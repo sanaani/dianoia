@@ -1,0 +1,67 @@
+{
+ "base": "fastino/GLiNER2.5-Decide",
+ "pairs": {
+  "fit": 2611,
+  "val": 290,
+  "test": 732
+ },
+ "labels": [
+  "clean",
+  "reverted"
+ ],
+ "zero_shot": [
+  0.5287,
+  0.4918,
+  0.5628
+ ],
+ "train_minutes": 17.4,
+ "train_log": {
+  "total_steps": 301,
+  "total_epochs": 3,
+  "total_time_seconds": 1045.3471660614014,
+  "samples_per_second": 14.969189670219922,
+  "best_metric": Infinity
+ },
+ "val_acc": [
+  0.5966,
+  0.5414,
+  0.6517
+ ],
+ "decide": [
+  0.5847,
+  0.5492,
+  0.6202
+ ],
+ "idea": [
+  0.6052,
+  0.5697,
+  0.6407
+ ],
+ "decide_minus_idea": [
+  -0.0205,
+  -0.0642,
+  0.0232
+ ],
+ "smaller": [
+  0.5622,
+  0.5266,
+  0.5963
+ ],
+ "decide_plus_idea": [
+  0.5997,
+  0.5628,
+  0.6352
+ ],
+ "decide_plus_idea_minus_decide": [
+  0.015,
+  -0.0219,
+  0.0506
+ ],
+ "combined_weights_all": {
+  "decide": 0.181,
+  "idea": 0.393,
+  "surprise": 0.002,
+  "relevance": -0.008,
+  "log_words": -0.094
+ }
+}

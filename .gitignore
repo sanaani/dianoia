@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+/data/
+*.npy
+*.parquet
+.pytest_cache/
+.snakemake/

@@ -1,0 +1,279 @@
+{
+ "rows": 325,
+ "graded": 325,
+ "model": "sonnet",
+ "true": {
+  "mean": 3.3,
+  "plausible": 0.486,
+  "n": 325
+ },
+ "predictor": {
+  "mean": 2.62,
+  "plausible": 0.209,
+  "n": 325
+ },
+ "last": {
+  "mean": 2.77,
+  "plausible": 0.262,
+  "n": 325
+ },
+ "context_mean": {
+  "mean": 2.58,
+  "plausible": 0.185,
+  "n": 325
+ },
+ "random": {
+  "mean": 1.25,
+  "plausible": 0.003,
+  "n": 325
+ },
+ "text_gen": {
+  "mean": 3.13,
+  "plausible": 0.397,
+  "n": 325
+ },
+ "text": {
+  "mean": 2.7,
+  "plausible": 0.255,
+  "n": 325
+ },
+ "predictor_minus": {
+  "true": {
+   "diff": -0.68,
+   "ci95": [
+    -0.843,
+    -0.52
+   ]
+  },
+  "last": {
+   "diff": -0.151,
+   "ci95": [
+    -0.295,
+    0.0
+   ]
+  },
+  "context_mean": {
+   "diff": 0.04,
+   "ci95": [
+    -0.105,
+    0.191
+   ]
+  },
+  "random": {
+   "diff": 1.366,
+   "ci95": [
+    1.24,
+    1.489
+   ]
+  },
+  "text_gen": {
+   "diff": -0.517,
+   "ci95": [
+    -0.677,
+    -0.354
+   ]
+  },
+  "text": {
+   "diff": -0.08,
+   "ci95": [
+    -0.24,
+    0.08
+   ]
+  }
+ },
+ "text_gen_minus": {
+  "true": {
+   "diff": -0.163,
+   "ci95": [
+    -0.338,
+    -0.003
+   ]
+  },
+  "predictor": {
+   "diff": 0.517,
+   "ci95": [
+    0.357,
+    0.68
+   ]
+  },
+  "last": {
+   "diff": 0.366,
+   "ci95": [
+    0.2,
+    0.526
+   ]
+  },
+  "context_mean": {
+   "diff": 0.557,
+   "ci95": [
+    0.4,
+    0.711
+   ]
+  },
+  "random": {
+   "diff": 1.883,
+   "ci95": [
+    1.754,
+    2.012
+   ]
+  },
+  "text": {
+   "diff": 0.437,
+   "ci95": [
+    0.302,
+    0.575
+   ]
+  }
+ },
+ "text_minus": {
+  "true": {
+   "diff": -0.6,
+   "ci95": [
+    -0.775,
+    -0.422
+   ]
+  },
+  "predictor": {
+   "diff": 0.08,
+   "ci95": [
+    -0.077,
+    0.234
+   ]
+  },
+  "last": {
+   "diff": -0.071,
+   "ci95": [
+    -0.222,
+    0.083
+   ]
+  },
+  "context_mean": {
+   "diff": 0.12,
+   "ci95": [
+    -0.037,
+    0.283
+   ]
+  },
+  "random": {
+   "diff": 1.446,
+   "ci95": [
+    1.317,
+    1.578
+   ]
+  },
+  "text_gen": {
+   "diff": -0.437,
+   "ci95": [
+    -0.578,
+    -0.302
+   ]
+  }
+ },
+ "by_medium": {
+  "chat/context_mean": {
+   "mean": 2.48,
+   "plausible": 0.117,
+   "n": 60
+  },
+  "chat/last": {
+   "mean": 2.58,
+   "plausible": 0.217,
+   "n": 60
+  },
+  "chat/predictor": {
+   "mean": 2.63,
+   "plausible": 0.183,
+   "n": 60
+  },
+  "chat/random": {
+   "mean": 1.17,
+   "plausible": 0.0,
+   "n": 60
+  },
+  "chat/text": {
+   "mean": 2.92,
+   "plausible": 0.367,
+   "n": 60
+  },
+  "chat/text_gen": {
+   "mean": 3.48,
+   "plausible": 0.583,
+   "n": 60
+  },
+  "chat/true": {
+   "mean": 3.32,
+   "plausible": 0.483,
+   "n": 60
+  },
+  "meeting/context_mean": {
+   "mean": 2.69,
+   "plausible": 0.24,
+   "n": 96
+  },
+  "meeting/last": {
+   "mean": 2.93,
+   "plausible": 0.302,
+   "n": 96
+  },
+  "meeting/predictor": {
+   "mean": 2.9,
+   "plausible": 0.24,
+   "n": 96
+  },
+  "meeting/random": {
+   "mean": 1.22,
+   "plausible": 0.0,
+   "n": 96
+  },
+  "meeting/text": {
+   "mean": 2.76,
+   "plausible": 0.25,
+   "n": 96
+  },
+  "meeting/text_gen": {
+   "mean": 3.22,
+   "plausible": 0.438,
+   "n": 96
+  },
+  "meeting/true": {
+   "mean": 3.15,
+   "plausible": 0.375,
+   "n": 96
+  },
+  "wiki/context_mean": {
+   "mean": 2.54,
+   "plausible": 0.178,
+   "n": 169
+  },
+  "wiki/last": {
+   "mean": 2.74,
+   "plausible": 0.254,
+   "n": 169
+  },
+  "wiki/predictor": {
+   "mean": 2.45,
+   "plausible": 0.201,
+   "n": 169
+  },
+  "wiki/random": {
+   "mean": 1.3,
+   "plausible": 0.006,
+   "n": 169
+  },
+  "wiki/text": {
+   "mean": 2.58,
+   "plausible": 0.219,
+   "n": 169
+  },
+  "wiki/text_gen": {
+   "mean": 2.96,
+   "plausible": 0.308,
+   "n": 169
+  },
+  "wiki/true": {
+   "mean": 3.37,
+   "plausible": 0.55,
+   "n": 169
+  }
+ }
+}

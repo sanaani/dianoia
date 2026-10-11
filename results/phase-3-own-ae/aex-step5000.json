@@ -1,0 +1,27 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/aex/decoded-step5000.jsonl",
+  "n_sources": 200,
+  "arms": {
+    "ae1024": {
+      "n_checked": 200,
+      "intent_check_all": 0.165,
+      "act": 0.77,
+      "action": 0.245,
+      "roles": 0.505,
+      "quantities": 0.74,
+      "word_jaccard_median": 0.37,
+      "exact_copy": 0.05
+    },
+    "ae256": {
+      "n_checked": 200,
+      "intent_check_all": 0.14,
+      "act": 0.765,
+      "action": 0.19,
+      "roles": 0.485,
+      "quantities": 0.725,
+      "word_jaccard_median": 0.358,
+      "exact_copy": 0.045
+    }
+  }
+}

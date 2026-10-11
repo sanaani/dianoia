@@ -1,0 +1,137 @@
+{
+ "rows": 325,
+ "graded": 325,
+ "model": "sonnet",
+ "true": {
+  "mean": 3.46,
+  "plausible": 0.56,
+  "n": 325
+ },
+ "predictor": {
+  "mean": 2.85,
+  "plausible": 0.271,
+  "n": 325
+ },
+ "last": {
+  "mean": 2.91,
+  "plausible": 0.338,
+  "n": 325
+ },
+ "context_mean": {
+  "mean": 2.69,
+  "plausible": 0.218,
+  "n": 325
+ },
+ "random": {
+  "mean": 1.31,
+  "plausible": 0.012,
+  "n": 325
+ },
+ "predictor_minus": {
+  "true": {
+   "diff": -0.612,
+   "ci95": [
+    -0.782,
+    -0.446
+   ]
+  },
+  "last": {
+   "diff": -0.062,
+   "ci95": [
+    -0.2,
+    0.08
+   ]
+  },
+  "context_mean": {
+   "diff": 0.163,
+   "ci95": [
+    0.022,
+    0.308
+   ]
+  },
+  "random": {
+   "diff": 1.538,
+   "ci95": [
+    1.406,
+    1.677
+   ]
+  }
+ },
+ "by_medium": {
+  "chat/context_mean": {
+   "mean": 2.78,
+   "plausible": 0.283,
+   "n": 60
+  },
+  "chat/last": {
+   "mean": 2.8,
+   "plausible": 0.25,
+   "n": 60
+  },
+  "chat/predictor": {
+   "mean": 2.87,
+   "plausible": 0.283,
+   "n": 60
+  },
+  "chat/random": {
+   "mean": 1.12,
+   "plausible": 0.0,
+   "n": 60
+  },
+  "chat/true": {
+   "mean": 3.53,
+   "plausible": 0.617,
+   "n": 60
+  },
+  "meeting/context_mean": {
+   "mean": 2.73,
+   "plausible": 0.177,
+   "n": 96
+  },
+  "meeting/last": {
+   "mean": 3.07,
+   "plausible": 0.406,
+   "n": 96
+  },
+  "meeting/predictor": {
+   "mean": 3.12,
+   "plausible": 0.344,
+   "n": 96
+  },
+  "meeting/random": {
+   "mean": 1.27,
+   "plausible": 0.021,
+   "n": 96
+  },
+  "meeting/true": {
+   "mean": 3.31,
+   "plausible": 0.49,
+   "n": 96
+  },
+  "wiki/context_mean": {
+   "mean": 2.63,
+   "plausible": 0.219,
+   "n": 169
+  },
+  "wiki/last": {
+   "mean": 2.86,
+   "plausible": 0.331,
+   "n": 169
+  },
+  "wiki/predictor": {
+   "mean": 2.69,
+   "plausible": 0.225,
+   "n": 169
+  },
+  "wiki/random": {
+   "mean": 1.4,
+   "plausible": 0.012,
+   "n": 169
+  },
+  "wiki/true": {
+   "mean": 3.52,
+   "plausible": 0.58,
+   "n": 169
+  }
+ }
+}

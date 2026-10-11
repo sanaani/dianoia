@@ -1,0 +1,27 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:04<31:42,  4.93s/it]Loading weights: 100%|██████████| 387/387 [00:04<00:00, 78.33it/s]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 188/1013 [00:00<00:00, 1874.78it/s]Loading weights:  37%|███▋      | 376/1013 [00:00<00:00, 1775.84it/s]Loading weights:  55%|█████▌    | 558/1013 [00:00<00:00, 1765.07it/s]Loading weights:  73%|███████▎  | 735/1013 [00:00<00:00, 1517.58it/s]Loading weights:  88%|████████▊ | 891/1013 [00:03<00:00, 147.01it/s] Loading weights:  98%|█████████▊| 993/1013 [00:05<00:00, 113.37it/s]Loading weights: 100%|██████████| 1013/1013 [00:09<00:00, 112.38it/s]
+{"groups": 90788, "with_pos": 70273, "with_neg": 66772}
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"step": 100, "rec": 0.5175, "nce": 0.2162, "minutes": 3.0}
+{"step": 200, "rec": 0.524, "nce": 0.0404, "minutes": 6.0}
+{"step": 300, "rec": 0.2519, "nce": 0.0572, "minutes": 9.0}
+{"step": 400, "rec": 0.2533, "nce": 0.1108, "minutes": 12.1}
+{"step": 500, "rec": 0.1626, "nce": 0.0163, "minutes": 15.1}
+{"step": 600, "rec": 0.1662, "nce": 0.1039, "minutes": 18.1}
+{"step": 700, "rec": 0.2091, "nce": 0.031, "minutes": 21.1}
+{"step": 800, "rec": 0.0904, "nce": 0.0525, "minutes": 24.2}
+{"step": 900, "rec": 0.1654, "nce": 0.0864, "minutes": 27.2}
+{"step": 1000, "rec": 0.1692, "nce": 0.0218, "minutes": 30.2}
+{"step": 1100, "rec": 0.1654, "nce": 0.0953, "minutes": 33.2}
+{"step": 1200, "rec": 0.1512, "nce": 0.0115, "minutes": 36.3}
+{"step": 1300, "rec": 0.1769, "nce": 0.0858, "minutes": 39.3}
+{"step": 1400, "rec": 0.2314, "nce": 0.0343, "minutes": 42.3}
+{"step": 1500, "rec": 0.2226, "nce": 0.0737, "minutes": 45.3}
+{"step": 1600, "rec": 0.287, "nce": 0.124, "minutes": 48.3}
+{"step": 1700, "rec": 0.3706, "nce": 0.0466, "minutes": 51.3}
+{"step": 1800, "rec": 0.2384, "nce": 0.186, "minutes": 54.4}
+{"step": 1900, "rec": 0.1747, "nce": 0.0855, "minutes": 57.4}
+{"step": 2000, "rec": 0.3422, "nce": 0.0259, "minutes": 60.4}
+{"trained": 2000, "minutes": 60.4}

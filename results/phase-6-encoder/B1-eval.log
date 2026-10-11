@@ -1,0 +1,16 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:12<1:20:11, 12.47s/it]Loading weights: 100%|██████████| 387/387 [00:12<00:00, 31.01it/s]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 179/1013 [00:00<00:00, 1789.77it/s]Loading weights:  35%|███▌      | 358/1013 [00:00<00:00, 1606.36it/s]Loading weights:  51%|█████▏    | 520/1013 [00:00<00:00, 1532.99it/s]Loading weights:  67%|██████▋   | 674/1013 [00:00<00:00, 1466.34it/s]Loading weights:  81%|████████  | 822/1013 [00:00<00:00, 1252.53it/s]Loading weights:  94%|█████████▍| 952/1013 [00:00<00:00, 1199.25it/s]Loading weights: 100%|██████████| 1013/1013 [00:01<00:00, 703.38it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 9/393 [00:00<00:36, 10.41it/s]Loading weights:  34%|███▍      | 133/393 [00:00<00:01, 179.86it/s]Loading weights:  50%|████▉     | 195/393 [00:01<00:00, 231.85it/s]Loading weights:  63%|██████▎   | 247/393 [00:01<00:00, 259.11it/s]Loading weights:  83%|████████▎ | 325/393 [00:01<00:00, 356.50it/s]Loading weights:  99%|█████████▉| 389/393 [00:01<00:00, 284.73it/s]Loading weights: 100%|██████████| 393/393 [00:01<00:00, 228.32it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: FacebookAI/roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 78/290 [00:00<00:00, 779.59it/s]Loading weights:  67%|██████▋   | 195/290 [00:00<00:00, 998.58it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 1251.05it/s]
+{"evaluated": 4498, "geometry": 80}

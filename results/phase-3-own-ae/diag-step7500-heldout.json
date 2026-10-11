@@ -1,0 +1,27 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/diag/heldout.jsonl",
+  "n_sources": 200,
+  "arms": {
+    "ae1024": {
+      "n_checked": 200,
+      "intent_check_all": 0.17,
+      "act": 0.74,
+      "action": 0.24,
+      "roles": 0.44,
+      "quantities": 0.735,
+      "word_jaccard_median": 0.414,
+      "exact_copy": 0.09
+    },
+    "ae256": {
+      "n_checked": 200,
+      "intent_check_all": 0.155,
+      "act": 0.705,
+      "action": 0.23,
+      "roles": 0.48,
+      "quantities": 0.73,
+      "word_jaccard_median": 0.412,
+      "exact_copy": 0.08
+    }
+  }
+}

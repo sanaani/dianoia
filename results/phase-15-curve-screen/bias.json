@@ -1,0 +1,108 @@
+{
+ "test_pairs": 4519,
+ "top_share": 0.2,
+ "read": 903,
+ "labels": {
+  "strict": {
+   "positives": 92,
+   "kept": 65,
+   "found_by_ranker": {
+    "Fastino": 65,
+    "word overlap (high first)": 27,
+    "cosine (high first)": 29,
+    "word overlap (low first)": 14,
+    "cosine (low first)": 2
+   },
+   "kept_minus_missed": {
+    "overlap": {
+     "diff": 0.0063,
+     "lo": -0.004,
+     "hi": 0.0166
+    },
+    "cosine": {
+     "diff": -0.0061,
+     "lo": -0.0185,
+     "hi": 0.0073
+    }
+   },
+   "means": {
+    "kept": {
+     "overlap": 0.0524,
+     "cosine": 0.6336
+    },
+    "missed": {
+     "overlap": 0.0462,
+     "cosine": 0.6398
+    },
+    "all_pairs": {
+     "overlap": 0.043,
+     "cosine": 0.6083
+    }
+   },
+   "domains": {
+    "kept": {
+     "Physical Sciences": 60,
+     "Life Sciences": 5
+    },
+    "missed": {
+     "Physical Sciences": 20,
+     "Health Sciences": 5,
+     "Life Sciences": 2
+    }
+   }
+  },
+  "v3p gate": {
+   "positives": 115,
+   "kept": 74,
+   "found_by_ranker": {
+    "Fastino": 74,
+    "word overlap (high first)": 32,
+    "cosine (high first)": 38,
+    "word overlap (low first)": 17,
+    "cosine (low first)": 4
+   },
+   "kept_minus_missed": {
+    "overlap": {
+     "diff": 0.0067,
+     "lo": -0.0016,
+     "hi": 0.0153
+    },
+    "cosine": {
+     "diff": -0.0045,
+     "lo": -0.016,
+     "hi": 0.0077
+    }
+   },
+   "means": {
+    "kept": {
+     "overlap": 0.0532,
+     "cosine": 0.6321
+    },
+    "missed": {
+     "overlap": 0.0465,
+     "cosine": 0.6366
+    },
+    "all_pairs": {
+     "overlap": 0.043,
+     "cosine": 0.6083
+    }
+   },
+   "domains": {
+    "kept": {
+     "Physical Sciences": 68,
+     "Health Sciences": 1,
+     "Life Sciences": 5
+    },
+    "missed": {
+     "Physical Sciences": 29,
+     "Health Sciences": 9,
+     "Life Sciences": 3
+    }
+   }
+  }
+ },
+ "spearman_p_vs": {
+  "overlap": 0.0566,
+  "cosine": 0.0521
+ }
+}

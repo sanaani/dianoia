@@ -1,0 +1,91 @@
+{
+  "sampled": {
+    "train": 2400,
+    "test": 400
+  },
+  "kept": {
+    "train": 2038,
+    "test": 350
+  },
+  "test_mailboxes": [
+    "badeer-r",
+    "davis-d",
+    "farmer-d",
+    "geaccone-t",
+    "giron-d",
+    "haedicke-m",
+    "hayslett-r",
+    "hendrickson-s",
+    "holst-k",
+    "horton-s",
+    "keavey-p",
+    "kuykendall-t",
+    "lucci-p",
+    "mann-k",
+    "mckay-j",
+    "motley-m",
+    "pereira-s",
+    "platter-p",
+    "quenet-j",
+    "rapp-b",
+    "ring-r",
+    "rodrique-r",
+    "saibi-e",
+    "scott-s",
+    "symes-k",
+    "thomas-p",
+    "tycholiz-b",
+    "watson-k",
+    "whitt-m",
+    "williams-j"
+  ],
+  "drops": {
+    "unusable": 226,
+    "canonical_rule": 22,
+    "no_paraphrase": 132,
+    "missing": 0,
+    "failed_call": 32,
+    "paraphrase_rule": 83,
+    "rename_rule": 0,
+    "register_rule": 3,
+    "drop_modifiers_rule": 17,
+    "act_change_rule": 26,
+    "role_swap_rule": 167,
+    "negation_rule": 184,
+    "modality_rule": 243,
+    "predicate_change_rule": 135,
+    "type_change_rule": 154,
+    "quantity_rule": 82
+  },
+  "variant_counts": {
+    "paraphrase": 2388,
+    "rename": 1010,
+    "register": 2373,
+    "drop_modifiers": 2105,
+    "act_change": 2351,
+    "role_swap": 869,
+    "negation": 2204,
+    "modality": 2144,
+    "predicate_change": 2252,
+    "type_change": 1725,
+    "quantity": 992
+  },
+  "speech_acts": {
+    "inform": 1681,
+    "request": 307,
+    "commit": 130,
+    "propose": 110,
+    "question": 97,
+    "thank": 30,
+    "other": 14,
+    "reject": 10,
+    "approve": 9
+  },
+  "domains": {
+    "business": 1738,
+    "personal": 318,
+    "news": 236,
+    "sports": 65,
+    "other": 31
+  }
+}

@@ -1,0 +1,14 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<01:49,  3.52it/s]Loading weights:  92%|█████████▏| 357/387 [00:00<00:00, 1179.52it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 961.56it/s] 
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:05<00:05,  5.79s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 24.72s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 21.90s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 170/1013 [00:00<00:00, 1622.36it/s]Loading weights:  33%|███▎      | 339/1013 [00:00<00:00, 1660.99it/s]Loading weights:  50%|█████     | 508/1013 [00:00<00:00, 1611.06it/s]Loading weights:  66%|██████▌   | 670/1013 [00:00<00:00, 1382.15it/s]Loading weights:  80%|████████  | 813/1013 [00:00<00:00, 1108.59it/s]Loading weights:  92%|█████████▏| 933/1013 [00:00<00:00, 972.77it/s] Loading weights: 100%|██████████| 1013/1013 [00:01<00:00, 908.26it/s]
+{"groups": 130538, "with_pos": 109841, "with_neg": 106557}
+{"paraphrase_groups": 12078, "entail_groups": 26123, "contrast_groups": 15211, "natural_per_batch": 7, "contrast_per_batch": 2, "lpara_groups": 13954, "lpara_per_batch": 3, "spara_groups": 8701, "spara_per_batch": 3, "merge_groups": 12121, "merge_per_batch": 8}
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"step": 100, "rec": 0.1286, "nce": 0.2612, "minutes": 3.4}
+{"step": 200, "rec": 0.0956, "nce": 0.1346, "minutes": 6.5}
+{"step": 300, "rec": 0.1108, "nce": 0.2311, "minutes": 9.7}
+{"step": 400, "rec": 0.1712, "nce": 0.4898, "minutes": 12.9}
+{"trained": 400, "minutes": 12.9}

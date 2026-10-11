@@ -1,0 +1,7 @@
+{
+  "sampled": 8000,
+  "kept": 7425,
+  "failed": 575,
+  "median_words_source": 16.0,
+  "median_words_canonical": 11.0
+}

@@ -1,0 +1,46 @@
+{
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/ae0/decoded.jsonl",
+  "n_sources": 500,
+  "arms": {
+    "ae128": {
+      "n_checked": 169,
+      "intent_check_all": 0.308,
+      "act": 0.929,
+      "action": 0.45,
+      "roles": 0.639,
+      "quantities": 0.716,
+      "word_jaccard_median": 0.348,
+      "exact_copy": 0.064
+    },
+    "ae256": {
+      "n_checked": 169,
+      "intent_check_all": 0.254,
+      "act": 0.947,
+      "action": 0.432,
+      "roles": 0.633,
+      "quantities": 0.704,
+      "word_jaccard_median": 0.385,
+      "exact_copy": 0.068
+    },
+    "ae64": {
+      "n_checked": 169,
+      "intent_check_all": 0.207,
+      "act": 0.917,
+      "action": 0.379,
+      "roles": 0.609,
+      "quantities": 0.669,
+      "word_jaccard_median": 0.26,
+      "exact_copy": 0.036
+    },
+    "noise": {
+      "n_checked": 168,
+      "intent_check_all": 0.0,
+      "act": 0.137,
+      "action": 0.0,
+      "roles": 0.0,
+      "quantities": 0.321,
+      "word_jaccard_median": 0.054,
+      "exact_copy": 0.0
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/392702 [00:00<?, ? examples/s]Generating train split:   0%|          | 1000/392702 [00:00<01:30, 4318.01 examples/s]Generating train split:  16%|█▌        | 62000/392702 [00:00<00:01, 228173.65 examples/s]Generating train split:  32%|███▏      | 124000/392702 [00:00<00:00, 348805.61 examples/s]Generating train split:  47%|████▋     | 185000/392702 [00:00<00:00, 417171.47 examples/s]Generating train split:  63%|██████▎   | 247000/392702 [00:00<00:00, 461400.29 examples/s]Generating train split:  79%|███████▊  | 309000/392702 [00:00<00:00, 490487.40 examples/s]Generating train split:  95%|█████████▍| 372000/392702 [00:00<00:00, 527728.29 examples/s]Generating train split: 100%|██████████| 392702/392702 [00:00<00:00, 417713.39 examples/s]
+Generating validation_matched split:   0%|          | 0/9815 [00:00<?, ? examples/s]Generating validation_matched split: 100%|██████████| 9815/9815 [00:00<00:00, 542958.24 examples/s]
+Generating validation_mismatched split:   0%|          | 0/9832 [00:00<?, ? examples/s]Generating validation_mismatched split: 100%|██████████| 9832/9832 [00:00<00:00, 531724.13 examples/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/394 [00:00<?, ?it/s]Loading weights:  89%|████████▉ | 352/394 [00:00<00:00, 3516.36it/s]Loading weights: 100%|██████████| 394/394 [00:00<00:00, 3612.48it/s]
+{"done": 0, "of": 367810}
+{"done": 25600, "of": 367810}
+{"done": 51200, "of": 367810}
+{"done": 76800, "of": 367810}
+{"done": 102400, "of": 367810}
+{"done": 128000, "of": 367810}
+{"done": 153600, "of": 367810}
+{"done": 179200, "of": 367810}
+{"done": 204800, "of": 367810}
+{"done": 230400, "of": 367810}
+{"done": 256000, "of": 367810}
+{"done": 281600, "of": 367810}
+{"done": 307200, "of": 367810}
+{"done": 332800, "of": 367810}
+{"done": 358400, "of": 367810}
+{"entail": 122611, "both_ways": 26888, "fwd": 114805, "contra": 122588, "contra_kept": 119068}

@@ -1,0 +1,74 @@
+{
+ "all": {
+  "n": 381,
+  "one": 0.591,
+  "align": 0.583,
+  "targeted": 0.734
+ },
+ "all-diff": {
+  "n": 157,
+  "one": 0.42,
+  "align": 0.433,
+  "targeted": 0.671
+ },
+ "all-same": {
+  "n": 224,
+  "one": 0.71,
+  "align": 0.688,
+  "targeted": 0.777
+ },
+ "chat": {
+  "n": 114,
+  "one": 0.447,
+  "align": 0.43,
+  "targeted": 0.663
+ },
+ "chat-diff": {
+  "n": 53,
+  "one": 0.34,
+  "align": 0.34,
+  "targeted": 0.652
+ },
+ "chat-same": {
+  "n": 61,
+  "one": 0.541,
+  "align": 0.508,
+  "targeted": 0.672
+ },
+ "email": {
+  "n": 150,
+  "one": 0.8,
+  "align": 0.8,
+  "targeted": 0.8
+ },
+ "email-diff": {
+  "n": 34,
+  "one": 0.647,
+  "align": 0.647,
+  "targeted": 0.676
+ },
+ "email-same": {
+  "n": 116,
+  "one": 0.845,
+  "align": 0.845,
+  "targeted": 0.836
+ },
+ "meeting": {
+  "n": 117,
+  "one": 0.462,
+  "align": 0.453,
+  "targeted": 0.713
+ },
+ "meeting-diff": {
+  "n": 70,
+  "one": 0.371,
+  "align": 0.4,
+  "targeted": 0.681
+ },
+ "meeting-same": {
+  "n": 47,
+  "one": 0.596,
+  "align": 0.532,
+  "targeted": 0.761
+ }
+}

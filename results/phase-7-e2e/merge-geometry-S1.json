@@ -1,0 +1,642 @@
+[
+ {
+  "role": "simple",
+  "radius": 0.03951156139373779,
+  "idea_to_centre": 0.021033287048339844,
+  "negation_to_centre": 0.4875591993331909,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.030016422271728516,
+  "idea_to_centre": 0.01888948678970337,
+  "negation_to_centre": 0.496584415435791,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.03068298101425171,
+  "idea_to_centre": 0.014290928840637207,
+  "negation_to_centre": 0.15165460109710693,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.02398526668548584,
+  "idea_to_centre": 0.012894749641418457,
+  "negation_to_centre": 0.6771512031555176,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.052024126052856445,
+  "idea_to_centre": 0.01699119806289673,
+  "negation_to_centre": 0.5015770196914673,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.09698665142059326,
+  "idea_to_centre": 0.036266326904296875,
+  "negation_to_centre": 0.40132051706314087,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.028263211250305176,
+  "idea_to_centre": 0.011828064918518066,
+  "negation_to_centre": 0.36153602600097656,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.028429925441741943,
+  "idea_to_centre": 0.01612257957458496,
+  "negation_to_centre": 0.22030246257781982,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.05183374881744385,
+  "idea_to_centre": 0.04769623279571533,
+  "negation_to_centre": 0.44850075244903564,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.054203689098358154,
+  "idea_to_centre": 0.023863554000854492,
+  "negation_to_centre": 0.3870546221733093,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.02969890832901001,
+  "idea_to_centre": 0.01330268383026123,
+  "negation_to_centre": 0.5862833261489868,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.030160188674926758,
+  "idea_to_centre": 0.019847214221954346,
+  "negation_to_centre": 0.4304654002189636,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 0.9166666666666666
+ },
+ {
+  "role": "complex",
+  "radius": 0.023205041885375977,
+  "idea_to_centre": 0.009136974811553955,
+  "negation_to_centre": 0.42058229446411133,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.02631533145904541,
+  "idea_to_centre": 0.016276180744171143,
+  "negation_to_centre": 0.33838289976119995,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.021687030792236328,
+  "idea_to_centre": 0.007676482200622559,
+  "negation_to_centre": 0.528262197971344,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.03516101837158203,
+  "idea_to_centre": 0.030765175819396973,
+  "negation_to_centre": 0.568435788154602,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.043186187744140625,
+  "idea_to_centre": 0.025283873081207275,
+  "negation_to_centre": 0.6265805959701538,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.027819573879241943,
+  "idea_to_centre": 0.010131657123565674,
+  "negation_to_centre": 0.42161130905151367,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.04030442237854004,
+  "idea_to_centre": 0.01667684316635132,
+  "negation_to_centre": 0.5837489366531372,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "complex",
+  "radius": 0.04629707336425781,
+  "idea_to_centre": 0.02774876356124878,
+  "negation_to_centre": 0.41750627756118774,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03229647874832153,
+  "idea_to_centre": 0.010786175727844238,
+  "negation_to_centre": 0.48411691188812256,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.019058644771575928,
+  "idea_to_centre": 0.006783008575439453,
+  "negation_to_centre": 0.3847604990005493,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03185391426086426,
+  "idea_to_centre": 0.01655679941177368,
+  "negation_to_centre": 0.25111037492752075,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03758031129837036,
+  "idea_to_centre": 0.025233745574951172,
+  "negation_to_centre": 0.5755752325057983,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04298657178878784,
+  "idea_to_centre": 0.03964400291442871,
+  "negation_to_centre": 0.5664812326431274,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.061558425426483154,
+  "idea_to_centre": 0.03707665205001831,
+  "negation_to_centre": 0.2554497718811035,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 0.9166666666666666
+ },
+ {
+  "role": "sample",
+  "radius": 0.03466010093688965,
+  "idea_to_centre": 0.01456606388092041,
+  "negation_to_centre": 0.2692825198173523,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03655552864074707,
+  "idea_to_centre": 0.015500664710998535,
+  "negation_to_centre": 0.4064222574234009,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.02970147132873535,
+  "idea_to_centre": 0.010930299758911133,
+  "negation_to_centre": 0.22106409072875977,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04575455188751221,
+  "idea_to_centre": 0.04575455188751221,
+  "negation_to_centre": 0.26710182428359985,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03373086452484131,
+  "idea_to_centre": 0.022966861724853516,
+  "negation_to_centre": 0.41333073377609253,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04468965530395508,
+  "idea_to_centre": 0.014840841293334961,
+  "negation_to_centre": 0.5221050977706909,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.06212949752807617,
+  "idea_to_centre": 0.03172272443771362,
+  "negation_to_centre": 0.5193265080451965,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.040655553340911865,
+  "idea_to_centre": 0.020026326179504395,
+  "negation_to_centre": 0.5624188184738159,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04572713375091553,
+  "idea_to_centre": 0.03321826457977295,
+  "negation_to_centre": 0.6470814943313599,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.010096490383148193,
+  "idea_to_centre": 0.003402113914489746,
+  "negation_to_centre": 0.5273740291595459,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03630930185317993,
+  "idea_to_centre": 0.016659080982208252,
+  "negation_to_centre": 0.3818017840385437,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.017688870429992676,
+  "idea_to_centre": 0.009242117404937744,
+  "negation_to_centre": 0.32796573638916016,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05039799213409424,
+  "idea_to_centre": 0.02595376968383789,
+  "negation_to_centre": 0.5689759254455566,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.011931180953979492,
+  "idea_to_centre": 0.005900681018829346,
+  "negation_to_centre": 0.22071337699890137,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.031844496726989746,
+  "idea_to_centre": 0.015707790851593018,
+  "negation_to_centre": 0.46900367736816406,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.057717740535736084,
+  "idea_to_centre": 0.04343819618225098,
+  "negation_to_centre": 0.494396448135376,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 0.9166666666666666
+ },
+ {
+  "role": "sample",
+  "radius": 0.054248034954071045,
+  "idea_to_centre": 0.032553672790527344,
+  "negation_to_centre": 0.12454426288604736,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 0.9166666666666666
+ },
+ {
+  "role": "sample",
+  "radius": 0.026664316654205322,
+  "idea_to_centre": 0.042073190212249756,
+  "negation_to_centre": 0.5454052090644836,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.042169153690338135,
+  "idea_to_centre": 0.01860600709915161,
+  "negation_to_centre": 0.6063657999038696,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.025500893592834473,
+  "idea_to_centre": 0.016117572784423828,
+  "negation_to_centre": 0.37471306324005127,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.01858001947402954,
+  "idea_to_centre": 0.0066068172454833984,
+  "negation_to_centre": 0.4313086271286011,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.0407557487487793,
+  "idea_to_centre": 0.02839893102645874,
+  "negation_to_centre": 0.6695197224617004,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05418050289154053,
+  "idea_to_centre": 0.02654731273651123,
+  "negation_to_centre": 0.6029307842254639,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04738736152648926,
+  "idea_to_centre": 0.02601468563079834,
+  "negation_to_centre": 0.36370426416397095,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.048123180866241455,
+  "idea_to_centre": 0.024789929389953613,
+  "negation_to_centre": 0.36250293254852295,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.07816356420516968,
+  "idea_to_centre": 0.07187682390213013,
+  "negation_to_centre": 0.11233723163604736,
+  "rewordings_closer_than_negation": 0.6666666865348816,
+  "roundtrip_beats_negation": 0.6666666666666666
+ },
+ {
+  "role": "sample",
+  "radius": 0.04779624938964844,
+  "idea_to_centre": 0.03451794385910034,
+  "negation_to_centre": 0.512378990650177,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03645467758178711,
+  "idea_to_centre": 0.018976211547851562,
+  "negation_to_centre": 0.5134391188621521,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.037064433097839355,
+  "idea_to_centre": 0.030416250228881836,
+  "negation_to_centre": 0.23972725868225098,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04125124216079712,
+  "idea_to_centre": 0.04506552219390869,
+  "negation_to_centre": 0.5332111120223999,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.038010597229003906,
+  "idea_to_centre": 0.02232307195663452,
+  "negation_to_centre": 0.63371741771698,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.011788666248321533,
+  "idea_to_centre": 0.007609128952026367,
+  "negation_to_centre": 0.37679845094680786,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.037038445472717285,
+  "idea_to_centre": 0.05367189645767212,
+  "negation_to_centre": 0.4540022611618042,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05523097515106201,
+  "idea_to_centre": 0.028268814086914062,
+  "negation_to_centre": 0.6085593104362488,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03882908821105957,
+  "idea_to_centre": 0.027467429637908936,
+  "negation_to_centre": 0.584890604019165,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.0440632700920105,
+  "idea_to_centre": 0.026517391204833984,
+  "negation_to_centre": 0.4455452561378479,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.034591734409332275,
+  "idea_to_centre": 0.015009164810180664,
+  "negation_to_centre": 0.5068923234939575,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.035257816314697266,
+  "idea_to_centre": 0.028039515018463135,
+  "negation_to_centre": 0.6666609644889832,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05217248201370239,
+  "idea_to_centre": 0.03866070508956909,
+  "negation_to_centre": 0.5511518716812134,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.07194793224334717,
+  "idea_to_centre": 0.03687763214111328,
+  "negation_to_centre": 0.46226537227630615,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04377758502960205,
+  "idea_to_centre": 0.01462477445602417,
+  "negation_to_centre": 0.46583330631256104,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 0.9166666666666666
+ },
+ {
+  "role": "sample",
+  "radius": 0.0254175066947937,
+  "idea_to_centre": 0.0110090970993042,
+  "negation_to_centre": 0.350156307220459,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.027872800827026367,
+  "idea_to_centre": 0.010123252868652344,
+  "negation_to_centre": 0.5603564977645874,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03124260902404785,
+  "idea_to_centre": 0.01722586154937744,
+  "negation_to_centre": 0.7217305302619934,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.04302644729614258,
+  "idea_to_centre": 0.03550821542739868,
+  "negation_to_centre": 0.5189248323440552,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.022050023078918457,
+  "idea_to_centre": 0.011787891387939453,
+  "negation_to_centre": 0.5025246143341064,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05369400978088379,
+  "idea_to_centre": 0.09876906871795654,
+  "negation_to_centre": 0.5595532655715942,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.05780059099197388,
+  "idea_to_centre": 0.04218447208404541,
+  "negation_to_centre": 0.17855602502822876,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.0195462703704834,
+  "idea_to_centre": 0.008087456226348877,
+  "negation_to_centre": 0.3721991777420044,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.027549028396606445,
+  "idea_to_centre": 0.014622747898101807,
+  "negation_to_centre": 0.46909260749816895,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.034888625144958496,
+  "idea_to_centre": 0.023663878440856934,
+  "negation_to_centre": 0.38919973373413086,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.052106380462646484,
+  "idea_to_centre": 0.025939464569091797,
+  "negation_to_centre": 0.5579895973205566,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.03674793243408203,
+  "idea_to_centre": 0.014945387840270996,
+  "negation_to_centre": 0.4974234104156494,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ },
+ {
+  "role": "sample",
+  "radius": 0.02625751495361328,
+  "idea_to_centre": 0.01391381025314331,
+  "negation_to_centre": 0.6059572696685791,
+  "rewordings_closer_than_negation": 1.0,
+  "roundtrip_beats_negation": 1.0
+ }
+]

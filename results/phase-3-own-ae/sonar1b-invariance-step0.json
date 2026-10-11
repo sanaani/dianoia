@@ -1,0 +1,17 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/sonar1b/invariance-step0.jsonl",
+  "n_sources": 840,
+  "arms": {
+    "ae1024": {
+      "n_checked": 840,
+      "intent_check_all": 0.644,
+      "act": 0.912,
+      "action": 0.79,
+      "roles": 0.867,
+      "quantities": 0.948,
+      "word_jaccard_median": 0.385,
+      "exact_copy": 0.001
+    }
+  }
+}

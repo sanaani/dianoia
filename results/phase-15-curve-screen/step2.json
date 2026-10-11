@@ -1,0 +1,153 @@
+{
+ "S1": {
+  "discard": 0.5,
+  "kept": 73,
+  "of": 92,
+  "share": 0.7935,
+  "lo": 0.6964,
+  "pass": false
+ },
+ "curve": [
+  {
+   "discard": 0.1,
+   "kept": 90,
+   "of": 92,
+   "share": 0.9783,
+   "lo": 0.9237
+  },
+  {
+   "discard": 0.2,
+   "kept": 84,
+   "of": 92,
+   "share": 0.913,
+   "lo": 0.8358
+  },
+  {
+   "discard": 0.3,
+   "kept": 79,
+   "of": 92,
+   "share": 0.8587,
+   "lo": 0.7705
+  },
+  {
+   "discard": 0.4,
+   "kept": 74,
+   "of": 92,
+   "share": 0.8043,
+   "lo": 0.7085
+  },
+  {
+   "discard": 0.5,
+   "kept": 73,
+   "of": 92,
+   "share": 0.7935,
+   "lo": 0.6964
+  },
+  {
+   "discard": 0.6,
+   "kept": 70,
+   "of": 92,
+   "share": 0.7609,
+   "lo": 0.6606
+  },
+  {
+   "discard": 0.7,
+   "kept": 67,
+   "of": 92,
+   "share": 0.7283,
+   "lo": 0.6255
+  },
+  {
+   "discard": 0.8,
+   "kept": 65,
+   "of": 92,
+   "share": 0.7065,
+   "lo": 0.6024
+  },
+  {
+   "discard": 0.9,
+   "kept": 50,
+   "of": 92,
+   "share": 0.5435,
+   "lo": 0.4363
+  }
+ ],
+ "curve_v3_gate": [
+  {
+   "discard": 0.1,
+   "kept": 111,
+   "of": 115,
+   "share": 0.9652,
+   "lo": 0.9133
+  },
+  {
+   "discard": 0.2,
+   "kept": 103,
+   "of": 115,
+   "share": 0.8957,
+   "lo": 0.8248
+  },
+  {
+   "discard": 0.3,
+   "kept": 96,
+   "of": 115,
+   "share": 0.8348,
+   "lo": 0.7541
+  },
+  {
+   "discard": 0.4,
+   "kept": 90,
+   "of": 115,
+   "share": 0.7826,
+   "lo": 0.696
+  },
+  {
+   "discard": 0.5,
+   "kept": 88,
+   "of": 115,
+   "share": 0.7652,
+   "lo": 0.6771
+  },
+  {
+   "discard": 0.6,
+   "kept": 83,
+   "of": 115,
+   "share": 0.7217,
+   "lo": 0.6305
+  },
+  {
+   "discard": 0.7,
+   "kept": 79,
+   "of": 115,
+   "share": 0.687,
+   "lo": 0.5938
+  },
+  {
+   "discard": 0.8,
+   "kept": 73,
+   "of": 115,
+   "share": 0.6348,
+   "lo": 0.5399
+  },
+  {
+   "discard": 0.9,
+   "kept": 57,
+   "of": 115,
+   "share": 0.4957,
+   "lo": 0.4011
+  }
+ ],
+ "largest_discard_passing": 0.12,
+ "auc": 0.777,
+ "test_pairs": 4519,
+ "base": "fastino/GLiNER2.5-Decide",
+ "rows": {
+  "fit": 3816,
+  "fit_pos": 816,
+  "val": 1015,
+  "test": 4519,
+  "test_pos": 92
+ },
+ "train_minutes": 15.0,
+ "score_minutes": 2.7
+}

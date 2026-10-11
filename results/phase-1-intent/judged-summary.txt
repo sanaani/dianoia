@@ -1,0 +1,14 @@
+                   mean  count
+field                         
+act_change        0.116    517
+canonical         0.048    526
+drop_modifiers    0.533    465
+modality          0.081    458
+negation          0.004    478
+paraphrase        0.095    525
+predicate_change  0.307    499
+quantity          0.129    225
+register          0.133    520
+rename            0.769    208
+role_swap         0.116    199
+type_change       0.107    375

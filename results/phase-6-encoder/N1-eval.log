@@ -1,0 +1,17 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [01:08<7:21:36, 68.64s/it]Loading weights: 100%|██████████| 387/387 [01:08<00:00,  5.64it/s]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 196/1013 [00:00<00:00, 1855.13it/s]Loading weights:  38%|███▊      | 382/1013 [00:00<00:00, 1701.47it/s]Loading weights:  55%|█████▌    | 560/1013 [00:00<00:00, 1701.11it/s]Loading weights:  72%|███████▏  | 731/1013 [00:00<00:00, 1568.27it/s]Loading weights:  88%|████████▊ | 889/1013 [00:00<00:00, 1407.02it/s]Loading weights: 100%|██████████| 1013/1013 [00:00<00:00, 1114.86it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 187/393 [00:00<00:00, 1868.83it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 2080.49it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: FacebookAI/roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 3842.94it/s]
+{"evaluated": 4498, "geometry": 80}

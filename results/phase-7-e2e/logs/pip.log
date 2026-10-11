@@ -1,0 +1,3 @@
+
+[notice] A new release of pip is available: 26.1 -> 26.2.1
+[notice] To update, run: /opt/pytorch/bin/python3.12 -m pip install --upgrade pip

@@ -1,0 +1,165 @@
+{
+  "anchors": 400,
+  "pairs_labelled": 3257,
+  "labels": {
+    "related": 1771,
+    "unrelated": 1203,
+    "same_intent": 254,
+    "twin": 29
+  },
+  "scores": {
+    "head64": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6803,
+      "ci": [
+        0.6096,
+        0.7468
+      ]
+    },
+    "head128": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6762,
+      "ci": [
+        0.611,
+        0.7408
+      ]
+    },
+    "head256": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6653,
+      "ci": [
+        0.597,
+        0.7357
+      ]
+    },
+    "sonar": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6612,
+      "ci": [
+        0.6043,
+        0.7181
+      ]
+    },
+    "minilm": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.5656,
+      "ci": [
+        0.5007,
+        0.6327
+      ]
+    },
+    "bge": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.5943,
+      "ci": [
+        0.5359,
+        0.6545
+      ]
+    },
+    "e5": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6557,
+      "ci": [
+        0.6005,
+        0.7139
+      ]
+    },
+    "gtr": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6066,
+      "ci": [
+        0.5437,
+        0.6725
+      ]
+    },
+    "qwen3": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.694,
+      "ci": [
+        0.637,
+        0.7554
+      ]
+    },
+    "ft_bge64": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.638,
+      "ci": [
+        0.5735,
+        0.7018
+      ]
+    },
+    "ft_bge128": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6366,
+      "ci": [
+        0.572,
+        0.6991
+      ]
+    },
+    "ft_bge256": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6421,
+      "ci": [
+        0.5825,
+        0.6992
+      ]
+    },
+    "ft_sonar64": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.7199,
+      "ci": [
+        0.6591,
+        0.7779
+      ]
+    },
+    "ft_sonar128": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.7186,
+      "ci": [
+        0.6579,
+        0.7746
+      ]
+    },
+    "ft_sonar256": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.7268,
+      "ci": [
+        0.6703,
+        0.7827
+      ]
+    },
+    "lsa": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.5792,
+      "ci": [
+        0.517,
+        0.6453
+      ]
+    },
+    "jaccard": {
+      "n_sources": 122,
+      "n_pairs": 732,
+      "win_rate": 0.6414,
+      "ci": [
+        0.5805,
+        0.6985
+      ]
+    }
+  }
+}

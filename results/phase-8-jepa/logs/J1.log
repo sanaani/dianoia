@@ -1,0 +1,22 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<02:20,  2.74it/s]Loading weights:  93%|█████████▎| 359/387 [00:00<00:00, 968.61it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 804.41it/s]
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:06<00:06,  6.42s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 24.47s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 21.81s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 196/1013 [00:00<00:00, 1941.03it/s]Loading weights:  39%|███▊      | 391/1013 [00:00<00:00, 1900.05it/s]Loading weights:  57%|█████▋    | 582/1013 [00:00<00:00, 1885.30it/s]Loading weights:  76%|███████▌  | 771/1013 [00:00<00:00, 1487.97it/s]Loading weights:  92%|█████████▏| 930/1013 [00:00<00:00, 1328.47it/s]Loading weights: 100%|██████████| 1013/1013 [00:00<00:00, 1113.17it/s]
+{"ideas": 38841, "encode_min": 0.9}
+/opt/pytorch/lib/python3.12/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+{"step": 250, "loss": 5.787, "cos": 0.0074, "minutes": 0.2}
+{"step": 500, "loss": 5.4309, "cos": 0.028, "minutes": 0.3}
+{"step": 750, "loss": 5.4113, "cos": 0.0505, "minutes": 0.5}
+{"step": 1000, "loss": 5.2269, "cos": 0.0627, "minutes": 0.6}
+{"step": 1250, "loss": 5.1623, "cos": 0.0683, "minutes": 0.7}
+{"step": 1500, "loss": 5.1093, "cos": 0.085, "minutes": 0.8}
+{"step": 1750, "loss": 5.0166, "cos": 0.1023, "minutes": 0.9}
+{"step": 2000, "loss": 4.513, "cos": 0.1063, "minutes": 1.0}
+{"step": 2250, "loss": 4.723, "cos": 0.1183, "minutes": 1.1}
+{"step": 2500, "loss": 4.6661, "cos": 0.1082, "minutes": 1.2}
+{"step": 2750, "loss": 4.6273, "cos": 0.1229, "minutes": 1.4}
+{"step": 3000, "loss": 4.4543, "cos": 0.1169, "minutes": 1.5}
+{"pool": 3951, "train_units": 5694, "test_units": 633, "predictor": {"cos": 0.0991, "top1": 0.0053, "top10": 0.043, "median_rank": 341.5, "n": 3374}, "last": {"cos": 0.4258, "top1": 0.0, "top10": 0.3465, "median_rank": 112.0, "n": 3374}, "context_mean": {"cos": 0.4649, "top1": 0.0027, "top10": 0.2955, "median_rank": 117.0, "n": 3374}, "same_unit_best": {"cos": 0.61}}

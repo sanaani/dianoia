@@ -1,0 +1,253 @@
+# Phase 10 as code (10/05/2026): historical recovery of cross-domain borrowings in patents, H1-H6.
+#
+# Shaun: write the research process as code before starting, then monitor it rather than steer it. Every step, its
+# inputs, its settings and its pass/fail rule are fixed here and in config.yaml before data exists. A step runs only
+# when its inputs exist; a failed step stops everything downstream; a rerun resumes at the failed step.
+#
+#   cd pipelines/phase10
+#   snakemake -n                       # preview: every step it would run, nothing run
+#   snakemake --cores 8 --resources mem_mb=5000 net=4 gpu=1 --retries 2 --keep-going
+#
+# Guards, each from a mistake on 10/04-10/05/2026:
+#   - memory: every laptop step runs under scripts/memcap.py with its own cap; snakemake never schedules more than
+#     mem_mb at once; a capped step is retried with smaller chunks (params scale with the attempt number)
+#   - downloads: scripts/fetch-verified.sh, checksummed, resumable, one per file in parallel
+#   - smoke: every script runs on a tiny slice (rule smoke_*) before the real step may start
+#   - GPU: one job through scripts/aws.sh (smoke lines, one-job guard, checksummed transfers, finish-before-terminate)
+#     after a budget gate
+#   - verdicts: rule verdicts applies OPERATIONALIZATION.md's rules to the metrics; nobody reads the numbers first
+
+import os
+
+# Paths from the Snakefile's own folder, so a smoke run can use another working directory (-d) while the real
+# run holds this one's lock.
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+# Forward slashes: bash read "C:\users\..." as escapes and found no script (first run, 10/05/2026).
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+RAW = f"{D}/raw/patentsview"
+W = f"{D}/work/p10"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+FILES = config["patents"]["files"]
+
+
+# The settings this run uses (config.yaml plus any --configfile/--config overrides), written beside the data and
+# passed to every script. The scripts first read config.yaml itself, so the smoke run's overrides were silently
+# ignored (10/05/2026). Rewritten only when it changes, so an unchanged rerun does not redo every step.
+import yaml as _yaml
+
+CFG = f"{W}/config.used.yaml"
+os.makedirs(W, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+
+def lighter(base):
+    """A setting that halves on each retry: the lighter restart after a memory kill."""
+    # A resource, not a param: only resource functions are given the attempt number.
+    return lambda wildcards, attempt: max(1, base // 2 ** (attempt - 1))
+
+
+rule all:
+    input:
+        f"{REPO}/results/phase-10-analogy/REPORT.md",
+
+
+# ---- 1. Data -------------------------------------------------------------------------------------------------------
+
+rule fetch:
+    output: f"{RAW}/{{name}}.ok"
+    wildcard_constraints: name=r"g_[a-z_]+\.tsv\.zip"
+    resources: net=1, mem_mb=100
+    log: f"{RAW}/{{name}}.log"
+    shell: "bash {S}/fetch-verified.sh {RAW}/manifest.txt {RAW} {wildcards.name} > {log} 2>&1 && touch {output}"
+
+
+rule convert:
+    # Each table to parquet as soon as it is downloaded, all four in parallel with whatever else runs (pyarrow,
+    # streamed from the zip; peak about 2 GB). Later steps read only the parquet.
+    input: f"{RAW}/{{name}}.tsv.zip.ok"
+    output: f"{RAW}/parquet/{{name}}.parquet"
+    wildcard_constraints: name=r"g_[a-z_]+"
+    resources: mem_mb=2000
+    log: f"{RAW}/parquet/{{name}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py convert --raw {RAW} --name {wildcards.name} > {log} 2>&1"
+
+
+rule patents:
+    # One row per utility patent: grant date, first-listed (inventional) CPC section, every section it carries.
+    input: [f"{RAW}/parquet/{f}.parquet" for f in ("g_patent", "g_cpc_current")]
+    output: f"{W}/patents.parquet"
+    resources: mem_mb=2000, batch=lighter(1_000_000)
+    log: f"{W}/logs/patents.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py patents --raw {RAW} --batch {resources.batch} --out {output} > {log} 2>&1"
+
+
+rule borrowings:
+    # Applicant citations whose cited patent shares no CPC section with the citing one.
+    input: patents=rules.patents.output, table=f"{RAW}/parquet/g_us_patent_citation.parquet"
+    output: f"{W}/borrowings.parquet"
+    resources: mem_mb=3500, batch=lighter(4_000_000)
+    log: f"{W}/logs/borrowings.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py borrowings --raw {RAW} --patents {input.patents} --batch {resources.batch} --out {output} > {log} 2>&1"
+
+
+rule data_approved:
+    # Human gate (Shaun, 10/05/2026: "subjectively judge the quality of the data ... before we go down this road").
+    # Nothing past this point runs until a person reads results/phase-10-analogy/DATA-REVIEW.md and its sample and
+    # creates this file by hand. The pipeline never creates it: this rule only fails, with instructions.
+    output: f"{W}/review/APPROVED"
+    shell: "echo 'Waiting for data approval: read results/phase-10-analogy/DATA-REVIEW.md, then create {output}' >&2; exit 1"
+
+
+rule sample:
+    # Oversampled draft queries (val, test) with everything each cites; the candidate pool and the spread sample.
+    # Queries come only from pairs that passed the labeling gate (config "keep"; the smoke fixture has none).
+    input: patents=rules.patents.output, borrowings=rules.borrowings.output, table=f"{RAW}/parquet/g_us_patent_citation.parquet",
+           approved=rules.data_approved.output, keep=([f"{W}/{config['keep']}"] if config.get("keep") else [])
+    output: draft=f"{W}/draft.parquet", needed=f"{W}/needed.parquet"
+    params: keep=(f"--keep {W}/{config['keep']}" if config.get("keep") else "")
+    resources: mem_mb=3000
+    log: f"{W}/logs/sample.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py sample --raw {RAW} --patents {input.patents} --borrowings {input.borrowings} {params.keep} --config {CFG} --out {W} > {log} 2>&1"
+
+
+rule abstracts:
+    input: needed=rules.sample.output.needed, table=f"{RAW}/parquet/g_patent_abstract.parquet"
+    output: f"{W}/abstracts.parquet"
+    resources: mem_mb=3000, batch=lighter(500_000)
+    log: f"{W}/logs/abstracts.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py abstracts --raw {RAW} --needed {input.needed} --batch {resources.batch} --out {output} > {log} 2>&1"
+
+
+rule finalize:
+    # 1,000 queries per split whose abstracts exist, each with its true cited patent and 999 candidates.
+    input: draft=rules.sample.output.draft, needed=rules.sample.output.needed, abstracts=rules.abstracts.output
+    output: f"{W}/queries.parquet"
+    resources: mem_mb=2000
+    log: f"{W}/logs/finalize.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py finalize --draft {input.draft} --needed {input.needed} --abstracts {input.abstracts} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule audit:
+    # Gate: no query is a candidate or in the spread sample; every candidate predates its query, sits in the cited
+    # patent's section and shares no section with the query; every needed abstract exists. Exit 1 stops everything.
+    input: queries=rules.finalize.output, needed=rules.sample.output.needed, abstracts=rules.abstracts.output, patents=rules.patents.output
+    output: f"{W}/audit.json"
+    resources: mem_mb=2000
+    log: f"{W}/logs/audit.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py audit --queries {input.queries} --needed {input.needed} --abstracts {input.abstracts} --patents {input.patents} --out {output} > {log} 2>&1"
+
+
+# ---- 2. Words (laptop) ---------------------------------------------------------------------------------------------
+
+rule tag:
+    # Part-of-speech tags and lemmas for every abstract (NLTK), in parallel worker processes.
+    input: abstracts=rules.abstracts.output, audit=rules.audit.output
+    output: f"{W}/tagged.parquet"
+    # Workers shrink on retry too (4, 2, 1): six worker processes, each loading its own libraries, passed the 3 GB cap
+    # within seconds on all three attempts while only the chunk size halved (10/07/2026).
+    threads: 4
+    resources: mem_mb=3000, chunk=lighter(2000), workers=lighter(4)
+    log: f"{W}/logs/tag.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py tag --abstracts {input.abstracts} --workers {resources.workers} --chunk {resources.chunk} --out {output} > {log} 2>&1"
+
+
+rule word_stats:
+    # Per lemma: general-English frequency (wordfreq Zipf) and domain spread (entropy over the 8 sections).
+    input: tagged=rules.tag.output, needed=rules.sample.output.needed
+    output: f"{W}/word_stats.parquet"
+    resources: mem_mb=2000
+    log: f"{W}/logs/word_stats.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py stats --tagged {input.tagged} --needed {input.needed} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule h1:
+    input: rules.word_stats.output
+    output: f"{W}/metrics/h1.json"
+    resources: mem_mb=1500
+    log: f"{W}/logs/h1.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py h1 --stats {input} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule h2_lexical:
+    # Verbs-only against nouns-only recovery, as TF-IDF lemma bags (no model).
+    input: tagged=rules.tag.output, queries=rules.finalize.output
+    output: f"{W}/metrics/h2_lexical.json"
+    resources: mem_mb=2500
+    log: f"{W}/logs/h2_lexical.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py h2 --tagged {input.tagged} --queries {input.queries} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule candidates:
+    # Role replacement inputs: for every noun and verb in a query or candidate abstract, its WordNet hypernyms up to
+    # 4 steps with their generality (z frequency + z spread). Qwen3 picks among them in context on the GPU.
+    input: tagged=rules.tag.output, stats=rules.word_stats.output, queries=rules.finalize.output
+    output: f"{W}/gpu/cands.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/candidates.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py candidates --tagged {input.tagged} --stats {input.stats} --queries {input.queries} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule h3_words:
+    # H3 word list: domain words (concentrated in one section) and their WordNet hypernyms.
+    input: rules.word_stats.output
+    output: f"{W}/gpu/h3_words.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/h3_words.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-words.py h3words --stats {input} --config {CFG} --out {output} > {log} 2>&1"
+
+
+# ---- 3. GPU (AWS, one job) -----------------------------------------------------------------------------------------
+
+rule gpu_inputs:
+    input: rules.finalize.output
+    output: f"{W}/gpu/queries.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/gpu_inputs.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-data.py export --queries {input} --out {output} > {log} 2>&1"
+
+
+rule smoke_gpu:
+    # The GPU script end to end on 5 queries per split, on the laptop CPU with Qwen3-0.6B, before any instance starts.
+    input: cands=rules.candidates.output, h3=rules.h3_words.output, queries=rules.gpu_inputs.output
+    output: f"{W}/smoke/ok"
+    resources: mem_mb=3600  # two 0.6B models in float32, one at a time: peaked at 3.1 GB loading
+    log: f"{W}/logs/smoke_gpu.log"
+    shell: "rm -rf {W}/smoke && {CAP} {resources.mem_mb} -- {PY} {S}/remote-p10.py --work {W}/gpu --config {CFG} --smoke 2 --batch 2 --out {W}/smoke > {log} 2>&1 && touch {output}"
+
+
+rule smoke_verdicts:
+    # The verdict code on the dry run's metrics, so a bug in it is found before money is spent, not after.
+    input: smoke=rules.smoke_gpu.output, h1=rules.h1.output, h2=rules.h2_lexical.output, audit=rules.audit.output
+    output: f"{W}/smoke/report/REPORT.md"
+    resources: mem_mb=500
+    log: f"{W}/logs/smoke_verdicts.log"
+    shell: "{PY} {S}/p10-verdicts.py --metrics {W}/metrics --gpu {W}/smoke/gpu.json --audit {input.audit} --config {CFG} --out {W}/smoke/report > {log} 2>&1"
+
+
+rule gpu:
+    # One AWS job (scripts/p10-gpu.sh): budget gate, start, smoke on the instance, run, verified download, terminate.
+    input: smoke=(rules.smoke_verdicts.output if config.get("laptop_gpu_smoke", True) else []), cands=rules.candidates.output,
+           h3=rules.h3_words.output, queries=rules.gpu_inputs.output
+    output: f"{W}/metrics/gpu.json"
+    resources: gpu=1, mem_mb=500
+    # Never retried: a retry after a failed download launched a second instance to redo the paid job (10/07/2026).
+    retries: 0
+    log: f"{W}/logs/gpu.log"
+    shell: "bash {S}/p10-gpu.sh {W} {CFG} > {log} 2>&1"
+
+
+# ---- 4. Verdicts ---------------------------------------------------------------------------------------------------
+
+rule verdicts:
+    input: h1=rules.h1.output, h2=rules.h2_lexical.output, gpu=rules.gpu.output, audit=rules.audit.output
+    output: f"{REPO}/results/phase-10-analogy/REPORT.md", f"{REPO}/results/phase-10-analogy/metrics.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/verdicts.log"
+    shell: "{PY} {S}/p10-verdicts.py --metrics {W}/metrics --audit {input.audit} --config {CFG} --out {REPO}/results/phase-10-analogy > {log} 2>&1"

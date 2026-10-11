@@ -1,0 +1,7 @@
+6d4ee693ada93f2d53f0ef86d108dba79bdf77982dfb9e356383dee3fb7fc7b5  logs/M1-train.log
+c87553ad1c90d1b71ef777efc65dd11a736b7119d43325cec14f8de99be7e668  logs/M1-merge.log
+80aa94024eda4b025f4faf689b48db80f1658c37d488fb4cb77bba858617891a  logs/S1-merge.log
+994e9d412a86c7c3246136f17c289c65ac80703610cfbbde070994dcbd5117df  out/M1-merge/eval.jsonl
+f58b378d39e6199af0e2665c0668c0646f49a34603e7bcf6f9100a7b0a67a5dc  out/M1-merge/geometry.json
+3e243cc554924b053b631c4c82826649a4eea378b6f24a9b9de5bdc6b61de09c  out/S1-merge/eval.jsonl
+7a11b4dc57ee0c6df6c0e4a7eddc7c69d410da9af778a3652d64305c5b317689  out/S1-merge/geometry.json

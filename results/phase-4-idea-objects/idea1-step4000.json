@@ -1,0 +1,1491 @@
+{
+  "decoded": "C:/Users/shaun/dianoia-data/work/ideas/idea1/decoded-step4000.jsonl",
+  "fidelity": {
+    "chat": {
+      "parsed": 1.0,
+      "n_a": 8.702,
+      "n_b": 9.202,
+      "count_equal": 0.26,
+      "event_f1": 0.522,
+      "multi_event": 1.0,
+      "act": 0.532,
+      "act_coarse": 0.686,
+      "neg": 0.895,
+      "mod": 0.757,
+      "pred": 0.609,
+      "content_cos": 0.852,
+      "center": 0.423
+    },
+    "email": {
+      "parsed": 0.993,
+      "n_a": 1.678,
+      "n_b": 1.699,
+      "count_equal": 0.801,
+      "event_f1": 0.925,
+      "multi_event": 0.568,
+      "act": 0.943,
+      "act_coarse": 0.959,
+      "neg": 0.987,
+      "mod": 0.79,
+      "pred": 0.828,
+      "content_cos": 0.926,
+      "center": 0.753
+    },
+    "meeting": {
+      "parsed": 1.0,
+      "n_a": 6.685,
+      "n_b": 7.769,
+      "count_equal": 0.231,
+      "event_f1": 0.67,
+      "multi_event": 1.0,
+      "act": 0.703,
+      "act_coarse": 0.81,
+      "neg": 0.942,
+      "mod": 0.819,
+      "pred": 0.792,
+      "content_cos": 0.894,
+      "center": 0.176
+    }
+  },
+  "invariance": {
+    "chat/paraphrase": {
+      "n_a": 9.202,
+      "n_b": 9.942,
+      "count_equal": 0.327,
+      "event_f1": 0.531,
+      "multi_event": 1.0,
+      "act": 0.679,
+      "act_coarse": 0.782,
+      "neg": 0.885,
+      "mod": 0.757,
+      "pred": 0.441,
+      "content_cos": 0.848,
+      "center": 0.743
+    },
+    "chat/stripped": {
+      "n_a": 9.202,
+      "n_b": 9.183,
+      "count_equal": 0.346,
+      "event_f1": 0.68,
+      "multi_event": 1.0,
+      "act": 0.739,
+      "act_coarse": 0.81,
+      "neg": 0.91,
+      "mod": 0.877,
+      "pred": 0.783,
+      "content_cos": 0.895,
+      "center": 0.882
+    },
+    "chat/disfluent": {
+      "n_a": 9.202,
+      "n_b": 9.202,
+      "count_equal": 0.423,
+      "event_f1": 0.706,
+      "multi_event": 1.0,
+      "act": 0.749,
+      "act_coarse": 0.803,
+      "neg": 0.921,
+      "mod": 0.854,
+      "pred": 0.782,
+      "content_cos": 0.892,
+      "center": 0.903
+    },
+    "chat/split": {
+      "n_a": 9.202,
+      "n_b": 9.308,
+      "count_equal": 0.452,
+      "event_f1": 0.767,
+      "multi_event": 1.0,
+      "act": 0.773,
+      "act_coarse": 0.83,
+      "neg": 0.928,
+      "mod": 0.871,
+      "pred": 0.823,
+      "content_cos": 0.92,
+      "center": 0.923
+    },
+    "email/paraphrase": {
+      "n_a": 1.699,
+      "n_b": 1.63,
+      "count_equal": 0.726,
+      "event_f1": 0.715,
+      "multi_event": 0.548,
+      "act": 0.93,
+      "act_coarse": 0.94,
+      "neg": 0.95,
+      "mod": 0.73,
+      "pred": 0.101,
+      "content_cos": 0.82,
+      "center": 0.678
+    },
+    "email/stripped": {
+      "n_a": 1.699,
+      "n_b": 1.678,
+      "count_equal": 0.932,
+      "event_f1": 0.978,
+      "multi_event": 0.548,
+      "act": 0.998,
+      "act_coarse": 1.0,
+      "neg": 0.997,
+      "mod": 0.953,
+      "pred": 0.925,
+      "content_cos": 0.968,
+      "center": 0.966
+    },
+    "email/disfluent": {
+      "n_a": 1.699,
+      "n_b": 1.664,
+      "count_equal": 0.952,
+      "event_f1": 0.985,
+      "multi_event": 0.548,
+      "act": 0.983,
+      "act_coarse": 0.99,
+      "neg": 0.993,
+      "mod": 0.947,
+      "pred": 0.96,
+      "content_cos": 0.977,
+      "center": 0.966
+    },
+    "email/split": {
+      "n_a": 1.699,
+      "n_b": 1.699,
+      "count_equal": 0.973,
+      "event_f1": 0.989,
+      "multi_event": 0.548,
+      "act": 0.986,
+      "act_coarse": 0.986,
+      "neg": 0.993,
+      "mod": 0.969,
+      "pred": 0.957,
+      "content_cos": 0.979,
+      "center": 0.993
+    },
+    "meeting/paraphrase": {
+      "n_a": 7.769,
+      "n_b": 9.009,
+      "count_equal": 0.194,
+      "event_f1": 0.67,
+      "multi_event": 1.0,
+      "act": 0.835,
+      "act_coarse": 0.87,
+      "neg": 0.943,
+      "mod": 0.861,
+      "pred": 0.663,
+      "content_cos": 0.897,
+      "center": 0.306
+    },
+    "meeting/stripped": {
+      "n_a": 7.769,
+      "n_b": 7.593,
+      "count_equal": 0.426,
+      "event_f1": 0.831,
+      "multi_event": 1.0,
+      "act": 0.853,
+      "act_coarse": 0.899,
+      "neg": 0.963,
+      "mod": 0.909,
+      "pred": 0.884,
+      "content_cos": 0.943,
+      "center": 0.648
+    },
+    "meeting/disfluent": {
+      "n_a": 7.769,
+      "n_b": 7.759,
+      "count_equal": 0.5,
+      "event_f1": 0.846,
+      "multi_event": 1.0,
+      "act": 0.896,
+      "act_coarse": 0.938,
+      "neg": 0.969,
+      "mod": 0.912,
+      "pred": 0.903,
+      "content_cos": 0.95,
+      "center": 0.664
+    },
+    "meeting/split": {
+      "n_a": 7.769,
+      "n_b": 7.769,
+      "count_equal": 0.556,
+      "event_f1": 0.876,
+      "multi_event": 1.0,
+      "act": 0.913,
+      "act_coarse": 0.944,
+      "neg": 0.971,
+      "mod": 0.937,
+      "pred": 0.916,
+      "content_cos": 0.957,
+      "center": 0.701
+    }
+  },
+  "sonnet_ceiling": {
+    "chat/paraphrase": {
+      "n_a": 8.645,
+      "n_b": 8.742,
+      "count_equal": 0.495,
+      "event_f1": 0.88,
+      "multi_event": 1.0,
+      "act": 0.817,
+      "act_coarse": 0.923,
+      "neg": 0.951,
+      "mod": 0.808,
+      "pred": 0.468,
+      "content_cos": 0.896,
+      "center": 0.742
+    },
+    "chat/stripped": {
+      "n_a": 8.667,
+      "n_b": 8.455,
+      "count_equal": 0.444,
+      "event_f1": 0.886,
+      "multi_event": 1.0,
+      "act": 0.809,
+      "act_coarse": 0.902,
+      "neg": 0.979,
+      "mod": 0.871,
+      "pred": 0.848,
+      "content_cos": 0.937,
+      "center": 0.747
+    },
+    "chat/disfluent": {
+      "n_a": 8.636,
+      "n_b": 8.677,
+      "count_equal": 0.485,
+      "event_f1": 0.902,
+      "multi_event": 1.0,
+      "act": 0.829,
+      "act_coarse": 0.929,
+      "neg": 0.983,
+      "mod": 0.88,
+      "pred": 0.872,
+      "content_cos": 0.942,
+      "center": 0.798
+    },
+    "chat/split": {
+      "n_a": 8.62,
+      "n_b": 8.64,
+      "count_equal": 0.43,
+      "event_f1": 0.905,
+      "multi_event": 1.0,
+      "act": 0.823,
+      "act_coarse": 0.918,
+      "neg": 0.975,
+      "mod": 0.899,
+      "pred": 0.886,
+      "content_cos": 0.947,
+      "center": 0.73
+    },
+    "email/paraphrase": {
+      "n_a": 1.679,
+      "n_b": 1.621,
+      "count_equal": 0.764,
+      "event_f1": 0.744,
+      "multi_event": 0.571,
+      "act": 0.907,
+      "act_coarse": 0.94,
+      "neg": 0.918,
+      "mod": 0.7,
+      "pred": 0.151,
+      "content_cos": 0.835,
+      "center": 0.75
+    },
+    "email/stripped": {
+      "n_a": 1.715,
+      "n_b": 1.677,
+      "count_equal": 0.815,
+      "event_f1": 0.941,
+      "multi_event": 0.592,
+      "act": 0.981,
+      "act_coarse": 0.988,
+      "neg": 0.981,
+      "mod": 0.895,
+      "pred": 0.913,
+      "content_cos": 0.958,
+      "center": 0.931
+    },
+    "email/disfluent": {
+      "n_a": 1.674,
+      "n_b": 1.695,
+      "count_equal": 0.872,
+      "event_f1": 0.95,
+      "multi_event": 0.56,
+      "act": 0.932,
+      "act_coarse": 0.946,
+      "neg": 0.982,
+      "mod": 0.896,
+      "pred": 0.883,
+      "content_cos": 0.96,
+      "center": 0.915
+    },
+    "email/split": {
+      "n_a": 1.683,
+      "n_b": 1.719,
+      "count_equal": 0.806,
+      "event_f1": 0.93,
+      "multi_event": 0.576,
+      "act": 0.942,
+      "act_coarse": 0.96,
+      "neg": 0.993,
+      "mod": 0.885,
+      "pred": 0.912,
+      "content_cos": 0.953,
+      "center": 0.906
+    },
+    "meeting/paraphrase": {
+      "n_a": 6.735,
+      "n_b": 6.931,
+      "count_equal": 0.373,
+      "event_f1": 0.799,
+      "multi_event": 1.0,
+      "act": 0.829,
+      "act_coarse": 0.906,
+      "neg": 0.961,
+      "mod": 0.854,
+      "pred": 0.489,
+      "content_cos": 0.887,
+      "center": 0.696
+    },
+    "meeting/stripped": {
+      "n_a": 6.667,
+      "n_b": 6.695,
+      "count_equal": 0.438,
+      "event_f1": 0.844,
+      "multi_event": 1.0,
+      "act": 0.843,
+      "act_coarse": 0.918,
+      "neg": 0.983,
+      "mod": 0.903,
+      "pred": 0.879,
+      "content_cos": 0.938,
+      "center": 0.705
+    },
+    "meeting/disfluent": {
+      "n_a": 6.624,
+      "n_b": 6.416,
+      "count_equal": 0.376,
+      "event_f1": 0.829,
+      "multi_event": 1.0,
+      "act": 0.835,
+      "act_coarse": 0.918,
+      "neg": 0.984,
+      "mod": 0.892,
+      "pred": 0.882,
+      "content_cos": 0.937,
+      "center": 0.713
+    },
+    "meeting/split": {
+      "n_a": 6.694,
+      "n_b": 6.949,
+      "count_equal": 0.429,
+      "event_f1": 0.829,
+      "multi_event": 1.0,
+      "act": 0.857,
+      "act_coarse": 0.934,
+      "neg": 0.983,
+      "mod": 0.902,
+      "pred": 0.89,
+      "content_cos": 0.94,
+      "center": 0.735
+    }
+  },
+  "sensitivity": {
+    "chat": 0.654,
+    "email": 0.966,
+    "meeting": 0.667
+  },
+  "words_intent": {
+    "chat": {
+      "n": 114,
+      "pass": 0.0
+    },
+    "email": {
+      "n": 150,
+      "pass": 0.327
+    },
+    "meeting": {
+      "n": 117,
+      "pass": 0.068
+    }
+  },
+  "words_samples": [
+    {
+      "uid": "chat-2004-11-15_03-1051",
+      "original": [
+        [
+          "A",
+          "In universe there is fluxbox_0.1.14-4_i386.deb and fluxbox_0.9.9-1_i386.deb but i can only manage to apt 0.1.14-4. How can I get the 0.9.9-1 release?"
+        ],
+        [
+          "B",
+          "A, dpkg ?"
+        ],
+        [
+          "A",
+          "umm.. I use apt-get. But should I try dpkg?"
+        ],
+        [
+          "C",
+          "A: 0.9.9 is most likely the hoary version, not the warty version"
+        ],
+        [
+          "C",
+          "A: dpkg won't help you"
+        ],
+        [
+          "C",
+          "(well, it could, but it's not advisable)"
+        ],
+        [
+          "A",
+          "ahh but its in the the same repo?"
+        ],
+        [
+          "C",
+          "it's in the same pool"
+        ]
+      ],
+      "decoded": "t1 inform have [world ; infobox 1.4x, 0.4.06 and 0.4.1 ; -] yes none now | t1 inform get [a ; 0.9.9 release ; -] yes can now | t2 propositionalQuestion use [a ; dpkg ; -] yes none now | t3 answer use [a ; apt-get ; -] yes none now | t4 inform try [a ; dpkg ; -] yes must future | t5 propositionalQuestion be [9.9.04 ; warren version ; -] yes uncertain now | t6 disagreement be [9.04 ; warren version ; -] not uncertain now | t7 inform help [dpkg ; a ; -] not uncertain future | t8 checkQuestion be [it ; in same repo ; -] yes none now | * 1",
+      "words": "A: I can get the 0.9.9 release now, but the world has infobox 1.4x, 0.4.06 and 0.4.1.\nA: Do I use dpkg?\nB: I use apt-get.\nA: I must try dpkg.\nB: Is 9.9.04 the warren version?\nA: No, 9.04 is the warren version, I'm not sure.\nB: Maybe dpkg won't help me later.\nA: Is it in the same repo?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2004-11-15_03-1193",
+      "original": [
+        [
+          "A",
+          "sorry, but I lost my link, repeating the question: anybody knows why I can't play any .mpg, etc? it shows me the sound, but not shows me the screen"
+        ],
+        [
+          "B",
+          "RestrictedFormats on the wiki"
+        ],
+        [
+          "C",
+          "A: probably missing codecs"
+        ],
+        [
+          "D",
+          "check http://www.desktopos.com/reviews.php?op=PrintReview&id=21 for .mpg tips."
+        ],
+        [
+          "A",
+          "D, I installed mplayer and the essential codecs package, but it still isn't working. I didn't find why"
+        ],
+        [
+          "C",
+          "A: run mplayer from a terminal and check the output?"
+        ],
+        [
+          "A",
+          "it shows errors like: can't open ~/.mplayer/codecs.conf, font, but I don't think so that it is the real problem"
+        ],
+        [
+          "B",
+          "it's not an error, it's a warning"
+        ]
+      ],
+      "decoded": "t1 inform lose [a ; link ; -] yes none past | t1 setQuestion know [anyone ; why not play mp3 ; a] yes none now | t1 inform show [mp3 ; screen ; -] not none now | t2 inform be [restricted fonts ; problem ; -] yes uncertain now | t3 request review [a ; codecs ; -] yes none now | t4 inform be [codecs ; missing ; -] yes none now | t5 inform find [a ; original package ; -] not none past | t6 inform work [keypad ; - ; -] not none now | t7 inform show [keypad ; error message ; -] yes uncertain now | t8 propositionalQuestion be [error ; real ; -] yes none now | * 1",
+      "words": "A: I lost the link. Does anyone know why mp3 doesn't play? It doesn't show on the screen.\nB: Restricted fonts might be the problem.\nA: Can you review the codecs?\nB: The codecs are missing.\nA: I didn't find the original package.\nB: The keypad doesn't work.\nA: The keypad might show an error message.\nB: Is the error real?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2004-11-15_03-1231",
+      "original": [
+        [
+          "A",
+          "Hi All! I took the plunge and installed Ubuntu. However, I need some help."
+        ],
+        [
+          "A",
+          "I have an unsupported USRobotics wireless PCI card and I need to use ndiswrapper. Unfortunately, the install cd (Warty 4.10 Full Release) does not have ndiswrapper. What is the URL from the ubutnu website that I can download it from?"
+        ],
+        [
+          "B",
+          "A: if you start synaptic"
+        ],
+        [
+          "B",
+          "and you enable 'restricted'"
+        ],
+        [
+          "B",
+          "you can install ndiswrapper"
+        ]
+      ],
+      "decoded": "t1 greeting - [a ; - ; -] yes none now | t2 inform install [a ; ubuntu ; -] yes none past | t3 request help [you ; a ; -] yes none now | t4 inform have [a ; unusable nsw pcb card ; -] yes none now | t4 inform use [a ; ndiswrapper ; -] yes must now | t5 setQuestion be [disaster cd ; where ; -] yes none now | t6 inform download [a ; ndiswrapper from website ; -] yes can now | t7 setQuestion use [a ; ndiswrapper ; -] yes none now | t8 instruct install [a ; ndiswrapper ; -] yes must now | * 1",
+      "words": "A: Hello.\nB: I installed Ubuntu.\nA: Can you help me?\nB: I have an unusable NSW PCB card, and I must use ndiswrapper.\nA: Where is the disaster CD?\nB: You can download ndiswrapper from the website.\nA: Do you use ndiswrapper?\nB: You must install ndiswrapper.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-06-27_12-1146",
+      "original": [
+        [
+          "A",
+          "I have a problem with my ubuntu"
+        ],
+        [
+          "A",
+          "I have it installed Breezy in my ibook G4"
+        ],
+        [
+          "A",
+          "and some dist-upgrade has broken my X keyboard layout"
+        ],
+        [
+          "B",
+          "A: you're using hoary, right?"
+        ],
+        [
+          "A",
+          "B: no, breezy"
+        ],
+        [
+          "A",
+          "it worked rigth till today"
+        ],
+        [
+          "C",
+          "whats the diff between breezy and hoary?"
+        ],
+        [
+          "B",
+          "breezy is the development branch"
+        ]
+      ],
+      "decoded": "t1 inform have [a ; problem with ubuntu ; -] yes none now | t2 inform install [a ; breezy in ibook g4 ; -] yes none past | t2 inform break [upgrade ; x-key layout ; -] yes none past | t2 inform use [breezy ; x-key ; -] yes none now | t3 propositionalQuestion work [b ; hoary ; -] yes none now | t4 answer work [breezy ; - ; -] not none now | t5 confirm work [breezy ; - ; -] yes none now | t6 inform be [breezy ; difference between hoary and hoary ; -] yes none now | t7 setQuestion be [breezy ; development branch ; -] yes none now | * 1",
+      "words": "A: I have a problem with Ubuntu.\nB: I installed Breezy on an iBook G4, and the upgrade broke the X-key layout. Breezy uses X-key.\nA: Does Hoary work for you?\nB: Breezy doesn't work.\nA: Breezy works.\nB: Breezy is the difference between Hoary and Hoary.\nA: Is Breezy the development branch?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1033",
+      "original": [
+        [
+          "A",
+          "anyone familiar w/ a prob getting the sound running on a K7S41Gx mainboard?"
+        ],
+        [
+          "B",
+          "no, i have tons of those, run ubuntu just fine"
+        ],
+        [
+          "B",
+          "how new is it?"
+        ],
+        [
+          "B",
+          "maybe they have changed the chipset again"
+        ],
+        [
+          "A",
+          "chips are SIS SI7012 with CMI 9761 mixer"
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion have [anybody ; problem playing sound on csi417mk chipset ; -] yes none now | t2 answer have [b ; problems playing sound on csi417mk chipset ; -] not none now | t3 inform run [a ; ubuntu ; -] yes none now | t4 setQuestion be [sound ; better ; -] yes none now | t5 answer change [a ; chipset ; -] yes uncertain past | t6 inform have [they ; si710 chipset ; -] yes none now | t7 inform be [sys mix with 9761 kmi processor ; -] yes none now | * 1",
+      "words": "A: Does anybody have a problem playing sound on the csi417mk chipset?\nB: I don't have problems playing sound on the csi417mk chipset.\nA: I run Ubuntu.\nB: Is the sound better?\nA: I might have changed the chipset.\nB: They have the si710 chipset.\nA: It's a sys mix with a 9761 kmi processor.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1085",
+      "original": [
+        [
+          "A",
+          "anyone using the cool networkmanager from breezy?"
+        ],
+        [
+          "B",
+          "A, not until breezy is release"
+        ],
+        [
+          "B",
+          "d"
+        ],
+        [
+          "B",
+          ">_>"
+        ],
+        [
+          "A",
+          "B: oh well, I don't use breezy just upgraded the things needed for NM and beagle, wanted to see them running"
+        ],
+        [
+          "A",
+          "but I will upgrade after the exams :)"
+        ],
+        [
+          "B",
+          "if you want to play with that stuff, maybe run breezy as a separate instance? that way you can do unlimited damage without harm to the main pc"
+        ],
+        [
+          "A",
+          "no thanks, I can repair most of that"
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion use [anyone ; network manager from breezy ; -] yes none now | t2 answer use [breezy ; network manager ; -] not none now | t3 inform release [breezy ; breezy ; -] not none past | t4 feedback - [a ; - ; -] yes none - | t5 inform upgrade [b ; nme and biggs ; -] yes will future | t5 inform run [b ; breezy ; -] yes will future | t6 inform upgrade [b ; breezy ; -] yes will future | t6 inform run [b ; breezy ; -] yes will future | t6 inform do [b ; separate partition ; -] yes uncertain future | t6 inform damage [breezy ; main pc ; -] not can future | t6 thanking - [a ; - ; b] yes none - | t6 inform repair [b ; breezy ; -] yes will future | * 3",
+      "words": "A: Does anyone use the network manager from Breezy?\nB: Breezy doesn't use the network manager.\nA: Breezy wasn't released.\nB: Okay.\nA: I will upgrade nme and biggs, and I will run Breezy.\nB: I will upgrade Breezy and run Breezy. I might do a separate partition, since Breezy can't damage my main PC. Thanks. I will repair Breezy.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1106",
+      "original": [
+        [
+          "A",
+          "y doesm"
+        ],
+        [
+          "A",
+          "why doesn't gnome reload firefox on the startup?"
+        ],
+        [
+          "B",
+          "what do you mean on startup?"
+        ],
+        [
+          "B",
+          "sounds like the question answers it self"
+        ],
+        [
+          "A",
+          "B, whenever I start the desktop it starts gnome-terminal and xchat automatically"
+        ],
+        [
+          "A",
+          "but that doesn't happen with firefox"
+        ],
+        [
+          "B",
+          "of course"
+        ],
+        [
+          "B",
+          "you don't have it in your session"
+        ]
+      ],
+      "decoded": "t1 setQuestion redeem [gnome ; firefox ; -] not none now | t2 answer redeem [gnome ; firefox ; startup] not none now | t3 setQuestion mean [b ; what in startup ; a] yes none now | t4 answer answer answer answer start [problem ; itself ; -] yes none now | t4 inform start [gnome ; desktop-mash and xchat ; -] yes none now | t4 inform happen [- ; firefox ; -] not none now | t5 feedback - [- ; - ; -] yes none - | t6 inform have [b ; it in session ; -] not none now | * 1",
+      "words": "A: Gnome doesn't redeem Firefox?\nB: Gnome doesn't redeem Firefox at startup.\nA: What do you mean in startup?\nB: The problem starts itself. Gnome starts desktop-mash and xchat. Nothing happens to Firefox.\nA: Okay.\nB: I don't have it in my session.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1110",
+      "original": [
+        [
+          "A",
+          "i have read that samba support active directory like windows"
+        ],
+        [
+          "A",
+          "how can i download the latest version of samba?"
+        ],
+        [
+          "B",
+          "sudo apt-get install samba"
+        ],
+        [
+          "A",
+          "that will install the latest?"
+        ],
+        [
+          "B",
+          "the latest that counts ... you will have a lot of reading/research to do to get it to work right"
+        ],
+        [
+          "A",
+          "ok now"
+        ],
+        [
+          "A",
+          "in samba you can create usernames?"
+        ],
+        [
+          "A",
+          "for students"
+        ]
+      ],
+      "decoded": "t1 setQuestion read [a ; samba ; -] yes none now | t2 inform support [samba ; active directory ; -] yes none now | t3 setQuestion download [a ; latest version of samba ; -] yes can now | t4 instruct install [a ; sudo apt-get ; -] yes none now | t5 inform download [sudo apt-get ; latest version ; -] yes none now | t6 inform count [sudo ; most recent ; -] yes none now | t7 setQuestion write [a ; samba ; -] yes must future | t8 suggest create [a ; user names ; -] yes can future | t8 answer be [samba ; for students ; -] yes none now | * 1",
+      "words": "A: Did you read about Samba?\nB: Samba supports Active Directory.\nA: Can I download the latest version of Samba?\nB: Install it with sudo apt-get.\nA: Sudo apt-get downloads the latest version.\nB: Sudo counts as the most recent.\nA: Must I write Samba later?\nB: You can create user names later. Samba is for students.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1183",
+      "original": [
+        [
+          "A",
+          "anyone recomend a script for setting up port forwarding?"
+        ],
+        [
+          "B",
+          "A i use ipmasq"
+        ],
+        [
+          "A",
+          "oh oh.. I am intalling Hoary to a toshiba 4600 laptop - it just \"finished\" and I get \"I cannot start the X server....\""
+        ],
+        [
+          "A",
+          "and the it isn't responding to keyboard"
+        ],
+        [
+          "B",
+          "A: ctrl-alt-F1 and login. then we'll look at some logs"
+        ],
+        [
+          "A",
+          "B -i dont think you understand \"isn't responding to keyboard\" ;)"
+        ],
+        [
+          "A",
+          "ctrl-alt-F1 did nothing"
+        ],
+        [
+          "B",
+          "A: ahah, hehe sorry. just a moment"
+        ]
+      ],
+      "decoded": "t1 request suggest [someone ; script for port forwarding ; a] yes none now | t2 inform use [a ; msb-i ; -] yes none now | t3 inform install [a ; toys ; -] yes none past | t3 inform boot [a ; toys ; -] yes none past | t3 inform work [it ; - ; -] not none now | t4 inform get [a ; xf1 server ; -] yes none now | t5 inform react [xf1 server ; - ; -] not none now | t6 instruct start [a ; log-alt ; -] yes none now | t7 instruct review [a ; logs ; -] yes must future | t8 inform understand [a ; script ; -] not none now | t8 inform know [a ; what logs means ; -] not none now | * 1",
+      "words": "A: Can someone suggest a script for port forwarding?\nB: I use msb-i.\nA: I installed and booted toys, and it doesn't work.\nB: I get an xf1 server.\nA: The xf1 server doesn't react.\nB: Start log-alt.\nA: You must review the logs.\nB: I don't understand the script, and I don't know what logs means.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1204",
+      "original": [
+        [
+          "A",
+          "hello. i installed ubuntu \"server\" so its the base. then i installed x-system and xfce4. But the problem is that how can i get root system console because here is now xterm or something?"
+        ],
+        [
+          "B",
+          "A: do you really need root? you can just 'sudo <command>'"
+        ],
+        [
+          "B",
+          "A: if you really do need root just 'sudo passwd root' and create an account"
+        ],
+        [
+          "A",
+          "B: sudo apt-get -f install && apt-get install build-essential libncurses5-dev kernel-package | says that E could not open lock file /ver/lib/dpkg/lock - open (13 permission denied) E: are you root?"
+        ],
+        [
+          "B",
+          "A: you need the second sudo in there ;)"
+        ],
+        [
+          "A",
+          "B: dammit :DDDD"
+        ],
+        [
+          "A",
+          "B: thank you :P"
+        ],
+        [
+          "B",
+          "A: np ;)"
+        ]
+      ],
+      "decoded": "t1 inform install [a ; ubuntu server ; -] yes none past | t1 inform install [a ; xserver and xfce ; -] yes none past | t2 setQuestion get [a ; root system ; -] yes can now | t3 answer need [a ; root ; -] yes none now | t4 propositionalQuestion need [a ; sudo root ; -] yes none now | t5 instruct open [a ; sudo command ; -] yes none now | t6 instruct open [a ; sudo command ; -] yes none now | t7 instruct open [a ; sudo command ; -] yes none now | t8 instruct open [a ; sudo command ; -] yes must now | t8 inform need [a ; root ; -] not none now | t8 instruct lock [a ; root command ; -] yes must now | t8 thanking - [a ; - ; b] yes none now | * 1",
+      "words": "A: I installed Ubuntu server, and I installed xserver and xfce.\nB: Can I get a root system?\nA: You need root.\nB: Do I need sudo root?\nA: Open the sudo command.\nB: Open the sudo command.\nA: Open the sudo command.\nB: You must open the sudo command. You don't need root. You must lock the root command. Thanks.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1221",
+      "original": [
+        [
+          "A",
+          "I know I gonna get flammed for this but... How I can change the default boot to windows? is because I m not hte only one who uses this pc :("
+        ],
+        [
+          "B",
+          "A, /boot/grub/menu.lst, change the default entry"
+        ],
+        [
+          "A",
+          "B to what?"
+        ],
+        [
+          "B",
+          "A, to whatever your windows entry is?"
+        ],
+        [
+          "A",
+          "you mean hda1?"
+        ],
+        [
+          "B",
+          "A, no, the number of the menu entry, starting with 0"
+        ],
+        [
+          "A",
+          "Oh..."
+        ],
+        [
+          "A",
+          "Got it lol"
+        ]
+      ],
+      "decoded": "t1 inform burn [a ; a ; -] yes uncertain future | t1 setQuestion change [a ; default boot to windows ; -] yes can now | t1 inform use [a ; pc ; -] not none now | t2 instruct change [a ; menu.grub/entry ; -] yes none now | t3 instruct change [a ; default entry ; -] yes none now | t4 setQuestion mean [a ; windows entry ; -] yes none now | t5 answer mean [a ; windows entry ; -] yes none now | t6 instruct change [a ; htda menu number ; -] yes none now | t7 inform start [a ; entry ; -] yes none now | t8 inform know [a ; number ; -] not none now | * 1",
+      "words": "A: I'm going to burn this, and I can change the default boot to Windows now, but I'm not using this PC.\nB: Change menu.grub/entry.\nB: Change the default entry.\nA: What does the Windows entry mean?\nB: It means the Windows entry.\nB: Change the htda menu number.\nB: It starts the entry.\nA: I don't know the number.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1230",
+      "original": [
+        [
+          "A",
+          "how do I get to the apache manual through my browser? the link on http://localhost/apache2-default/ is dead"
+        ],
+        [
+          "B",
+          "A: what about just http://localhost"
+        ],
+        [
+          "A",
+          "B, that just shows an index"
+        ],
+        [
+          "A",
+          "with a link to apache2-default/"
+        ]
+      ],
+      "decoded": "t1 setQuestion get [a ; apache manual through browser ; -] yes none now | t2 answer be [link to http://localhost2-default ; dead ; -] yes none now | t3 setQuestion be [link ; dead ; -] yes none now | t4 answer show [link ; index with link to http://pache2-default ; a] yes none now | * 1",
+      "words": "A: How do I get the Apache manual through the browser?\nB: The link to http://localhost2-default is dead.\nA: Is the link dead?\nB: It shows an index with a link to http://pache2-default, A.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1264",
+      "original": [
+        [
+          "A",
+          "hmm"
+        ],
+        [
+          "A",
+          "does ubuntu install nvidia drivers on default ? or do I have to install them myself ?"
+        ],
+        [
+          "B",
+          "A, it doesn't install the proprietary drivers, but it does make it easy"
+        ],
+        [
+          "A",
+          "okay :)"
+        ],
+        [
+          "B",
+          "A, see eg. http://ubuntuforums.org/archive/index.php/t-21111.html"
+        ],
+        [
+          "B",
+          "(I just googled for it, there might be better instructions, but seems simple enough)"
+        ],
+        [
+          "A",
+          "B, okay... I check it out... thanks :D"
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion install [ubuntu ; nvidia drivers ; -] yes none now | t1 propositionalQuestion install [ubuntu ; nvidia drivers ; -] yes must future | t2 answer install [ubuntu ; nvidia drivers ; -] not none now | t2 inform install [ubuntu ; proprietary drivers ; -] yes none now | t2 inform make [it ; it easier ; -] yes none now | t3 feedback - [a ; - ; -] yes none - | t4 suggest look [a ; ubuntu forums ; -] yes none now | t5 inform be [instructions ; clear ; -] yes uncertain now | t6 thanking - [a ; - ; b] yes none - | t7 feedback - [b ; - ; -] yes none - | * 1",
+      "words": "A: Does Ubuntu install the Nvidia drivers? Do I have to install the Nvidia drivers on Ubuntu?\nB: Ubuntu doesn't install the Nvidia drivers. It installs the proprietary drivers, and that makes it easier.\nA: Okay.\nB: Look at the Ubuntu forums.\nA: The instructions are clear, I guess.\nA: Thanks, B.\nB: Okay.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1428",
+      "original": [
+        [
+          "A",
+          "anybody got 3acceleration work with pcie ati in ubuntu?"
+        ],
+        [
+          "A",
+          "3dac"
+        ],
+        [
+          "B",
+          "A: many many have. see the BinaryDriverHowto on the wiki"
+        ],
+        [
+          "A",
+          "k"
+        ],
+        [
+          "A",
+          "B are you sure about Ati PCIE"
+        ],
+        [
+          "B",
+          "A: oh, didn't see the E at the end ;)"
+        ],
+        [
+          "A",
+          "yeah you try screw me"
+        ],
+        [
+          "A",
+          ">:("
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion have [anyone ; 3ce acceleration work with ati pci ; -] yes none now | t2 answer have [a ; 3ce ; -] yes none now | t3 inform see [a ; multi-driver ati-courtoid ; -] yes none past | t4 propositionalQuestion be [a ; sure about ati pci ; -] yes none now | t5 answer see [a ; ati ; -] not none past | t6 inform see [a ; e at the end ; -] yes none past | t7 request screw [a ; a ; -] yes none now | t8 feedback - [b ; - ; a] yes none - | * 1",
+      "words": "A: Does anyone have 3ce acceleration working with ATI PCI?\nB: I have 3ce.\nB: I saw multi-driver ati-courtoid.\nA: Are you sure about ATI PCI?\nB: I didn't see ATI.\nB: I saw an e at the end.\nA: Screw it.\nB: Okay, A.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-07-06_14-1435",
+      "original": [
+        [
+          "A",
+          "how can i er, share my files on my ubuntu on my network with other computers running on windows"
+        ],
+        [
+          "B",
+          "A: samba"
+        ],
+        [
+          "A",
+          "is that the only way?"
+        ],
+        [
+          "A",
+          "=s"
+        ],
+        [
+          "B",
+          "A: no you can ftp"
+        ],
+        [
+          "A",
+          "oo lala"
+        ],
+        [
+          "A",
+          "which method is easier?"
+        ],
+        [
+          "C",
+          "A, samba is pretty easy"
+        ]
+      ],
+      "decoded": "t1 setQuestion share [a ; files on ubuntu with other windows computers ; -] yes can now | t2 answer be [samba ; only way ; -] yes none now | t3 propositionalQuestion be [samba ; only way ; -] yes none now | t4 answer be [samba ; only way ; -] not none now | t5 inform use [a ; ftp ; -] not can now | t6 setQuestion be [method ; easier ; -] yes none now | t7 answer be [samba ; easier ; -] yes none now | * 1",
+      "words": "A: How can I share files on Ubuntu with other Windows computers?\nB: Samba is the only way.\nA: Is Samba the only way?\nB: Samba is not the only way.\nB: You can't use FTP.\nA: Is there an easier method?\nB: Samba is easier.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-08-08_01-1075",
+      "original": [
+        [
+          "A",
+          "any idea why Gnome won't associate VLC with movie files? If I try to add it manually it comes upw ith an error"
+        ],
+        [
+          "B",
+          "A, works fine here- right click the file, properties, open with and choose VLC."
+        ],
+        [
+          "B",
+          "\"vlc media player\""
+        ],
+        [
+          "A",
+          "B, when I do that it says \"Could not add application to the application database\""
+        ],
+        [
+          "A",
+          "B, works fine for any other apps... however mine is called \"VLC for GNOME\" rather than \"VLC media player\""
+        ],
+        [
+          "B",
+          "A, so, what happens when you choose \"vLC for gnome\"?"
+        ],
+        [
+          "A",
+          "B, it comes up with that error (could not add application to application database)"
+        ],
+        [
+          "A",
+          "B, I have gnome-vlc, vlc, vlc-gnome, and wxvlc installed - think any of those need removing maybe?"
+        ]
+      ],
+      "decoded": "t1 setQuestion associate [gnome ; vlc with movies ; -] yes none now | t2 inform fail [file ; - ; -] yes none now | t3 instruct choose [a ; proper function ; -] yes none now | t4 instruct add [a ; vlc to folder ; -] yes none now | t5 inform say [gnome ; vlc does not work for application ; -] yes none now | t6 inform add [a ; vlc to application ; -] yes can now | t7 setQuestion be [- ; what happened ; -] yes none now | t8 answer be [- ; vlc with gnome ; -] yes none now | t8 inform know [b ; what to do ; -] not none now | * 1",
+      "words": "A: How do I associate VLC with movies in GNOME?\nB: The file fails.\nB: Choose the proper function.\nB: Add VLC to the folder.\nA: GNOME says VLC does not work for the application.\nB: You can add VLC to the application.\nA: What happened?\nB: It's VLC with GNOME. I don't know what to do.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2005-08-08_01-1169",
+      "original": [
+        [
+          "A",
+          "i'm having trouble running my .xsession file"
+        ],
+        [
+          "A",
+          "i'm using gdm from login"
+        ],
+        [
+          "A",
+          "i'm having trouble running my .xsession file... it isn't loaded when i login in GDM..."
+        ],
+        [
+          "B",
+          "A: choose the defult in the sessions list"
+        ],
+        [
+          "A",
+          "thanx bud!!!"
+        ],
+        [
+          "A",
+          "i'll check that"
+        ]
+      ],
+      "decoded": "t1 inform have [a ; trouble running xsession file ; -] yes none now | t2 inform use [a ; gdm from login ; -] yes none now | t3 inform load [gdm ; file ; -] not none now | t4 suggest choose [a ; default in sessions list ; -] yes none now | t5 thanking - [a ; - ; b] yes none now | t6 promise check [a ; - ; b] yes will future | * 1",
+      "words": "A: I have trouble running the xsession file.\nA: I use GDM from the login.\nB: GDM doesn't load the file.\nB: Choose default in the sessions list.\nA: Thanks, B.\nB: I'll check.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-01-11_12-1053",
+      "original": [
+        [
+          "A",
+          "What's the difference between fdisk and cfdisk and is there an advantage to using one over the other?"
+        ],
+        [
+          "B",
+          "A, both tools are good. I prefer cfdisk."
+        ],
+        [
+          "A",
+          "B, any particular reason?"
+        ],
+        [
+          "B",
+          "A, I get a better overview with cfdisk and the options that i have."
+        ],
+        [
+          "A",
+          "B, ah. Thanks."
+        ]
+      ],
+      "decoded": "t1 setQuestion be [difference ; between fdisk and cfdisk ; -] yes none now | t1 propositionalQuestion have [b ; advantage over using one over the other ; -] yes none now | t2 answer be [both tools ; good ; -] yes none now | t3 inform prefer [b ; fdisk ; -] yes none now | t4 propositionalQuestion have [b ; particular reason ; -] yes none now | t5 answer get [b ; better overview of fdisk and cfdisk ; -] yes can now | t6 thanking - [a ; - ; c] yes none - | * 1",
+      "words": "A: What is the difference between fdisk and cfdisk? Do you have an advantage using one over the other?\nB: Both tools are good.\nB: I prefer fdisk.\nA: Do you have a particular reason?\nB: You can get a better overview of fdisk and cfdisk.\nA: Thanks, C.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-01-11_12-1409",
+      "original": [
+        [
+          "A",
+          "Anybody know how to stop ubuntu from freezing when you leave it idle?"
+        ],
+        [
+          "B",
+          "A: that used to happen when I ran dapper.....never figured that one out..."
+        ],
+        [
+          "A",
+          "Well I gotta figure it out"
+        ],
+        [
+          "A",
+          "Or none of my friends are gonna change from windows to Ubuntu >.<"
+        ],
+        [
+          "C",
+          "yeah my install freezes like that also"
+        ]
+      ],
+      "decoded": "t1 setQuestion know [anyone ; how to stop ubuntu freezing when idling ; -] yes none now | t2 answer happen [that ; dapper ; -] yes none past | t3 inform run [a ; dapper ; -] yes none past | t3 inform figure [a ; that out ; -] not none past | t4 inform change [a ; ubuntu from windows to friends ; -] yes will future | t5 inform freeze [a's installation ; - ; -] yes none now | * 1",
+      "words": "A: Does anyone know how to stop Ubuntu freezing when idling?\nB: That happened in Dapper.\nB: I ran Dapper.\nB: I didn't figure that out.\nB: I will change Ubuntu from Windows to friends.\nB: My installation freezes.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-01-11_12-890",
+      "original": [
+        [
+          "A",
+          "What would I need to install to get the kernel source files in \"/lib/modules/2.6.17-10-generic/source\"? (and no, kernel-headers and kernel-source don't seem to be the right ones)"
+        ],
+        [
+          "A",
+          "What would I need to install to get the kernel source files in \"/lib/modules/2.6.17-10-generic/source\"? (and no, kernel-headers and kernel-source don't seem to be the right ones)"
+        ],
+        [
+          "A",
+          "Do I need to install anything other than kernel-source and kernel-headers to compile and install drivers?"
+        ],
+        [
+          "A",
+          "If I add a module to /lib/modules/whatever how do I update the system to see it? Just putting it there doesn't work due to needing to run modules-update or something but that doesn't work on Ubuntu anymore it seems"
+        ],
+        [
+          "B",
+          "A, modprobe/insmod ?"
+        ],
+        [
+          "A",
+          "B, I just said it's not seen because you have to update the mod database first"
+        ],
+        [
+          "A",
+          "So much for ever getting help in here :/"
+        ],
+        [
+          "B",
+          "A, module-assistant update I believe (but not sure)"
+        ]
+      ],
+      "decoded": "t1 setQuestion install [a ; kernel source files ; -] yes must future | t2 answer need [a ; anything other than modules to install kernel source files ; -] yes must future | t3 setQuestion install [a ; kernel source files ; -] yes must future | t4 answer install [a ; kernel source files ; -] yes must future | t5 inform work [modules ; - ; -] not none now | t6 inform update [modules ; kernel source files ; -] yes must future | t7 inform see [a ; anything else ; -] yes none past | t8 inform work [modules ; - ; -] not none now | * 1",
+      "words": "A: Do I have to install the kernel source files?\nB: Do you need anything other than modules to install kernel source files? You must.\nA: Do I have to install the kernel source files?\nB: You must install the kernel source files.\nA: The modules don't work.\nB: You must update the modules with the kernel source files.\nA: I saw anything else.\nB: The modules don't work.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-1041",
+      "original": [
+        [
+          "A",
+          "i want to backup /home/user  is this correct use this command: tar -czf user_backup.tar.gz /home/user"
+        ],
+        [
+          "B",
+          "A probably not, i dont think that works"
+        ],
+        [
+          "A",
+          "B, what is the correct one?"
+        ],
+        [
+          "B",
+          "A why are you backing up /home?"
+        ],
+        [
+          "A",
+          "B, i want to backup /home/user , not /home"
+        ],
+        [
+          "A",
+          "B, i want to re-install my ubuntu"
+        ],
+        [
+          "A",
+          "B, upgrade it to 7.10"
+        ],
+        [
+          "A",
+          "B, because right now i use 7.04"
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion use [a ; /home/server ; -] yes will now | t2 answer be [b ; correct command ; -] not uncertain now | t3 setQuestion work [it ; - ; -] not none now | t4 answer be [b ; correct command ; -] yes none now | t5 setQuestion backup [a ; home/user ; -] yes none now | t6 answer backup [a ; /home/user ; -] not none now | t7 inform reinstall [a ; ubuntu ; -] yes will now | t8 inform upgrade [a ; ubuntu 7.10 ; -] yes will now | t8 inform use [a ; 7.04 ; -] yes none now | * 1",
+      "words": "A: Will I be using the /home/server command now?\nB: I'm not sure that's the correct command.\nA: How does it work?\nB: Yes, that's the correct command.\nA: Which should I back up, home/user?\nB: No, back up /home/user.\nA: I'll reinstall Ubuntu.\nA: I'll upgrade to Ubuntu 7.10, since I'm using 7.04.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-1099",
+      "original": [
+        [
+          "A",
+          "Anybody know how to configure an ad hoc connection in gutsy?"
+        ],
+        [
+          "A",
+          "So, is it even possible to set up an Ad Hoc connection between 2 ubuntu computers?"
+        ],
+        [
+          "B",
+          "A: https://help.ubuntu.com/community/WifiDocs/Adhoc"
+        ],
+        [
+          "A",
+          "Can anybody help me, I am trying to use this computer as a hub to connect my other computers to the internet"
+        ],
+        [
+          "A",
+          "is it even possible to connect two computers in ubuntu via ad hoc?"
+        ]
+      ],
+      "decoded": "t1 setQuestion configure [anyone ; ad hoc connection in gutsy ; -] yes none now | t2 propositionalQuestion set [a ; ad hoc connection between two ubuntu computers ; -] yes can now | t3 request help [anyone ; a ; -] yes none now | t4 propositionalQuestion use [a ; ad hoc as hub to connect computers ; -] yes will now | t5 propositionalQuestion connect [a ; two computers ; ubuntu] yes can now | * 1",
+      "words": "A: How do I configure an ad hoc connection in Gutsy?\nB: Can you set up an ad hoc connection between two Ubuntu computers?\nA: Can anyone help me?\nB: Will you use ad hoc as a hub to connect the computers?\nA: Can you connect two Ubuntu computers?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-1101",
+      "original": [
+        [
+          "A",
+          "i'm having a lot of trouble with this, i had hda/sda1 = windows, hda/sda2 = storage, and hda/sda5 = linux partition... i installed XP over the vista partition, but now grub doesn't load at all"
+        ],
+        [
+          "A",
+          "before i was using grub to dual boot"
+        ],
+        [
+          "A",
+          "if i change the boot partition i can't get linux to load at all, and i can't get grub to set up right using a live cd"
+        ],
+        [
+          "B",
+          "A: When you install XP, it overwrites the MBR"
+        ],
+        [
+          "A",
+          "B: i am aware of this"
+        ],
+        [
+          "A",
+          "B: how do i reset it"
+        ],
+        [
+          "B",
+          "slvchn: Did you try to reinstall GRUB from the live CD?"
+        ],
+        [
+          "A",
+          "B: yes but it gave me problems"
+        ]
+      ],
+      "decoded": "t1 inform have [a ; problem with this ; -] yes none now | t2 inform install [a ; xda ; -] yes none past | t2 inform install [a ; grub ; -] not none past | t3 inform load [grub ; grub ; -] not can now | t4 inform reinstall [a ; ubuntu ; -] yes none now | t5 inform change [a ; xd ; -] yes none now | t6 propositionalQuestion know [a ; how to reinstall it ; -] yes none now | t7 answer know [a ; how to reinstall it ; -] not none now | t8 thanking - [a ; - ; b] yes none now | t8 inform reinstall [a ; grub ; -] yes none past | * 1",
+      "words": "A: I have a problem with this.\nA: I installed XDA, but I didn't install GRUB.\nA: GRUB can't load.\nA: I'm reinstalling Ubuntu.\nA: I'm changing XD.\nA: Do you know how to reinstall it?\nB: I don't know how to reinstall it.\nA: Thanks, I reinstalled GRUB.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-1201",
+      "original": [
+        [
+          "A",
+          "I have a few .vcd's.. I know I looked up in the past of how to make these into iso's... I forget =\\ anyone know?"
+        ],
+        [
+          "A",
+          "I have a few .vcd's.. I know I looked up in the past of how to make these into iso's... I forget =\\ anyone know?"
+        ],
+        [
+          "A",
+          "I have a data disk that is in VCD format. How can I change this to an ISO format so I can burn it into a CD?"
+        ],
+        [
+          "A",
+          "I have a data disk that is in VCD format. How can I change this to an ISO format so I can burn it into a CD?"
+        ],
+        [
+          "B",
+          "if its was for microsft i wuld have used NERO burner"
+        ],
+        [
+          "C",
+          "can K3B handle VCD's?"
+        ]
+      ],
+      "decoded": "t1 inform have [a ; several vcs in iso ; -] yes none now | t1 inform forget [a ; making them into iso ; -] yes none past | t2 propositionalQuestion know [anyone ; how to make them into iso ; -] yes none now | t3 answer have [a ; data disk in vcs format ; -] yes none now | t3 propositionalQuestion change [a ; format to cd ; -] yes can now | t4 propositionalQuestion handle [a ; micro disk ; -] yes can now | t5 inform use [kernel ; v3b ; -] yes none past | t6 propositionalQuestion be [kernel ; micro format burner ; -] yes none now | * 3",
+      "words": "A: I have several VCDs in ISO, and I forgot to make them into ISO.\nB: Does anyone know how to make them into ISO?\nA: I have a data disk in VCD format. Can I change the format to CD?\nB: Can you handle a micro disk?\nA: The kernel used v3b.\nB: Is the kernel a micro format burner?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-1458",
+      "original": [
+        [
+          "A",
+          "did anybody try the last ati catalyst driver under ubuntu gutsy?"
+        ],
+        [
+          "A",
+          "sorry for my english."
+        ],
+        [
+          "B",
+          "A: I tried the restricted driver on 9550 and it sucked."
+        ],
+        [
+          "A",
+          "B, yeah, im having a lot of problems too"
+        ],
+        [
+          "B",
+          "A: I have no problems with xorg driver and I get ogl fine in gutsy."
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion try [anyone ; ati catalyst driver on gutsy ubuntu ; -] yes none past | t2 apology apologize [a ; english ; -] yes none now | t3 inform try [a ; restricted driver on 9550 ; -] yes none past | t4 inform suck [a ; - ; -] yes none past | t5 inform have [a ; many problems ; -] yes none now | t6 inform get [a ; xorg driver ; -] not none now | * 1",
+      "words": "A: Has anyone tried the ATI Catalyst driver on Gutsy Ubuntu?\nA: Sorry about my English.\nA: I tried the restricted driver on the 9550.\nA: It sucked.\nA: I have many problems.\nA: I can't get the Xorg driver.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-893",
+      "original": [
+        [
+          "A",
+          "B yeah, in the bios"
+        ],
+        [
+          "B",
+          "A: I am at the point Guided, but which one ; entire disk / entire disk and set up LVM / entire disk and set up encrypted LVM? then theres the first- resize (which is prolly what i dont want) and manual"
+        ],
+        [
+          "A",
+          "B dont you want the first?  I don't know, I always have chosen manual  :("
+        ],
+        [
+          "A",
+          "B if you choose manual, all you need to do is have at least one partition marked as /"
+        ],
+        [
+          "B",
+          "A choosing manual"
+        ],
+        [
+          "B",
+          "A: now i see Guided / Help partioneg below that are two SATA drives - one has a submenu"
+        ],
+        [
+          "B",
+          "A # 1 primary and #5 logical"
+        ],
+        [
+          "A",
+          "B mmk, are they partitioned?"
+        ]
+      ],
+      "decoded": "t1 feedback - [a ; - ; -] yes none now | t2 inform be [b ; in bios ; -] yes none now | t2 inform guide [b ; entire disk ; -] yes none now | t2 inform choose [b ; first manual ; -] not none now | t2 inform know [b ; first manual ; -] not none now | t2 inform have [b ; selection ; -] yes must now | t2 inform mark [a ; manual as partition ; -] yes none past | t3 inform have [a ; two partitions ; -] yes none now | t4 suggest use [b ; ssh ; -] yes none now | t5 inform be [first manual ; manual partition ; -] yes none now | t6 inform have [a ; five segments ; -] yes none now | t7 inform be [b ; logic partition ; -] yes none now | t8 inform be [b ; manual partition ; -] yes none now | * 1",
+      "words": "A: Okay.\nB: It's in the BIOS. It guides the entire disk. You don't choose the first manual one, you don't know the first manual one, and you must have a selection. I marked manual as a partition.\nA: I have two partitions.\nB: Use SSH.\nA: The first manual is the manual partition.\nA: I have five segments.\nB: It's a logic partition.\nB: It's a manual partition.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2007-12-01_03-980",
+      "original": [
+        [
+          "A",
+          "is there any way i can change the status of a hidden directory (windows hidden directory) in ubuntu?"
+        ],
+        [
+          "A",
+          "I have a folder that windows reads as hidden, is there any way i can change this using ubuntu?"
+        ],
+        [
+          "A",
+          "I have a folder that windows reads as hidden, is there any way i can change this using ubuntu?"
+        ],
+        [
+          "B",
+          "A: why are you trying to do that?"
+        ],
+        [
+          "A",
+          "its for my mp3 player"
+        ],
+        [
+          "B",
+          "A: this is a foldaer that should not be hidden?"
+        ],
+        [
+          "A",
+          "yes it should not be hidden"
+        ],
+        [
+          "B",
+          "A: is it hidden in windows?"
+        ]
+      ],
+      "decoded": "t1 propositionalQuestion change [a ; hidden folder status in ubuntu ; -] yes can now | t2 propositionalQuestion do [a ; this ; -] yes none now | t3 propositionalQuestion try [a ; - ; -] yes none now | t4 answer be [folder ; for mp3 player ; -] yes none now | t5 inform hide [folder ; - ; -] not must now | t6 propositionalQuestion be [folder ; in windows ; -] yes none now | * 1",
+      "words": "A: Can I change a hidden folder's status in Ubuntu?\nB: Can you do this?\nA: Can you try?\nB: The folder is for an MP3 player.\nA: The folder must not be hidden.\nB: Is the folder in Windows?",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2008-07-14_18-1000",
+      "original": [
+        [
+          "A",
+          "then it won't refresh :)"
+        ],
+        [
+          "B",
+          "meowskisbane: top > top.txt"
+        ],
+        [
+          "C",
+          "hi all, can anybody help me with usb driver programming for the latest kernel?"
+        ],
+        [
+          "D",
+          "is medibuntu down?"
+        ],
+        [
+          "E",
+          "traakinas I do not get that option because it isnt in the panel its in the panel's menu"
+        ],
+        [
+          "F",
+          "is there a way to set ulimits for a user to unlimited in ubuntu permanently?"
+        ],
+        [
+          "G",
+          "H: is probably a driver problem. search it on cups site."
+        ],
+        [
+          "H",
+          "ok"
+        ]
+      ],
+      "decoded": "t1 inform refresh [it ; - ; -] not none future | t2 inform be [ubuntu ; mewsubuntu.topic.tk ; -] yes none now | t3 request help [anyone ; a ; -] yes none now | t4 propositionalQuestion update [a ; usb driver ; -] yes none now | t5 inform be [mewsubuntu ; in the menu ; -] not none now | t6 inform get [a ; option ; -] not can now | t7 propositionalQuestion set [a ; menu limits ; -] yes none now | t8 propositionalQuestion have [a ; way to unlimited user access ; -] yes uncertain now | t8 answer be [it ; problem ; -] yes uncertain now | t8 propositionalQuestion search [a ; driver ; -] yes none now | t9 inform be [it ; on the table ; -] yes none now | * 1",
+      "words": "A: I won't refresh it.\nB: Ubuntu is mewsubuntu.topic.tk.\nA: Can anyone help me?\nB: Should I update the USB driver?\nA: Mewsubuntu isn't in the menu.\nA: I can't get the option.\nB: Should I set menu limits?\nA: Do I maybe have a way to unlimited user access? Maybe it's a problem. Should I search for a driver?\nB: It's on the table.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2008-07-14_18-1051",
+      "original": [
+        [
+          "A",
+          "or linuxprinting.org to see how supported your printer is"
+        ],
+        [
+          "B",
+          "E, power switch it is then"
+        ],
+        [
+          "C",
+          "sudo tar xvfj alsa-driver*  gives me an error"
+        ],
+        [
+          "D",
+          "ok, thanks trakinas and A"
+        ],
+        [
+          "E",
+          "Seavas: never mind, its booted"
+        ]
+      ],
+      "decoded": "t1 suggest use [a ; linuxprinting-view ; -] yes none now | t2 inform be [printer ; supported ; -] yes none now | t3 instruct press [a ; power ; -] yes none now | t4 inform give [xvid travar ; alsa server error ; a] yes none now | t5 thanking - [a ; - ; b] yes none now | t6 inform get [a ; error ; -] yes none past | t7 instruct use [a ; marinvas ; -] yes none now | t8 instruct forget [a ; it is booted ; -] yes none now | * 1",
+      "words": "A: Use linuxprinting-view.\nB: The printer is supported.\nA: Press power.\nB: Xvid travar gives me an ALSA server error.\nA: Thanks.\nB: I got an error.\nA: Use marinvas.\nA: Forget it's booted.",
+      "intent_ok": false
+    },
+    {
+      "uid": "chat-2008-07-14_18-1202",
+      "original": [
+        [
+          "A",
+          "jam4: Ubuntu installation CDs can be downloaded from http://nl.releases.ubuntu.com - Mirrors can be found at http://wiki.ubuntu.com/Mirrors - PLEASE use the !torrents to download Hardy, and help keeping the servers' load low!"
+        ],
+        [
+          "B",
+          "theres a make clean for rtorrent and make distclean"
+        ],
+        [
+          "B",
+          "yeah, i will"
+        ],
+        [
+          "C",
+          "netcatc: seems you hosed your sda3"
+        ],
+        [
+          "D",
+          "netcatc: file -s"
+        ],
+        [
+          "E",
+          "C: so how can i resize it ?"
+        ],
+        [
+          "D",
+          "B: you can look at the files in the install target and remove them by hand."
+        ],
+        [
+          "D",
+          "yeah, i will try that would be to increase the new size or use awn on top of it"
+        ]
+      ],
+      "decoded": "t1 inform download [a ; download cd files ; -] yes can now | t2 suggest clean [a ; netrator ; -] yes will now | t3 inform be [netrator ; clean ; -] yes none now | t4 suggest use [a ; sda files ; -] yes none now | t5 inform resize [a ; sda files ; -] yes uncertain now | t6 suggest use [a ; netrator ; -] yes uncertain now | t7 setQuestion place [a ; files in target ; -] yes can now | t8 inform remove [a ; files ; -] yes will now | t8 inform use [a ; netrator ; -] yes will now | t8 inform increase [netrator ; size ; -] yes will now | * 1",
+      "words": "A: You can download the CD files.\nB: You should clean Netrator.\nA: Netrator is clean.\nB: Use the sda files.\nA: I might resize the sda files.\nB: Maybe use Netrator.\nA: How can I place the files in the target?\nB: I'll remove the files, use Netrator, and increase its size.",
+      "intent_ok": false
+    }
+  ]
+}

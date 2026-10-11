@@ -1,0 +1,116 @@
+{
+  "base": "bge",
+  "best_epoch": 15,
+  "best_val_win_256": 0.8289,
+  "args": {
+    "base": "bge",
+    "items": "phase1/items.jsonl",
+    "texts": [
+      "phase1/texts.jsonl",
+      "pool/texts.jsonl"
+    ],
+    "epochs": 16,
+    "batch": 32,
+    "lr": 2e-05,
+    "out": "out/ft",
+    "tag": "_e16"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "loss": 1.6275,
+      "val_win_256": 0.7653,
+      "seconds": 40
+    },
+    {
+      "epoch": 1,
+      "loss": 1.2444,
+      "val_win_256": 0.8041,
+      "seconds": 39
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0245,
+      "val_win_256": 0.8138,
+      "seconds": 39
+    },
+    {
+      "epoch": 3,
+      "loss": 0.8714,
+      "val_win_256": 0.8166,
+      "seconds": 40
+    },
+    {
+      "epoch": 4,
+      "loss": 0.7255,
+      "val_win_256": 0.8184,
+      "seconds": 40
+    },
+    {
+      "epoch": 5,
+      "loss": 0.6225,
+      "val_win_256": 0.8192,
+      "seconds": 39
+    },
+    {
+      "epoch": 6,
+      "loss": 0.5344,
+      "val_win_256": 0.8227,
+      "seconds": 40
+    },
+    {
+      "epoch": 7,
+      "loss": 0.4773,
+      "val_win_256": 0.8263,
+      "seconds": 39
+    },
+    {
+      "epoch": 8,
+      "loss": 0.3989,
+      "val_win_256": 0.825,
+      "seconds": 39
+    },
+    {
+      "epoch": 9,
+      "loss": 0.3442,
+      "val_win_256": 0.822,
+      "seconds": 40
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2936,
+      "val_win_256": 0.8273,
+      "seconds": 40
+    },
+    {
+      "epoch": 11,
+      "loss": 0.2681,
+      "val_win_256": 0.825,
+      "seconds": 39
+    },
+    {
+      "epoch": 12,
+      "loss": 0.2324,
+      "val_win_256": 0.8245,
+      "seconds": 40
+    },
+    {
+      "epoch": 13,
+      "loss": 0.2064,
+      "val_win_256": 0.8271,
+      "seconds": 39
+    },
+    {
+      "epoch": 14,
+      "loss": 0.1823,
+      "val_win_256": 0.8258,
+      "seconds": 40
+    },
+    {
+      "epoch": 15,
+      "loss": 0.1695,
+      "val_win_256": 0.8289,
+      "seconds": 39
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[project]
+name = "dianoia"
+version = "0.1.0"
+description = "Encode ideas, not words: sentence and paragraph geometry on the Enron corpus, after Noema"
+requires-python = ">=3.12"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

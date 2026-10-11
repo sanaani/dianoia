@@ -1,0 +1,297 @@
+{
+ "hypotheses": {
+  "H1": {
+   "question": "far-trained beats off the shelf, far test",
+   "compare": "far-s0-e2 vs base",
+   "diff": 0.2509,
+   "lo": 0.189,
+   "hi": 0.3093,
+   "verdict": "supported",
+   "mrr": {
+    "diff": 0.2457,
+    "lo": 0.1988,
+    "hi": 0.2907
+   }
+  },
+  "H2": {
+   "question": "far-trained beats near-trained, far test",
+   "compare": "far-s0-e2 vs near-s0-e3",
+   "diff": 0.0447,
+   "lo": 0.0034,
+   "hi": 0.0859,
+   "verdict": "supported",
+   "mrr": {
+    "diff": 0.0085,
+    "lo": -0.0239,
+    "hi": 0.0371
+   }
+  },
+  "H3": {
+   "question": "far training costs at most 3 points on near test pairs",
+   "compare": "far-s0-e2 vs base",
+   "diff": 0.0226,
+   "lo": -0.0301,
+   "hi": 0.0752,
+   "verdict": "falsified",
+   "mrr": {
+    "diff": 0.0934,
+    "lo": 0.0492,
+    "hi": 0.1408
+   }
+  }
+ },
+ "chosen_epochs": {
+  "far": 2,
+  "near": 3
+ },
+ "audit": {
+  "train_shares_patent_with_eval": 0,
+  "train_shares_text_with_eval": 0,
+  "negative_breaks_rule_or_is_held": 0,
+  "negative_count_wrong": 0,
+  "train_duplicate_pair": 0,
+  "far_and_near_overlap": 0,
+  "train_empty_text": 0,
+  "far_rule_broken": 0,
+  "near_rule_broken": 0,
+  "near_size_differs": 0,
+  "eval_label_rule_broken": 0,
+  "eval_missing_doc": 0,
+  "eval_empty_query": 0,
+  "eval_cited_among_candidates": 0,
+  "eval_wrong_split": 0,
+  "far_test_too_few": 0
+ },
+ "medians": {
+  "overlap": 0.09,
+  "cosine": 0.6746,
+  "pairs": 8031,
+  "missing_abstract": 30
+ },
+ "train": {
+  "far": 1676,
+  "near": 1676
+ },
+ "eval": {
+  "dev": 244,
+  "test": 291,
+  "test_near": 266
+ },
+ "handcheck": {
+  "test": {
+   "rater_agreement": "9/10",
+   "new": 50,
+   "kept": 45,
+   "same_product": 0,
+   "unrelated": 5,
+   "gate_pass": true
+  },
+  "train": {
+   "rater_agreement": "8/10",
+   "disagreements": [
+    [
+     18,
+     "A",
+     "C"
+    ],
+    [
+     43,
+     "C",
+     "B"
+    ]
+   ],
+   "gate": "NOT READ: fix the rubric or its application first"
+  },
+  "test_real_share": 0.9,
+  "pass": true
+ },
+ "models": {
+  "base": {
+   "dev": {
+    "top10": 0.4877,
+    "mrr": 0.2976
+   },
+   "test": {
+    "top10": 0.5258,
+    "mrr": 0.2751
+   },
+   "test_near": {
+    "top10": 0.8459,
+    "mrr": 0.6049
+   }
+  },
+  "far-s0-e1": {
+   "dev": {
+    "top10": 0.7008,
+    "mrr": 0.4594
+   },
+   "test": {
+    "top10": 0.7423,
+    "mrr": 0.5109
+   },
+   "test_near": {
+    "top10": 0.8797,
+    "mrr": 0.6873
+   }
+  },
+  "far-s0-e2": {
+   "dev": {
+    "top10": 0.7213,
+    "mrr": 0.4724
+   },
+   "test": {
+    "top10": 0.7766,
+    "mrr": 0.5208
+   },
+   "test_near": {
+    "top10": 0.8684,
+    "mrr": 0.6984
+   }
+  },
+  "far-s0-e3": {
+   "dev": {
+    "top10": 0.709,
+    "mrr": 0.4644
+   },
+   "test": {
+    "top10": 0.7526,
+    "mrr": 0.5175
+   },
+   "test_near": {
+    "top10": 0.8571,
+    "mrr": 0.6779
+   }
+  },
+  "far-s1-e2": {
+   "dev": {
+    "top10": 0.7172,
+    "mrr": 0.4681
+   },
+   "test": {
+    "top10": 0.7663,
+    "mrr": 0.5186
+   },
+   "test_near": {
+    "top10": 0.8609,
+    "mrr": 0.6967
+   }
+  },
+  "far-s2-e2": {
+   "dev": {
+    "top10": 0.7172,
+    "mrr": 0.4757
+   },
+   "test": {
+    "top10": 0.7869,
+    "mrr": 0.5208
+   },
+   "test_near": {
+    "top10": 0.8835,
+    "mrr": 0.6946
+   }
+  },
+  "near-s0-e1": {
+   "dev": {
+    "top10": 0.6844,
+    "mrr": 0.4355
+   },
+   "test": {
+    "top10": 0.7251,
+    "mrr": 0.4983
+   },
+   "test_near": {
+    "top10": 0.9248,
+    "mrr": 0.7606
+   }
+  },
+  "near-s0-e2": {
+   "dev": {
+    "top10": 0.6926,
+    "mrr": 0.4418
+   },
+   "test": {
+    "top10": 0.7251,
+    "mrr": 0.5065
+   },
+   "test_near": {
+    "top10": 0.9248,
+    "mrr": 0.7327
+   }
+  },
+  "near-s0-e3": {
+   "dev": {
+    "top10": 0.6967,
+    "mrr": 0.4328
+   },
+   "test": {
+    "top10": 0.732,
+    "mrr": 0.5123
+   },
+   "test_near": {
+    "top10": 0.9135,
+    "mrr": 0.716
+   }
+  }
+ },
+ "seed_spread_far_test_top10": {
+  "far": 0.7766,
+  "far_s1": 0.7663,
+  "far_s2": 0.7869
+ },
+ "by_quartile": {
+  "overlap": {
+   "cuts": [
+    0.0318,
+    0.054,
+    0.0733
+   ],
+   "top10": {
+    "base": [
+     0.4521,
+     0.5616,
+     0.5479,
+     0.5417
+    ],
+    "far": [
+     0.6575,
+     0.7808,
+     0.8219,
+     0.8472
+    ],
+    "near": [
+     0.6438,
+     0.7534,
+     0.7945,
+     0.7361
+    ]
+   }
+  },
+  "cosine": {
+   "cuts": [
+    0.5946,
+    0.6267,
+    0.6517
+   ],
+   "top10": {
+    "base": [
+     0.3973,
+     0.589,
+     0.5616,
+     0.5556
+    ],
+    "far": [
+     0.7671,
+     0.7945,
+     0.7671,
+     0.7778
+    ],
+    "near": [
+     0.6575,
+     0.7534,
+     0.7397,
+     0.7778
+    ]
+   }
+  }
+ }
+}

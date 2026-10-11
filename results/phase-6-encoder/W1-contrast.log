@@ -1,0 +1,18 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<01:49,  3.53it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 1047.68it/s]
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:06<00:06,  6.52s/it]Fetching 2 files: 100%|██████████| 2/2 [00:44<00:00, 24.74s/it]Fetching 2 files: 100%|██████████| 2/2 [00:44<00:00, 22.01s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 196/1013 [00:00<00:00, 1787.29it/s]Loading weights:  38%|███▊      | 380/1013 [00:00<00:00, 1813.10it/s]Loading weights:  55%|█████▌    | 562/1013 [00:00<00:00, 1639.73it/s]Loading weights:  72%|███████▏  | 728/1013 [00:00<00:00, 1443.16it/s]Loading weights:  86%|████████▋ | 876/1013 [00:00<00:00, 1337.04it/s]Loading weights: 100%|█████████▉| 1012/1013 [00:00<00:00, 1265.40it/s]Loading weights: 100%|██████████| 1013/1013 [00:00<00:00, 1071.12it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:  51%|█████     | 201/393 [00:00<00:00, 1955.04it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 2266.29it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: FacebookAI/roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 3329.76it/s]
+{"evaluated": 1800, "geometry": 80}

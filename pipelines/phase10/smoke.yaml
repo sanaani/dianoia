@@ -1,0 +1,18 @@
+# Overrides for the dry run on make_fixture.py's synthetic data: everything small, same code paths.
+mem_mb_total: 3000
+recovery:
+  queries: 20
+  min_queries: 20
+  candidates: 50
+  pool_per_section: 80
+  top_k: 10
+words:
+  spread_per_section: 150
+  min_count: 2
+  max_hypernym_steps: 4
+verdicts:
+  h1_pass: 0.70
+  h1_fail: 0.60
+  bootstrap: 200
+
+keep: ""   # the synthetic fixture has no labels

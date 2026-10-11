@@ -1,0 +1,76 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:06<00:06,  6.53s/it]Fetching 2 files: 100%|██████████| 2/2 [00:31<00:00, 17.57s/it]Fetching 2 files: 100%|██████████| 2/2 [00:31<00:00, 15.91s/it]
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 4106.37it/s]
+{"pairs": 13764, "steps": 3441}
+{"step": 50, "loss": 0.5549, "minutes": 1.0}
+{"step": 100, "loss": 0.591, "minutes": 1.9}
+{"step": 150, "loss": 0.4983, "minutes": 2.7}
+{"step": 200, "loss": 0.1406, "minutes": 3.5}
+{"step": 250, "loss": 0.3064, "minutes": 4.3}
+{"step": 300, "loss": 0.1559, "minutes": 5.2}
+{"step": 350, "loss": 0.6789, "minutes": 6.0}
+{"step": 400, "loss": 0.5832, "minutes": 6.8}
+{"step": 450, "loss": 0.3792, "minutes": 7.6}
+{"step": 500, "loss": 0.5993, "minutes": 8.5}
+{"step": 550, "loss": 0.6358, "minutes": 9.3}
+{"step": 600, "loss": 0.2454, "minutes": 10.1}
+{"step": 650, "loss": 0.2385, "minutes": 10.9}
+{"step": 700, "loss": 0.1608, "minutes": 11.7}
+{"step": 750, "loss": 0.178, "minutes": 12.6}
+{"step": 800, "loss": 0.8832, "minutes": 13.4}
+{"step": 850, "loss": 0.3612, "minutes": 14.2}
+{"step": 900, "loss": 0.6825, "minutes": 15.0}
+{"step": 950, "loss": 0.3219, "minutes": 15.9}
+{"step": 1000, "loss": 0.1734, "minutes": 16.7}
+{"step": 1050, "loss": 0.5482, "minutes": 17.5}
+{"step": 1100, "loss": 0.1756, "minutes": 18.3}
+{"step": 1150, "loss": 0.3144, "minutes": 19.2}
+{"step": 1200, "loss": 0.2292, "minutes": 20.0}
+{"step": 1250, "loss": 0.3376, "minutes": 20.9}
+{"step": 1300, "loss": 0.0853, "minutes": 21.7}
+{"step": 1350, "loss": 0.2965, "minutes": 22.5}
+{"step": 1400, "loss": 0.1537, "minutes": 23.4}
+{"step": 1450, "loss": 0.2389, "minutes": 24.2}
+{"step": 1500, "loss": 0.1637, "minutes": 25.0}
+{"step": 1550, "loss": 0.2525, "minutes": 25.9}
+{"step": 1600, "loss": 0.4552, "minutes": 26.7}
+{"step": 1650, "loss": 0.068, "minutes": 27.5}
+{"step": 1700, "loss": 0.0367, "minutes": 28.4}
+{"step": 1750, "loss": 0.0871, "minutes": 29.3}
+{"step": 1800, "loss": 0.0942, "minutes": 30.1}
+{"step": 1850, "loss": 0.1297, "minutes": 30.9}
+{"step": 1900, "loss": 0.1299, "minutes": 31.7}
+{"step": 1950, "loss": 0.1598, "minutes": 32.6}
+{"step": 2000, "loss": 0.3211, "minutes": 33.4}
+{"step": 2050, "loss": 0.3736, "minutes": 34.2}
+{"step": 2100, "loss": 0.0338, "minutes": 35.1}
+{"step": 2150, "loss": 0.2763, "minutes": 35.9}
+{"step": 2200, "loss": 0.1207, "minutes": 36.8}
+{"step": 2250, "loss": 0.1188, "minutes": 37.6}
+{"step": 2300, "loss": 0.0529, "minutes": 38.4}
+{"step": 2350, "loss": 0.0274, "minutes": 39.3}
+{"step": 2400, "loss": 0.029, "minutes": 40.1}
+{"step": 2450, "loss": 0.1824, "minutes": 40.9}
+{"step": 2500, "loss": 0.0446, "minutes": 41.7}
+{"step": 2550, "loss": 0.1847, "minutes": 42.5}
+{"step": 2600, "loss": 0.1878, "minutes": 43.4}
+{"step": 2650, "loss": 0.0815, "minutes": 44.2}
+{"step": 2700, "loss": 0.0184, "minutes": 45.1}
+{"step": 2750, "loss": 0.0138, "minutes": 45.9}
+{"step": 2800, "loss": 0.063, "minutes": 46.7}
+{"step": 2850, "loss": 0.438, "minutes": 47.5}
+{"step": 2900, "loss": 0.1541, "minutes": 48.4}
+{"step": 2950, "loss": 0.4135, "minutes": 49.2}
+{"step": 3000, "loss": 0.0724, "minutes": 50.0}
+{"step": 3050, "loss": 0.1668, "minutes": 50.8}
+{"step": 3100, "loss": 0.1264, "minutes": 51.6}
+{"step": 3150, "loss": 0.0566, "minutes": 52.5}
+{"step": 3200, "loss": 0.0146, "minutes": 53.3}
+{"step": 3250, "loss": 0.0056, "minutes": 54.1}
+{"step": 3300, "loss": 0.08, "minutes": 54.9}
+{"step": 3350, "loss": 0.1431, "minutes": 55.8}
+{"step": 3400, "loss": 0.0152, "minutes": 56.6}
+trained

@@ -1,0 +1,13 @@
+{
+ "agreement": "9/10",
+ "counted": true,
+ "real_share": 0.12,
+ "heavy_real_share": 0.16,
+ "rest_real_share": 0.08,
+ "labels": {
+  "C": 2,
+  "G": 4,
+  "A": 9,
+  "B": 35
+ }
+}

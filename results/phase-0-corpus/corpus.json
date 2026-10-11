@@ -1,0 +1,13 @@
+{
+  "raw_messages": 517401,
+  "unique_authored_bodies": 213021,
+  "messages_with_a_kept_paragraph": 107827,
+  "messages_sampled": 30000,
+  "paragraphs": 63683,
+  "paragraphs_in_paragraph_set": 45193,
+  "sentences": 166988,
+  "sentences_boilerplate": 5541,
+  "unique_sentence_texts": 159106,
+  "mailboxes": 150,
+  "seed": 20260930
+}

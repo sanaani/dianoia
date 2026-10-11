@@ -1,0 +1,47 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/ae0/decoded.jsonl",
+  "n_sources": 500,
+  "arms": {
+    "ae128": {
+      "n_checked": 500,
+      "intent_check_all": 0.15,
+      "act": 0.742,
+      "action": 0.222,
+      "roles": 0.408,
+      "quantities": 0.688,
+      "word_jaccard_median": 0.348,
+      "exact_copy": 0.064
+    },
+    "ae256": {
+      "n_checked": 500,
+      "intent_check_all": 0.166,
+      "act": 0.75,
+      "action": 0.25,
+      "roles": 0.442,
+      "quantities": 0.702,
+      "word_jaccard_median": 0.385,
+      "exact_copy": 0.068
+    },
+    "ae64": {
+      "n_checked": 500,
+      "intent_check_all": 0.08,
+      "act": 0.652,
+      "action": 0.112,
+      "roles": 0.332,
+      "quantities": 0.646,
+      "word_jaccard_median": 0.26,
+      "exact_copy": 0.036
+    },
+    "noise": {
+      "n_checked": 500,
+      "intent_check_all": 0.0,
+      "act": 0.006,
+      "action": 0.0,
+      "roles": 0.002,
+      "quantities": 0.614,
+      "word_jaccard_median": 0.054,
+      "exact_copy": 0.0
+    }
+  }
+}

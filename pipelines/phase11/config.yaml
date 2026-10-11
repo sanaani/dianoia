@@ -1,0 +1,66 @@
+# Phase 11: does training on analogy pairs teach a model to find far-field sources? Every number here was fixed on
+# 10/07/2026, before any phase 11 result. Hypotheses: results/phase-11-analogy-training/HYPOTHESES.md; measures and
+# verdict rules: OPERATIONALIZATION.md beside this file. A change after results exist is a new commit saying why.
+
+data: C:/Users/shaun/dianoia-data
+seed: 0
+mem_mb_total: 5000
+
+# Relative to <data>/work. The queries, candidates and abstracts are phase 10's (pipelines/phase10).
+inputs:
+  train: p10/label/train-p11.jsonl
+  queries: p10/queries.parquet
+  abstracts: p10/abstracts.parquet
+  keep: p10/label/kept-final.parquet
+
+train_years: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+sizes: [1000, 3000, all]     # nested: each trains on the first k lines of train.jsonl
+
+model: Qwen/Qwen3-1.7B-Base
+embedder: Qwen/Qwen3-Embedding-0.6B
+
+prompt: "Patent abstract:\n{abstract}\n\nAn invention from a different field that supplies this invention's key mechanism:\n"
+# Queries: phase 10's instruction for the raw abstract (its level 0), and one for a written description. Candidates
+# carry no instruction, as in phase 10.
+instruct_abstract: "Instruct: Given a patent abstract, retrieve an earlier patent from a different field whose idea it borrows\nQuery: "
+instruct_description: "Instruct: Given a description of an invention, retrieve the patent abstract that matches it\nQuery: "
+
+train:
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  lr: 2.0e-4
+  batch: 16                 # 4 per step x 4 accumulation
+  micro_batch: 4
+  max_prompt_tokens: 320    # citing abstract, truncated
+  max_target_tokens: 320    # cited abstract, truncated
+  epochs: [1, 2]            # chosen on val at 3k (top-10, then MRR), then used for 1k and N
+  warmup_ratio: 0.05
+
+generate:
+  max_new_tokens: 160
+  batch: 32
+  # greedy; the text is cut at the first blank line, so a base model's run-on output is scored on its first paragraph
+
+recovery:
+  top_k: 10
+
+verdicts:
+  bootstrap: 2000
+
+smoke:                      # laptop CPU dry run on real files: code paths only
+  train: 8
+  queries: 3
+  candidates: 15
+  # A tiny random Qwen3 for both models: Qwen3-0.6B on the laptop CPU was killed by commit-charge pressure or ran too
+  # slowly in bfloat16 (10/07/2026). Code paths only; the instance's smoke line runs the real models.
+  model: trl-internal-testing/tiny-Qwen3ForCausalLM
+  embedder: trl-internal-testing/tiny-Qwen3ForCausalLM
+  steps: 2
+
+aws:
+  hours: 4                  # self-terminate cap; 10/07/2026: phase 10's GPU job ran 2.5 h against an estimate of
+                            # about 1.5 h and its 3 h cap had to be extended by hand, so phase 11's estimate gets room
+  market: od                # over an hour; training stages checkpoint, but a reclaim mid-stage loses that stage
+  budget_left_usd: 11.9     # $14.50 less phase 10's GPU job (about 2.5 h on demand, plus a 2-minute retry instance)
+  max_cost_usd: 5

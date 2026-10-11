@@ -1,0 +1,21 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/sonar1b/decoded-step3000.jsonl",
+  "n_sources": 348,
+  "arms": {
+    "ae1024": {
+      "n_checked": 348,
+      "intent_check_all": 0.759,
+      "act": 0.917,
+      "action": 0.882,
+      "roles": 0.94,
+      "quantities": 0.951,
+      "word_jaccard_median": 0.651,
+      "exact_copy": 0.037,
+      "pass_within_tolerance": 0.868,
+      "cos_median": 0.936,
+      "tau_median": 0.8,
+      "decodes_with_unbound_placeholder": 0.181
+    }
+  }
+}

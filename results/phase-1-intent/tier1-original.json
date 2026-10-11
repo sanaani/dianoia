@@ -1,0 +1,2430 @@
+{
+  "materials": "original",
+  "test_sources": 350,
+  "results": {
+    "jaccard": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.2924,
+        "ci": [
+          0.2757,
+          0.3094
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3405,
+        "ci": [
+          0.315,
+          0.3655
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.3016,
+        "ci": [
+          0.2627,
+          0.3438
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.2416,
+        "ci": [
+          0.2191,
+          0.2661
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.3029,
+        "ci": [
+          0.28,
+          0.3269
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.32,
+        "ci": [
+          0.2986,
+          0.3431
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.2874,
+        "ci": [
+          0.2646,
+          0.3106
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.204,
+        "ci": [
+          0.1714,
+          0.2375
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.5021,
+        "ci": [
+          0.4462,
+          0.5587
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.115,
+        "ci": [
+          0.0908,
+          0.1394
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.2818,
+        "ci": [
+          0.244,
+          0.3211
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6876,
+        "ci": [
+          0.647,
+          0.7269
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.204
+      }
+    },
+    "sonar": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.2785,
+        "ci": [
+          0.2584,
+          0.3007
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3412,
+        "ci": [
+          0.3109,
+          0.371
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.3659,
+        "ci": [
+          0.3194,
+          0.4135
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.2238,
+        "ci": [
+          0.2016,
+          0.2472
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2005,
+        "ci": [
+          0.179,
+          0.2225
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.2646,
+        "ci": [
+          0.2392,
+          0.2908
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.353,
+        "ci": [
+          0.3219,
+          0.3841
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.2392,
+        "ci": [
+          0.2006,
+          0.2775
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0455,
+        "ci": [
+          0.0328,
+          0.0598
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.3228,
+        "ci": [
+          0.2599,
+          0.3876
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.2673,
+        "ci": [
+          0.2337,
+          0.3023
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.2372,
+        "ci": [
+          0.2031,
+          0.275
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5413,
+        "ci": [
+          0.4897,
+          0.593
+        ]
+      },
+      "worst_move": {
+        "kind": "move:modality",
+        "win_rate": 0.2005
+      }
+    },
+    "head64": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.7075,
+        "ci": [
+          0.6891,
+          0.7257
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8425,
+        "ci": [
+          0.813,
+          0.8712
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.6377,
+        "ci": [
+          0.5808,
+          0.6929
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9197,
+        "ci": [
+          0.8978,
+          0.9394
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.8531,
+        "ci": [
+          0.8243,
+          0.8841
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4841,
+        "ci": [
+          0.4492,
+          0.5212
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.5397,
+        "ci": [
+          0.4977,
+          0.5797
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.484,
+        "ci": [
+          0.4333,
+          0.5339
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5356,
+        "ci": [
+          0.5097,
+          0.5615
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.8126,
+        "ci": [
+          0.7742,
+          0.8468
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.7048,
+        "ci": [
+          0.6778,
+          0.733
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.7192,
+        "ci": [
+          0.6903,
+          0.7484
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.83,
+        "ci": [
+          0.8049,
+          0.8549
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.484
+      }
+    },
+    "head128": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.6964,
+        "ci": [
+          0.6785,
+          0.7152
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8344,
+        "ci": [
+          0.8027,
+          0.8635
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.6214,
+        "ci": [
+          0.5654,
+          0.6763
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.919,
+        "ci": [
+          0.8981,
+          0.9382
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.8516,
+        "ci": [
+          0.8204,
+          0.8818
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4658,
+        "ci": [
+          0.428,
+          0.5031
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.5231,
+        "ci": [
+          0.4784,
+          0.5645
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.4536,
+        "ci": [
+          0.403,
+          0.5048
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5235,
+        "ci": [
+          0.4975,
+          0.5507
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.8016,
+        "ci": [
+          0.764,
+          0.8378
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.7021,
+        "ci": [
+          0.6752,
+          0.7289
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.6986,
+        "ci": [
+          0.6685,
+          0.7285
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8196,
+        "ci": [
+          0.7941,
+          0.8459
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.4536
+      }
+    },
+    "head256": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.6894,
+        "ci": [
+          0.6715,
+          0.7091
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8282,
+        "ci": [
+          0.7982,
+          0.8569
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.6069,
+        "ci": [
+          0.5474,
+          0.6636
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9152,
+        "ci": [
+          0.8946,
+          0.9351
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.8501,
+        "ci": [
+          0.8183,
+          0.8804
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4573,
+        "ci": [
+          0.4193,
+          0.4947
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.512,
+        "ci": [
+          0.4704,
+          0.5539
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.4424,
+        "ci": [
+          0.3926,
+          0.4935
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5225,
+        "ci": [
+          0.4964,
+          0.5482
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.7948,
+        "ci": [
+          0.7581,
+          0.8309
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6966,
+        "ci": [
+          0.6688,
+          0.7242
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.6849,
+        "ci": [
+          0.654,
+          0.7137
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8108,
+        "ci": [
+          0.7839,
+          0.8373
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.4424
+      }
+    },
+    "shuffled": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.4946,
+        "ci": [
+          0.4747,
+          0.5136
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.4667,
+        "ci": [
+          0.4307,
+          0.5048
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.5,
+        "ci": [
+          0.4394,
+          0.5597
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.4825,
+        "ci": [
+          0.4459,
+          0.5198
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.5151,
+        "ci": [
+          0.4771,
+          0.5519
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.5004,
+        "ci": [
+          0.4642,
+          0.5382
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.5416,
+        "ci": [
+          0.5014,
+          0.5824
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.4432,
+        "ci": [
+          0.3878,
+          0.5008
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.494,
+        "ci": [
+          0.4589,
+          0.5293
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.4925,
+        "ci": [
+          0.4361,
+          0.5483
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5126,
+        "ci": [
+          0.4765,
+          0.5482
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.4907,
+        "ci": [
+          0.4531,
+          0.5281
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.4814,
+        "ci": [
+          0.4465,
+          0.5172
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.4432
+      }
+    },
+    "minilm": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.3562,
+        "ci": [
+          0.3347,
+          0.3773
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3609,
+        "ci": [
+          0.3337,
+          0.3883
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.308,
+        "ci": [
+          0.263,
+          0.3539
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.3703,
+        "ci": [
+          0.3402,
+          0.403
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2277,
+        "ci": [
+          0.2057,
+          0.2513
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.3931,
+        "ci": [
+          0.3646,
+          0.4233
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.5462,
+        "ci": [
+          0.5086,
+          0.5825
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.2168,
+        "ci": [
+          0.182,
+          0.254
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0876,
+        "ci": [
+          0.071,
+          0.1058
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.2654,
+        "ci": [
+          0.2065,
+          0.3266
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.3554,
+        "ci": [
+          0.3217,
+          0.3914
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.4465,
+        "ci": [
+          0.4042,
+          0.4864
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5824,
+        "ci": [
+          0.5313,
+          0.6322
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.2168
+      }
+    },
+    "bge": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.4525,
+        "ci": [
+          0.4307,
+          0.4739
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.4799,
+        "ci": [
+          0.4487,
+          0.5118
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.2808,
+        "ci": [
+          0.2379,
+          0.3241
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.7167,
+        "ci": [
+          0.6849,
+          0.7498
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2761,
+        "ci": [
+          0.2507,
+          0.3023
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4291,
+        "ci": [
+          0.3962,
+          0.465
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.488,
+        "ci": [
+          0.4522,
+          0.5248
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.3368,
+        "ci": [
+          0.2932,
+          0.3851
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.1774,
+        "ci": [
+          0.1557,
+          0.2005
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.3995,
+        "ci": [
+          0.3391,
+          0.4624
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5088,
+        "ci": [
+          0.4748,
+          0.5438
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.5174,
+        "ci": [
+          0.4775,
+          0.5564
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6355,
+        "ci": [
+          0.591,
+          0.68
+        ]
+      },
+      "worst_move": {
+        "kind": "move:modality",
+        "win_rate": 0.2761
+      }
+    },
+    "e5": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.4324,
+        "ci": [
+          0.4123,
+          0.4542
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.4969,
+        "ci": [
+          0.4653,
+          0.5284
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.2663,
+        "ci": [
+          0.227,
+          0.3091
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.6387,
+        "ci": [
+          0.6065,
+          0.6704
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2489,
+        "ci": [
+          0.2244,
+          0.2739
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4051,
+        "ci": [
+          0.3728,
+          0.4364
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.4954,
+        "ci": [
+          0.4592,
+          0.5295
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.3256,
+        "ci": [
+          0.2849,
+          0.3676
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.1725,
+        "ci": [
+          0.1472,
+          0.1982
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.368,
+        "ci": [
+          0.3082,
+          0.4308
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.4945,
+        "ci": [
+          0.4593,
+          0.5313
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.4626,
+        "ci": [
+          0.4217,
+          0.5028
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6295,
+        "ci": [
+          0.5846,
+          0.6759
+        ]
+      },
+      "worst_move": {
+        "kind": "move:modality",
+        "win_rate": 0.2489
+      }
+    },
+    "gtr": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.3281,
+        "ci": [
+          0.3077,
+          0.3483
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3344,
+        "ci": [
+          0.3099,
+          0.3593
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.2953,
+        "ci": [
+          0.2567,
+          0.337
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.3041,
+        "ci": [
+          0.2778,
+          0.3291
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2228,
+        "ci": [
+          0.2,
+          0.246
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.3606,
+        "ci": [
+          0.3321,
+          0.3908
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.5194,
+        "ci": [
+          0.4853,
+          0.5538
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.212,
+        "ci": [
+          0.176,
+          0.2488
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0608,
+        "ci": [
+          0.0466,
+          0.0755
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.2449,
+        "ci": [
+          0.188,
+          0.3046
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.33,
+        "ci": [
+          0.2954,
+          0.3656
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.3935,
+        "ci": [
+          0.3541,
+          0.4362
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5693,
+        "ci": [
+          0.5185,
+          0.6183
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.212
+      }
+    },
+    "qwen3": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.3868,
+        "ci": [
+          0.3653,
+          0.4074
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3724,
+        "ci": [
+          0.3439,
+          0.4014
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.308,
+        "ci": [
+          0.2665,
+          0.3497
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.4387,
+        "ci": [
+          0.4065,
+          0.4729
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2345,
+        "ci": [
+          0.2121,
+          0.2587
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.4199,
+        "ci": [
+          0.3885,
+          0.4514
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.6017,
+        "ci": [
+          0.5621,
+          0.6389
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.2536,
+        "ci": [
+          0.2137,
+          0.2956
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.1265,
+        "ci": [
+          0.1082,
+          0.1471
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.2202,
+        "ci": [
+          0.1689,
+          0.2758
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.4545,
+        "ci": [
+          0.419,
+          0.4907
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.4433,
+        "ci": [
+          0.4024,
+          0.4862
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5961,
+        "ci": [
+          0.5468,
+          0.6427
+        ]
+      },
+      "worst_move": {
+        "kind": "move:modality",
+        "win_rate": 0.2345
+      }
+    },
+    "ft_bge64": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.8295,
+        "ci": [
+          0.8145,
+          0.8441
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8915,
+        "ci": [
+          0.8698,
+          0.913
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.7373,
+        "ci": [
+          0.6868,
+          0.7852
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9517,
+        "ci": [
+          0.9379,
+          0.9656
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9218,
+        "ci": [
+          0.9001,
+          0.9434
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7198,
+        "ci": [
+          0.6874,
+          0.7502
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7357,
+        "ci": [
+          0.6954,
+          0.7738
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.7176,
+        "ci": [
+          0.6691,
+          0.7662
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6544,
+        "ci": [
+          0.6278,
+          0.6837
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.9289,
+        "ci": [
+          0.9001,
+          0.9551
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8165,
+        "ci": [
+          0.7906,
+          0.8408
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8848,
+        "ci": [
+          0.8647,
+          0.9043
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9291,
+        "ci": [
+          0.9126,
+          0.9437
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.7176
+      }
+    },
+    "ft_bge128": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.826,
+        "ci": [
+          0.8108,
+          0.8407
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8874,
+        "ci": [
+          0.865,
+          0.9088
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.7373,
+        "ci": [
+          0.6879,
+          0.7856
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.948,
+        "ci": [
+          0.9341,
+          0.9617
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9188,
+        "ci": [
+          0.8953,
+          0.94
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7135,
+        "ci": [
+          0.6831,
+          0.7434
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7311,
+        "ci": [
+          0.6927,
+          0.7689
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.7208,
+        "ci": [
+          0.6714,
+          0.7686
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6457,
+        "ci": [
+          0.6187,
+          0.6743
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.922,
+        "ci": [
+          0.89,
+          0.9491
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8127,
+        "ci": [
+          0.7872,
+          0.8377
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8836,
+        "ci": [
+          0.8624,
+          0.9031
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9307,
+        "ci": [
+          0.9133,
+          0.9464
+        ]
+      },
+      "worst_move": {
+        "kind": "move:predicate_change",
+        "win_rate": 0.7135
+      }
+    },
+    "ft_bge256": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.8269,
+        "ci": [
+          0.8125,
+          0.8411
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.8874,
+        "ci": [
+          0.8646,
+          0.9084
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.7283,
+        "ci": [
+          0.6781,
+          0.7772
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9502,
+        "ci": [
+          0.9355,
+          0.9635
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9196,
+        "ci": [
+          0.8962,
+          0.9416
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7184,
+        "ci": [
+          0.6875,
+          0.7475
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7301,
+        "ci": [
+          0.6891,
+          0.7681
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.724,
+        "ci": [
+          0.6735,
+          0.772
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6462,
+        "ci": [
+          0.6179,
+          0.6739
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.9261,
+        "ci": [
+          0.8978,
+          0.9521
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8165,
+        "ci": [
+          0.7917,
+          0.8398
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8817,
+        "ci": [
+          0.8602,
+          0.9016
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9302,
+        "ci": [
+          0.9135,
+          0.946
+        ]
+      },
+      "worst_move": {
+        "kind": "move:predicate_change",
+        "win_rate": 0.7184
+      }
+    },
+    "ft_sonar64": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.8465,
+        "ci": [
+          0.8325,
+          0.8602
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.9105,
+        "ci": [
+          0.8893,
+          0.9307
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.8207,
+        "ci": [
+          0.7744,
+          0.8601
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9651,
+        "ci": [
+          0.953,
+          0.9758
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9241,
+        "ci": [
+          0.9024,
+          0.9441
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7403,
+        "ci": [
+          0.7087,
+          0.7726
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7172,
+        "ci": [
+          0.6773,
+          0.7567
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.764,
+        "ci": [
+          0.7182,
+          0.81
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6988,
+        "ci": [
+          0.6725,
+          0.7258
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.9439,
+        "ci": [
+          0.9149,
+          0.9677
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8302,
+        "ci": [
+          0.8065,
+          0.8528
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8798,
+        "ci": [
+          0.8588,
+          0.9005
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9422,
+        "ci": [
+          0.9255,
+          0.9563
+        ]
+      },
+      "worst_move": {
+        "kind": "move:type_change",
+        "win_rate": 0.7172
+      }
+    },
+    "ft_sonar128": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.8428,
+        "ci": [
+          0.8284,
+          0.8566
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.9044,
+        "ci": [
+          0.8815,
+          0.9256
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.808,
+        "ci": [
+          0.7622,
+          0.8475
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9636,
+        "ci": [
+          0.9497,
+          0.9757
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9233,
+        "ci": [
+          0.9021,
+          0.9437
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7325,
+        "ci": [
+          0.7031,
+          0.7633
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7126,
+        "ci": [
+          0.6743,
+          0.7498
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.7736,
+        "ci": [
+          0.7269,
+          0.8205
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.69,
+        "ci": [
+          0.6624,
+          0.7185
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.9439,
+        "ci": [
+          0.9147,
+          0.9671
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8357,
+        "ci": [
+          0.8129,
+          0.8572
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8717,
+        "ci": [
+          0.8495,
+          0.892
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9367,
+        "ci": [
+          0.9209,
+          0.9524
+        ]
+      },
+      "worst_move": {
+        "kind": "move:type_change",
+        "win_rate": 0.7126
+      }
+    },
+    "ft_sonar256": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.8418,
+        "ci": [
+          0.8267,
+          0.8562
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.9058,
+        "ci": [
+          0.8826,
+          0.9264
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.808,
+        "ci": [
+          0.7648,
+          0.8502
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.9621,
+        "ci": [
+          0.9484,
+          0.9737
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.9226,
+        "ci": [
+          0.9005,
+          0.9422
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.7318,
+        "ci": [
+          0.7004,
+          0.7614
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.7126,
+        "ci": [
+          0.6753,
+          0.7516
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.764,
+        "ci": [
+          0.714,
+          0.812
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.6873,
+        "ci": [
+          0.659,
+          0.7137
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.9453,
+        "ci": [
+          0.9167,
+          0.9689
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8363,
+        "ci": [
+          0.8126,
+          0.8591
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.8667,
+        "ci": [
+          0.8449,
+          0.8873
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.9384,
+        "ci": [
+          0.922,
+          0.953
+        ]
+      },
+      "worst_move": {
+        "kind": "move:type_change",
+        "win_rate": 0.7126
+      }
+    },
+    "wordavg": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.2577,
+        "ci": [
+          0.2396,
+          0.2773
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.3126,
+        "ci": [
+          0.2876,
+          0.3384
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.2255,
+        "ci": [
+          0.1917,
+          0.2627
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.2112,
+        "ci": [
+          0.1897,
+          0.2322
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.2421,
+        "ci": [
+          0.2197,
+          0.2637
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.2879,
+        "ci": [
+          0.2642,
+          0.3123
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.281,
+        "ci": [
+          0.2544,
+          0.3073
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.1816,
+        "ci": [
+          0.1514,
+          0.213
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0077,
+        "ci": [
+          0.0022,
+          0.0161
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.4323,
+        "ci": [
+          0.3633,
+          0.4993
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.144,
+        "ci": [
+          0.1169,
+          0.1742
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.2671,
+        "ci": [
+          0.2307,
+          0.3068
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.5433,
+        "ci": [
+          0.4928,
+          0.5951
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.1816
+      }
+    },
+    "lsa": {
+      "all": {
+        "n_sources": 349,
+        "n_pairs": 7815,
+        "win_rate": 0.4124,
+        "ci": [
+          0.3957,
+          0.429
+        ]
+      },
+      "move:act_change": {
+        "n_sources": 343,
+        "n_pairs": 1470,
+        "win_rate": 0.4582,
+        "ci": [
+          0.4347,
+          0.4815
+        ]
+      },
+      "move:role_swap": {
+        "n_sources": 130,
+        "n_pairs": 552,
+        "win_rate": 0.452,
+        "ci": [
+          0.4093,
+          0.4929
+        ]
+      },
+      "move:negation": {
+        "n_sources": 315,
+        "n_pairs": 1345,
+        "win_rate": 0.4349,
+        "ci": [
+          0.4125,
+          0.4581
+        ]
+      },
+      "move:modality": {
+        "n_sources": 310,
+        "n_pairs": 1324,
+        "win_rate": 0.4958,
+        "ci": [
+          0.4731,
+          0.5188
+        ]
+      },
+      "move:predicate_change": {
+        "n_sources": 332,
+        "n_pairs": 1417,
+        "win_rate": 0.3641,
+        "ci": [
+          0.341,
+          0.3865
+        ]
+      },
+      "move:type_change": {
+        "n_sources": 252,
+        "n_pairs": 1082,
+        "win_rate": 0.323,
+        "ci": [
+          0.2992,
+          0.3475
+        ]
+      },
+      "move:quantity": {
+        "n_sources": 144,
+        "n_pairs": 625,
+        "win_rate": 0.3088,
+        "ci": [
+          0.27,
+          0.3475
+        ]
+      },
+      "keep:paraphrase": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.0197,
+        "ci": [
+          0.011,
+          0.0295
+        ]
+      },
+      "keep:rename": {
+        "n_sources": 143,
+        "n_pairs": 731,
+        "win_rate": 0.8372,
+        "ci": [
+          0.793,
+          0.8771
+        ]
+      },
+      "keep:register": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.1813,
+        "ci": [
+          0.1542,
+          0.21
+        ]
+      },
+      "keep:drop_modifiers": {
+        "n_sources": 304,
+        "n_pairs": 1606,
+        "win_rate": 0.411,
+        "ci": [
+          0.3702,
+          0.4515
+        ]
+      },
+      "keep:canonical": {
+        "n_sources": 349,
+        "n_pairs": 1826,
+        "win_rate": 0.8675,
+        "ci": [
+          0.8409,
+          0.8937
+        ]
+      },
+      "worst_move": {
+        "kind": "move:quantity",
+        "win_rate": 0.3088
+      }
+    }
+  },
+  "diffs": {
+    "head64-sonar": {
+      "diff": 0.429,
+      "ci": [
+        0.4087,
+        0.4502
+      ]
+    },
+    "head128-sonar": {
+      "diff": 0.4179,
+      "ci": [
+        0.3956,
+        0.4388
+      ]
+    },
+    "head256-sonar": {
+      "diff": 0.4109,
+      "ci": [
+        0.3892,
+        0.4322
+      ]
+    },
+    "ft_sonar256-sonar": {
+      "diff": 0.5633,
+      "ci": [
+        0.5404,
+        0.5852
+      ]
+    },
+    "ft_sonar256-bge": {
+      "diff": 0.3893,
+      "ci": [
+        0.3676,
+        0.4105
+      ]
+    }
+  },
+  "verdict": {
+    "jaccard_below_0.5": true,
+    "head_overall_ge_0.90": false,
+    "head_worst_move_ge_0.80": false,
+    "chosen": "ft_sonar256",
+    "head_minus_sonar_ge_0.10_ci_above_0": true,
+    "natural_pairs_ge_0.80": "pending (scored separately)"
+  },
+  "by_domain": {
+    "business": {
+      "jaccard": 0.2903,
+      "sonar": 0.2793,
+      "head256": 0.6881,
+      "ft_sonar256": 0.8453,
+      "bge": 0.454,
+      "n_sources": 244
+    },
+    "news": {
+      "jaccard": 0.2675,
+      "sonar": 0.2471,
+      "head256": 0.7019,
+      "ft_sonar256": 0.8433,
+      "bge": 0.4051,
+      "n_sources": 35
+    },
+    "other": {
+      "jaccard": 0.2972,
+      "sonar": 0.2547,
+      "head256": 0.6509,
+      "ft_sonar256": 0.8302,
+      "bge": 0.5,
+      "n_sources": 6
+    },
+    "personal": {
+      "jaccard": 0.3249,
+      "sonar": 0.2959,
+      "head256": 0.6956,
+      "ft_sonar256": 0.8288,
+      "bge": 0.4655,
+      "n_sources": 60
+    },
+    "sports": {
+      "jaccard": 0.1864,
+      "sonar": 0.2818,
+      "head256": 0.6273,
+      "ft_sonar256": 0.8182,
+      "bge": 0.5182,
+      "n_sources": 5
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+ "min_real": 0.7,
+ "far": {
+  "agreement": "10/10",
+  "counted": true,
+  "real_share": 0.4,
+  "c_share": 0.0,
+  "labels": {
+   "C": 0,
+   "G": 20,
+   "A": 4,
+   "B": 26
+  }
+ },
+ "strict": {
+  "agreement": "10/10",
+  "counted": true,
+  "real_share": 0.86,
+  "c_share": 0.2,
+  "labels": {
+   "C": 10,
+   "G": 33,
+   "A": 2,
+   "B": 5
+  }
+ },
+ "sonnet": {
+  "v3p": 4979,
+  "v3p_labels": {
+   "B": 4077,
+   "C": 389,
+   "A": 513
+  },
+  "v4p": 131,
+  "strict": 109,
+  "strict_share": 0.0219
+ },
+ "step2_pass": true
+}

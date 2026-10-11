@@ -1,0 +1,56 @@
+{
+  "base": "sonar",
+  "best_epoch": 5,
+  "best_val_win_256": 0.847,
+  "args": {
+    "base": "sonar",
+    "items": "phase1/items.jsonl",
+    "texts": [
+      "phase1/texts.jsonl",
+      "pool/texts.jsonl"
+    ],
+    "epochs": 6,
+    "batch": 8,
+    "lr": 2e-05,
+    "out": "out/ft",
+    "tag": ""
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "loss": 1.6895,
+      "val_win_256": 0.7699,
+      "seconds": 198
+    },
+    {
+      "epoch": 1,
+      "loss": 1.226,
+      "val_win_256": 0.8245,
+      "seconds": 197
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0757,
+      "val_win_256": 0.833,
+      "seconds": 197
+    },
+    {
+      "epoch": 3,
+      "loss": 0.9828,
+      "val_win_256": 0.8396,
+      "seconds": 197
+    },
+    {
+      "epoch": 4,
+      "loss": 0.8952,
+      "val_win_256": 0.8447,
+      "seconds": 198
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8255,
+      "val_win_256": 0.847,
+      "seconds": 198
+    }
+  ]
+}

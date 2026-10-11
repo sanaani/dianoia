@@ -1,0 +1,98 @@
+# Phase 11 as code (10/07/2026): train a model on analogy pairs and test whether it finds far-field sources, H1-H3.
+# Hypotheses: results/phase-11-analogy-training/HYPOTHESES.md; rules: OPERATIONALIZATION.md; numbers: config.yaml.
+# Inputs are phase 10's queries and candidates (pipelines/phase10) and the training pairs (scripts/p10-label.py train).
+#
+#   pipelines/phase11/run.sh             preview, then run in the background
+#
+# Guards, as in phase 10: every laptop step under scripts/memcap.py; an audit of the exact training files before
+# training (remote-p11.py refuses files that changed since); a laptop dry run of the GPU script and of the verdict
+# code before any instance starts; one AWS job through scripts/aws.sh after a budget gate.
+
+import os
+
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+W = f"{D}/work/p11"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+INP = {k: f"{D}/work/{v}" for k, v in config["inputs"].items()}
+
+import yaml as _yaml
+
+CFG = f"{W}/config.used.yaml"
+os.makedirs(W, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+
+rule all:
+    input: f"{REPO}/results/phase-11-analogy-training/REPORT.md"
+
+
+rule build:
+    input: **INP
+    output: train=f"{W}/train.jsonl", eval=f"{W}/eval.jsonl", docs=f"{W}/docs.jsonl"
+    resources: mem_mb=3000
+    log: f"{W}/logs/build.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p11-data.py build --data {D} --config {CFG} --out {W} > {log} 2>&1"
+
+
+rule audit:
+    # Any violation stops the pipeline; remote-p11.py also checks these files' hashes against this audit.
+    input: rules.build.output
+    output: f"{W}/audit.json"
+    resources: mem_mb=2000
+    log: f"{W}/logs/audit.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p11-data.py audit --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule smoke_build:
+    # A small copy of the real files for the laptop dry run.
+    input: **INP
+    output: f"{W}/smoke-in/audit.json"
+    resources: mem_mb=3000
+    log: f"{W}/logs/smoke_build.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p11-data.py build --data {D} --config {CFG} --out {W}/smoke-in --smoke > {log} 2>&1"
+           " && {CAP} {resources.mem_mb} -- {PY} {S}/p11-data.py audit --data {D} --config {CFG} --work {W}/smoke-in --out {output} --smoke >> {log} 2>&1"
+
+
+rule smoke_gpu:
+    # The GPU script end to end on the laptop CPU with a tiny random Qwen3 (config smoke.model): 8 pairs, 3 queries
+    # per split, 15 candidates. Peak 1.9 GB in its first run (10/07/2026).
+    input: rules.smoke_build.output
+    output: f"{W}/smoke/p11.json"
+    resources: mem_mb=3000
+    log: f"{W}/logs/smoke_gpu.log"
+    shell: "rm -rf {W}/smoke && {CAP} {resources.mem_mb} -- {PY} {S}/remote-p11.py --work {W}/smoke-in --config {CFG} --out {W}/smoke --smoke > {log} 2>&1"
+
+
+rule smoke_verdicts:
+    # The verdict code on the dry run's metrics, so a bug in it is found before money is spent.
+    input: m=rules.smoke_gpu.output, audit=rules.smoke_build.output
+    output: f"{W}/smoke/report/REPORT.md"
+    resources: mem_mb=500
+    log: f"{W}/logs/smoke_verdicts.log"
+    shell: "{PY} {S}/p11-verdicts.py --metrics {input.m} --audit {input.audit} --config {CFG} --out {W}/smoke/report > {log} 2>&1"
+
+
+rule gpu:
+    input: smoke=rules.smoke_verdicts.output, audit=rules.audit.output
+    output: f"{W}/metrics/p11.json"
+    resources: gpu=1, mem_mb=500
+    # Never retried: phase 10's retry after a failed download launched a second instance to redo the paid job.
+    retries: 0
+    log: f"{W}/logs/gpu.log"
+    shell: "bash {S}/p11-gpu.sh {W} {CFG} > {log} 2>&1"
+
+
+rule verdicts:
+    input: m=rules.gpu.output, audit=rules.audit.output
+    output: f"{REPO}/results/phase-11-analogy-training/REPORT.md", f"{REPO}/results/phase-11-analogy-training/metrics.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/verdicts.log"
+    shell: "{PY} {S}/p11-verdicts.py --metrics {input.m} --audit {input.audit} --config {CFG} --out {REPO}/results/phase-11-analogy-training > {log} 2>&1"

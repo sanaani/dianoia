@@ -1,0 +1,248 @@
+# Phase 13 as code (10/07/2026): short questions (step 1) and how much filtering scale needs (step 2).
+# Hypotheses: results/phase-13-scale-far/HYPOTHESES.md (approved 10/07/2026); numbers: config.yaml.
+#
+#   pipelines/phase13/run.sh prepare     the far pairs, both blind reading files, the short queries
+#   pipelines/phase13/run.sh             everything (needs Claude's labels: review-<source>-labels.txt)
+#
+# Every laptop step runs under scripts/memcap.py. Step 1's scoring runs on one AWS GPU (rule gpu): the laptop could
+# not hold Qwen3-Embedding-0.6B under its memory cap in float32, and bfloat16 on its CPU did not finish 128 documents
+# in 10 minutes (10/07/2026). Priced by config.yaml aws; the laptop dry run (smoke_gpu) runs first.
+
+import os
+
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+W = f"{D}/work/p13"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+RAW = f"{D}/raw/patentsview"
+YEARS = range(2021, 2025)
+
+import yaml as _yaml
+
+CFG = f"{W}/config.used.yaml"
+os.makedirs(W, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+
+rule all:
+    input: f"{W}/filter.json", f"{REPO}/results/phase-13-scale-far/STEP1.md"
+
+
+rule prepare:
+    input: expand(f"{W}/review-{{s}}.txt", s=("corpus", "fastino")), f"{W}/short.jsonl"
+
+
+rule far_overlap:
+    # Phase 12's far rule, unchanged, on every corpus pair not touching a test question. Pass 1: word overlap, streamed
+    # to far-tmp/low.jsonl (the pairs below the overlap median), no text held in memory.
+    input: f"{D}/work/p12/medians.json", f"{D}/work/p12/pool.parquet"
+    output: low=f"{W}/far-tmp/low.jsonl", done=f"{W}/far-tmp/low.done.json"
+    resources: mem_mb=2500
+    log: f"{W}/logs/far-overlap.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py far --data {D} --config {CFG} --out {W} --until overlap > {log} 2>&1"
+
+
+rule far_cosine:
+    # Pass 2: bge-small cosine on one AWS GPU (10/08/2026). The laptop CPU scored about 22k pairs an hour, so 150k pairs
+    # took 7 hours; the GPU takes minutes. Starts from the laptop's checkpoint (far-tmp/cosine.progress.json) and merges
+    # its rows into far-tmp/far-part.jsonl. Priced by config.yaml aws.
+    input: rules.far_overlap.output
+    output: f"{W}/far-tmp/cosine.merged"
+    # No automatic retry: a failure here is not transient (a firewall rule, a missing file), and the retry launched a
+    # second instance and overwrote the log holding the error (10/08/2026).
+    retries: 0
+    resources: mem_mb=1500
+    log: f"{W}/logs/far-cosine.log"
+    shell: "{CAP} {resources.mem_mb} -- bash {S}/p13-far-gpu.sh {W} {CFG} {PY} > {log} 2>&1 && touch {output}"
+
+
+rule far:
+    # Pass 3 on the laptop: field combinations, Fastino flag, loss weights; reads the far rows from disk.
+    input: rules.far_cosine.output
+    output: far=f"{W}/far.parquet", txt=f"{W}/far-text.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/far.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py far --data {D} --config {CFG} --out {W} > {log} 2>&1"
+
+
+rule review:
+    # Blind reading file: 25 heavily weighted + 25 other unread far pairs, 10 re-judged earlier pairs, numbers only.
+    input: rules.far.output
+    output: txt=f"{W}/review-{{source}}.txt", key=f"{W}/review-{{source}}-key.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/review-{{source}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py review --data {D} --config {CFG} --work {W} --source {wildcards.source} > {log} 2>&1"
+
+
+rule rejects:
+    # Step 2b (10/08/2026): the far pairs Fastino rejected, read blind; their share real and Fastino's recall. Reported.
+    input: f"{W}/far.parquet", expand(f"{W}/review-{{s}}-{{f}}", s=("fastino", "rejected"), f=("key.jsonl", "labels.txt"))
+    output: f"{W}/rejects.json"
+    resources: mem_mb=1000
+    log: f"{W}/logs/rejects.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py rejects --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule decide:
+    # Step 2's decision rule over Claude's two blind readings (RUBRIC.md).
+    input: expand(f"{W}/review-{{s}}-{{f}}", s=("corpus", "fastino"), f=("key.jsonl", "labels.txt"))
+    output: f"{W}/filter.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/decide.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py decide --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule queries:
+    # Step 1's short queries: titles and Background openings of phase 12's far test questions (streamed from zip).
+    input: f"{RAW}/g_patent.tsv.zip", expand(f"{RAW}/g_brf_sum_text_{{y}}.tsv.zip", y=YEARS)
+    output: f"{W}/short.jsonl"
+    resources: mem_mb=1000
+    log: f"{W}/logs/queries.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py queries --data {D} --config {CFG} --out {output} > {log} 2>&1"
+
+
+rule stage:
+    # Step 1's GPU inputs in one directory: phase 12's eval and docs and chosen adapters, unchanged, and the queries.
+    input: short=rules.queries.output, ev=f"{D}/work/p12/eval.jsonl", docs=f"{D}/work/p12/docs.jsonl"
+    output: ev=f"{W}/eval.jsonl", docs=f"{W}/docs.jsonl", ad=directory(f"{W}/adapters")
+    resources: mem_mb=300
+    run:
+        import shutil
+        shutil.copyfile(input.ev, output.ev)
+        shutil.copyfile(input.docs, output.docs)
+        for p in config["step1"]["adapters"].values():
+            shutil.copytree(f"{D}/work/{p}", f"{output.ad}/{os.path.basename(p)}")
+
+
+rule smoke_gpu:
+    # Laptop dry run of the GPU script on the real files with a tiny model (code paths only).
+    input: rules.stage.output
+    output: f"{W}/smoke/p13-short.json"
+    resources: mem_mb=1500
+    log: f"{W}/logs/smoke_gpu.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/remote-p13.py --work {W} --config {CFG} --out {W}/smoke --smoke > {log} 2>&1"
+
+
+rule gpu:
+    # Step 1's scoring on one AWS GPU instance after a budget gate (scripts/p13-gpu.sh); never retried.
+    input: rules.smoke_gpu.output, rules.stage.output
+    output: f"{W}/metrics/p13-short.json"
+    resources: gpu=1, mem_mb=500
+    retries: 0
+    log: f"{W}/logs/gpu.log"
+    shell: "bash {S}/p13-gpu.sh {W} {CFG} > {log} 2>&1"
+
+
+rule step1:
+    # S1's verdict and the short-query table.
+    input: rules.gpu.output, short=rules.queries.output
+    output: f"{REPO}/results/phase-13-scale-far/STEP1.md", f"{REPO}/results/phase-13-scale-far/step1.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/step1.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-verdicts.py --scores {W}/out/scores --p12 {D}/work/p12/out/scores --short {input.short} --config {CFG} --out {REPO}/results/phase-13-scale-far > {log} 2>&1"
+
+
+wildcard_constraints:
+    v="v3|v4",
+
+
+rule sonnet_todo:
+    # Far pairs Fastino kept that Sonnet has not labeled (v3), or v3 C with borrow >= 4 not yet confirmed (v4).
+    input: f"{W}/far.parquet", f"{W}/far-text.jsonl", lambda w: [] if w.v == "v3" else [f"{W}/sonnet/v3.jsonl"]
+    output: f"{W}/sonnet/todo-{{v}}.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/sonnet-todo-{{v}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py sonnet-todo --data {D} --config {CFG} --work {W} --prompt {wildcards.v} --out {output} > {log} 2>&1"
+
+
+rule sonnet:
+    # Sonnet through the Claude subscription (no AWS cost). Labels go to <v>.part.jsonl as each call returns, and a rerun
+    # resumes from it; Snakemake deletes a failed rule's outputs, so the declared output is copied only at the end.
+    input: f"{W}/sonnet/todo-{{v}}.jsonl"
+    output: f"{W}/sonnet/{{v}}.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/sonnet-{{v}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py sonnet --pairs {input} --out {W}/sonnet/{wildcards.v}.part.jsonl"
+           " --prompt {wildcards.v} --workers {config[sonnet][workers]} --per-call {config[sonnet][per_call]} > {log} 2>&1"
+           " && cp {W}/sonnet/{wildcards.v}.part.jsonl {output}"
+
+
+rule reject_sample:
+    # Step 2d: 3,000 stage 1 and 2,000 stage 2 far rejects, random, unread, for Sonnet.
+    input: f"{W}/far.parquet", f"{W}/far-text.jsonl"
+    output: f"{W}/filter/sample.jsonl"
+    resources: mem_mb=2000
+    log: f"{W}/logs/reject-sample.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py reject-sample --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule reject_v3:
+    # Sonnet v3 on the sample; resumable as rule sonnet.
+    input: rules.reject_sample.output
+    output: f"{W}/filter/v3.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/reject-v3.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py sonnet --pairs {input} --out {W}/filter/v3.part.jsonl"
+           " --prompt v3 --workers {config[sonnet][workers]} --per-call {config[sonnet][per_call]} > {log} 2>&1"
+           " && cp {W}/filter/v3.part.jsonl {output}"
+
+
+rule reject_v4_todo:
+    input: pairs=rules.reject_sample.output, v3=rules.reject_v3.output
+    output: f"{W}/filter/todo-v4.jsonl"
+    resources: mem_mb=500
+    log: f"{W}/logs/reject-v4-todo.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py v4-todo --data {D} --config {CFG} --pairs {input.pairs} --labels {input.v3} --out {output} > {log} 2>&1"
+
+
+rule reject_v4:
+    input: rules.reject_v4_todo.output
+    output: f"{W}/filter/v4.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/reject-v4.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py sonnet --pairs {input} --out {W}/filter/v4.part.jsonl"
+           " --prompt v4 --workers {config[sonnet][workers]} --per-call {config[sonnet][per_call]} > {log} 2>&1"
+           " && cp {W}/filter/v4.part.jsonl {output}"
+
+
+rule filter_build:
+    # Step 2d training file: Sonnet-labeled far pairs, y = strict rule; 30% of the reject sample held out.
+    input: f"{W}/filter/v3.jsonl", f"{W}/filter/v4.jsonl", f"{W}/sonnet/v4.jsonl"
+    output: f"{W}/filter/train.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/filter-build.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py filter-build --data {D} --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule filter_audit:
+    input: rules.filter_build.output
+    output: f"{W}/filter/audit.json"
+    resources: mem_mb=2000
+    log: f"{W}/logs/filter-audit.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py filter-audit --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule filter_gpu:
+    # Fine-tune and score on one AWS GPU (about 30 min). No automatic retry, as rule far_cosine.
+    input: rules.filter_audit.output
+    output: f"{W}/filter/out/holdout-scores.jsonl", f"{W}/filter/out/far-scores.jsonl"
+    retries: 0
+    resources: mem_mb=1500
+    log: f"{W}/logs/filter-gpu.log"
+    shell: "{CAP} {resources.mem_mb} -- bash {S}/p13-filter-gpu.sh {D}/work {CFG} > {log} 2>&1"
+
+
+rule filter_verdict:
+    # F1, by the rule in HYPOTHESES.md step 2d.
+    input: rules.filter_gpu.output
+    output: f"{REPO}/results/phase-13-scale-far/step2d.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/filter-verdict.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p13-data.py filter-verdict --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"

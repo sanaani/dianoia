@@ -1,0 +1,160 @@
+{
+ "hypotheses": {
+  "H1": {
+   "compare": "k5862-e2 vs untrained",
+   "diff": -0.18,
+   "lo": -0.214,
+   "hi": -0.146,
+   "verdict": "falsified",
+   "mrr": {
+    "diff": -0.1299,
+    "lo": -0.1566,
+    "hi": -0.1027
+   }
+  },
+  "H2": {
+   "compare": "k5862-e2 vs raw abstract",
+   "diff": -0.16,
+   "lo": -0.194,
+   "hi": -0.126,
+   "verdict": "falsified",
+   "mrr": {
+    "diff": -0.1096,
+    "lo": -0.1377,
+    "hi": -0.0822
+   }
+  },
+  "H3": {
+   "compare": "k5862-e2 vs k3000-e2",
+   "diff": 0.002,
+   "lo": -0.031,
+   "hi": 0.033,
+   "verdict": "falsified",
+   "mrr": {
+    "diff": -0.0051,
+    "lo": -0.0292,
+    "hi": 0.0171
+   }
+  }
+ },
+ "chosen_epochs": 2,
+ "sizes": [
+  1000,
+  3000,
+  5862
+ ],
+ "audit": {
+  "train_shares_patent_with_eval": 0,
+  "train_year_not_allowed": 0,
+  "train_duplicate_pair": 0,
+  "train_empty_text": 0,
+  "eval_missing_doc": 0,
+  "eval_empty_query": 0,
+  "eval_cited_among_candidates": 0,
+  "eval_wrong_split": 0,
+  "train_too_small": 0
+ },
+ "models": {
+  "abstract": {
+   "val": {
+    "top10": 0.6788,
+    "mrr": 0.439
+   },
+   "test": {
+    "top10": 0.685,
+    "mrr": 0.4219
+   }
+  },
+  "untrained": {
+   "val": {
+    "top10": 0.7008,
+    "mrr": 0.4612
+   },
+   "test": {
+    "top10": 0.705,
+    "mrr": 0.4421
+   }
+  },
+  "k3000-e1": {
+   "val": {
+    "top10": 0.4928,
+    "mrr": 0.2876
+   },
+   "test": {
+    "top10": 0.487,
+    "mrr": 0.2945
+   }
+  },
+  "k3000-e2": {
+   "val": {
+    "top10": 0.5226,
+    "mrr": 0.3106
+   },
+   "test": {
+    "top10": 0.523,
+    "mrr": 0.3174
+   }
+  },
+  "k1000-e2": {
+   "val": {
+    "top10": 0.5479,
+    "mrr": 0.322
+   },
+   "test": {
+    "top10": 0.533,
+    "mrr": 0.3294
+   }
+  },
+  "k5862-e2": {
+   "val": {
+    "top10": 0.5171,
+    "mrr": 0.2968
+   },
+   "test": {
+    "top10": 0.525,
+    "mrr": 0.3123
+   }
+  }
+ },
+ "test_queries": 1000,
+ "val_queries": 909,
+ "by_overlap_quartile": {
+  "cuts": [
+   0.057,
+   0.0924,
+   0.1341
+  ],
+  "top10": {
+   "abstract": [
+    0.5675,
+    0.612,
+    0.712,
+    0.8508
+   ],
+   "untrained": [
+    0.6151,
+    0.64,
+    0.736,
+    0.8306
+   ],
+   "k_small": [
+    0.4603,
+    0.488,
+    0.568,
+    0.6169
+   ],
+   "k_mid": [
+    0.4563,
+    0.472,
+    0.54,
+    0.625
+   ],
+   "k_all": [
+    0.4444,
+    0.496,
+    0.556,
+    0.6048
+   ]
+  }
+ }
+}

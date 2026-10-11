@@ -1,0 +1,140 @@
+# Phase 12 as code (10/07/2026): train the search encoder on far patent borrowings and test whether it finds far
+# sources, H1-H3. Hypotheses: results/phase-12-far-analogy/HYPOTHESES.md; rules: OPERATIONALIZATION.md; numbers:
+# config.yaml. Inputs are phase 10's queries, candidates and kept pairs, and phase 11's training pairs.
+#
+#   pipelines/phase12/run.sh             preview, then run in the background
+#
+# Guards, as in phases 10 and 11: every laptop step under scripts/memcap.py; a hand check of the far test pairs that
+# must pass before any money is spent (rule handcheck: Claude writes review-test-labels.txt and
+# review-train-labels.txt by reading the review files with RUBRIC.md, blind); an audit of the exact training files
+# (remote-p12.py refuses files changed since); a laptop dry run of the GPU script and of the verdict code before any
+# instance starts; one AWS job through scripts/aws.sh after a budget gate.
+
+import os
+
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+W = f"{D}/work/p12"
+P10 = f"{D}/work/p10"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+INP = {k: f"{D}/work/{v}" for k, v in config["inputs"].items()}
+RV = config["review"]
+TEXTS = ",".join([f"{W}/review-text.jsonl"] + [f"{D}/work/{t}" for t in RV["texts"]])
+OUT = f"{REPO}/results/phase-12-far-analogy"
+
+import yaml as _yaml
+
+CFG = f"{W}/config.used.yaml"
+os.makedirs(W, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+
+rule all:
+    input: f"{OUT}/REPORT.md"
+
+
+rule prepare:
+    # Everything before the hand check (`run.sh prepare`): the far set, the reading files, the audited training files
+    # and the GPU script's laptop dry run. `all` cannot be planned until Claude's labels exist.
+    input: expand(f"{W}/review-{{s}}.txt", s=("test", "train")), f"{W}/audit.json", f"{W}/smoke/p12.json"
+
+
+rule measure:
+    # Word overlap and second-encoder cosine for every pair; far = below the pool median on both.
+    input: **INP
+    output: pool=f"{W}/pool.parquet", med=f"{W}/medians.json", rv=f"{W}/review-pairs.parquet", txt=f"{W}/review-text.jsonl"
+    resources: mem_mb=3000
+    log: f"{W}/logs/measure.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p12-data.py measure --data {D} --config {CFG} --out {W} > {log} 2>&1"
+
+
+rule review:
+    # The blind reading files: 50 far pairs of a split plus 10 earlier hand-labeled pairs, numbers only.
+    input: rules.measure.output.rv, rules.measure.output.txt
+    output: txt=f"{W}/review-{{split}}.txt", key=f"{W}/review-{{split}}-key.jsonl"
+    wildcard_constraints: split="test|train"
+    resources: mem_mb=1500
+    log: f"{W}/logs/review-{{split}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py review --labels {W}/review-pairs.parquet --split {wildcards.split}"
+           " --pairs {TEXTS} --gold {D}/work/{RV[gold]} --work {P10} --n {RV[n]} --seed {RV[seed]} --out {W}/review-{wildcards.split} > {log} 2>&1"
+
+
+rule handcheck:
+    # Claude's labels (one "<n> <C|G|A|B>" line per pair) are the input; the pipeline waits here until they exist.
+    input: expand(f"{W}/review-{{s}}-key.jsonl", s=("test", "train")), test=f"{W}/review-test-labels.txt", train=f"{W}/review-train-labels.txt"
+    output: f"{W}/handcheck.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/handcheck.log"
+    shell: "for s in test train; do {PY} {S}/p10-label.py review-score --out {W}/review-$s --labels {W}/review-$s-labels.txt"
+           " | tail -1 > {W}/review-$s-score.json || exit 1; done"
+           " && {PY} {S}/p12-data.py handcheck --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule build:
+    input: rules.measure.output.pool, **INP
+    output: [f"{W}/{f}" for f in ("train-far.jsonl", "train-near.jsonl", "train-docs.jsonl", "eval.jsonl", "docs.jsonl")]
+    resources: mem_mb=4000
+    log: f"{W}/logs/build.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p12-data.py build --data {D} --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule audit:
+    # Any violation stops the pipeline; remote-p12.py also checks these files' hashes against this audit.
+    input: rules.build.output
+    output: f"{W}/audit.json"
+    resources: mem_mb=2000
+    log: f"{W}/logs/audit.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p12-data.py audit --data {D} --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+rule smoke_build:
+    # A small copy of the real files for the laptop dry run.
+    input: rules.measure.output.pool, **INP
+    output: f"{W}/smoke-in/audit.json"
+    resources: mem_mb=4000
+    log: f"{W}/logs/smoke_build.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p12-data.py build --data {D} --config {CFG} --work {W} --smoke > {log} 2>&1"
+           " && {CAP} {resources.mem_mb} -- {PY} {S}/p12-data.py audit --data {D} --config {CFG} --work {W} --out {output} --smoke >> {log} 2>&1"
+
+
+rule smoke_gpu:
+    # The GPU script end to end on the laptop CPU with a tiny random Qwen3 (config smoke.embedder).
+    input: rules.smoke_build.output
+    output: f"{W}/smoke/p12.json"
+    resources: mem_mb=3000
+    log: f"{W}/logs/smoke_gpu.log"
+    shell: "rm -rf {W}/smoke && {CAP} {resources.mem_mb} -- {PY} {S}/remote-p12.py --work {W}/smoke-in --config {CFG} --out {W}/smoke --smoke > {log} 2>&1"
+
+
+rule smoke_verdicts:
+    # The verdict code on the dry run's metrics, so a bug in it is found before money is spent.
+    input: m=rules.smoke_gpu.output, audit=rules.smoke_build.output, hc=rules.handcheck.output
+    output: f"{W}/smoke/report/REPORT.md"
+    resources: mem_mb=500
+    log: f"{W}/logs/smoke_verdicts.log"
+    shell: "{PY} {S}/p12-verdicts.py --metrics {input.m} --audit {input.audit} --handcheck {input.hc} --config {CFG} --out {W}/smoke/report > {log} 2>&1"
+
+
+rule gpu:
+    input: smoke=rules.smoke_verdicts.output, audit=rules.audit.output, hc=rules.handcheck.output
+    output: f"{W}/metrics/p12.json"
+    resources: gpu=1, mem_mb=500
+    # Never retried: phase 10's retry after a failed download launched a second instance to redo the paid job.
+    retries: 0
+    log: f"{W}/logs/gpu.log"
+    shell: "bash {S}/p12-gpu.sh {W} {CFG} > {log} 2>&1"
+
+
+rule verdicts:
+    input: m=rules.gpu.output, audit=rules.audit.output, hc=rules.handcheck.output
+    output: f"{OUT}/REPORT.md", f"{OUT}/metrics.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/verdicts.log"
+    shell: "{PY} {S}/p12-verdicts.py --metrics {input.m} --audit {input.audit} --handcheck {input.hc} --config {CFG} --out {OUT} > {log} 2>&1"

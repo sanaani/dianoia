@@ -1,0 +1,50 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 65.11it/s]
+{"pairs": 6975, "steps": 1743}
+{"step": 50, "loss": 0.4107, "minutes": 0.9}
+{"step": 100, "loss": 0.6054, "minutes": 1.7}
+{"step": 150, "loss": 0.2649, "minutes": 2.5}
+{"step": 200, "loss": 0.6201, "minutes": 3.4}
+{"step": 250, "loss": 0.3702, "minutes": 4.2}
+{"step": 300, "loss": 0.4815, "minutes": 5.0}
+{"step": 350, "loss": 0.1717, "minutes": 5.8}
+{"step": 400, "loss": 0.0616, "minutes": 6.6}
+{"step": 450, "loss": 0.3188, "minutes": 7.5}
+{"step": 500, "loss": 0.5737, "minutes": 8.3}
+{"step": 550, "loss": 0.5375, "minutes": 9.2}
+{"step": 600, "loss": 0.4875, "minutes": 10.0}
+{"step": 650, "loss": 0.4187, "minutes": 10.9}
+{"step": 700, "loss": 0.1966, "minutes": 11.7}
+{"step": 750, "loss": 0.3885, "minutes": 12.5}
+{"step": 800, "loss": 0.2034, "minutes": 13.4}
+{"step": 850, "loss": 0.3516, "minutes": 14.3}
+{"step": 900, "loss": 0.0901, "minutes": 15.1}
+{"step": 950, "loss": 0.4548, "minutes": 16.0}
+{"step": 1000, "loss": 0.224, "minutes": 16.8}
+{"step": 1050, "loss": 0.1553, "minutes": 17.7}
+{"step": 1100, "loss": 0.2688, "minutes": 18.5}
+{"step": 1150, "loss": 0.2995, "minutes": 19.4}
+{"step": 1200, "loss": 0.2443, "minutes": 20.2}
+{"step": 1250, "loss": 0.1976, "minutes": 21.1}
+{"step": 1300, "loss": 0.1326, "minutes": 22.0}
+{"step": 1350, "loss": 0.0842, "minutes": 22.8}
+{"step": 1400, "loss": 0.195, "minutes": 23.6}
+{"step": 1450, "loss": 0.0646, "minutes": 24.5}
+{"step": 1500, "loss": 0.0946, "minutes": 25.3}
+{"step": 1550, "loss": 0.2608, "minutes": 26.1}
+{"step": 1600, "loss": 0.1384, "minutes": 26.9}
+{"step": 1650, "loss": 0.4066, "minutes": 27.8}
+{"step": 1700, "loss": 0.0445, "minutes": 28.7}
+trained
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 62.25it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"predicted": 1143, "empty": 0}
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+`torch_dtype` is deprecated! Use `dtype` instead!
+{"chat": {"n_ideas": 9.658, "n_ref": 9.737, "faithfulness": 0.962, "coverage": 0.832, "literal": 0.981, "ref_f1": 0.531, "unit_inv_stripped": 0.624, "inv_stripped": 0.797, "unit_inv_disfluent": 0.781, "inv_disfluent": 0.866, "invariance": 0.832, "unit_invariance": 0.703, "accuracy": 0.871, "n": 114}, "email": {"n_ideas": 1.567, "n_ref": 1.627, "faithfulness": 0.942, "coverage": 0.832, "literal": 0.91, "ref_f1": 0.649, "unit_inv_stripped": 0.802, "inv_stripped": 0.909, "unit_inv_disfluent": 0.848, "inv_disfluent": 0.937, "invariance": 0.923, "unit_invariance": 0.825, "accuracy": 0.896, "n": 150}, "meeting": {"n_ideas": 6.718, "n_ref": 6.974, "faithfulness": 0.961, "coverage": 0.747, "literal": 0.912, "ref_f1": 0.4, "unit_inv_stripped": 0.621, "inv_stripped": 0.787, "unit_inv_disfluent": 0.712, "inv_disfluent": 0.843, "invariance": 0.815, "unit_invariance": 0.666, "accuracy": 0.832, "n": 117}, "all": {"faithfulness": 0.954, "coverage": 0.806, "invariance": 0.863, "unit_invariance": 0.74, "literal": 0.932, "ref_f1": 0.537, "accuracy": 0.869}}

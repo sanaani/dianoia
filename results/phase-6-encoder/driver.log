@@ -1,0 +1,20 @@
++ cd /home/ubuntu/w
++ P=/opt/pytorch/bin/python
++ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
++ '[' -f out/base/eval.jsonl ']'
++ /opt/pytorch/bin/python remote-encoder.py eval --out out/base
++ for seed in ${SEEDS:-1 2}
++ for arm in L B
++ run=L1
++ '[' -f out/L1/lora.pt ']'
++ /opt/pytorch/bin/python remote-encoder.py train --data pairs/arm-L.jsonl --out out/L1 --seed 1 --steps 2000
++ '[' -f out/L1/eval.jsonl ']'
++ /opt/pytorch/bin/python remote-encoder.py eval --adapter out/L1/lora.pt --out out/L1
++ for arm in L B
++ run=B1
++ '[' -f out/B1/lora.pt ']'
++ /opt/pytorch/bin/python remote-encoder.py train --data pairs/arm-B.jsonl --out out/B1 --seed 1 --steps 2000
++ '[' -f out/B1/eval.jsonl ']'
++ /opt/pytorch/bin/python remote-encoder.py eval --adapter out/B1/lora.pt --out out/B1
++ touch ALL_DONE

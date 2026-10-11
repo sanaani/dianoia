@@ -1,0 +1,23 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [01:20<8:39:04, 80.68s/it]Loading weights: 100%|██████████| 387/387 [01:20<00:00,  4.80it/s]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:   5%|▍         | 48/1013 [00:00<00:06, 153.47it/s]Loading weights:  26%|██▌       | 264/1013 [00:00<00:01, 691.10it/s]Loading weights:  36%|███▌      | 360/1013 [00:01<00:02, 249.63it/s]Loading weights:  62%|██████▏   | 630/1013 [00:01<00:00, 468.49it/s]Loading weights:  70%|███████   | 713/1013 [00:01<00:00, 419.93it/s]Loading weights:  78%|███████▊  | 792/1013 [00:02<00:00, 309.33it/s]Loading weights:  83%|████████▎ | 840/1013 [00:04<00:01, 111.45it/s]Loading weights:  86%|████████▌ | 873/1013 [00:05<00:01, 77.94it/s] Loading weights:  89%|████████▊ | 897/1013 [00:05<00:01, 74.59it/s]Loading weights:  90%|█████████ | 915/1013 [00:06<00:01, 57.75it/s]Loading weights:  92%|█████████▏| 928/1013 [00:07<00:01, 53.38it/s]Loading weights:  93%|█████████▎| 938/1013 [00:07<00:01, 40.59it/s]Loading weights:  94%|█████████▍| 950/1013 [00:08<00:01, 35.04it/s]Loading weights:  95%|█████████▌| 966/1013 [00:09<00:01, 32.10it/s]Loading weights:  97%|█████████▋| 982/1013 [00:09<00:00, 32.35it/s]Loading weights:  99%|█████████▊| 998/1013 [00:10<00:00, 29.77it/s]Loading weights: 100%|██████████| 1013/1013 [00:18<00:00,  6.24it/s]Loading weights: 100%|██████████| 1013/1013 [00:18<00:00, 56.00it/s]
+{"groups": 121798, "with_pos": 101099, "with_neg": 97707}
+{"paraphrase_groups": 8943, "entail_groups": 26123, "contrast_groups": 15231, "natural_per_batch": 6, "contrast_per_batch": 3, "lpara_groups": 14300, "lpara_per_batch": 4, "spara_groups": 8694, "spara_per_batch": 5}
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"step": 100, "rec": 0.1151, "nce": 0.0904, "minutes": 3.1}
+{"step": 200, "rec": 0.1731, "nce": 0.3793, "minutes": 6.1}
+{"step": 300, "rec": 0.1316, "nce": 0.2328, "minutes": 9.2}
+{"step": 400, "rec": 0.126, "nce": 0.3217, "minutes": 12.2}
+{"step": 500, "rec": 0.1105, "nce": 0.1693, "minutes": 15.3}
+{"step": 600, "rec": 0.1463, "nce": 0.1103, "minutes": 18.3}
+{"step": 700, "rec": 0.1583, "nce": 0.2435, "minutes": 21.4}
+{"step": 800, "rec": 0.1208, "nce": 0.2144, "minutes": 24.4}
+{"step": 900, "rec": 0.0973, "nce": 0.1138, "minutes": 27.5}
+{"step": 1000, "rec": 0.1229, "nce": 0.1132, "minutes": 30.6}
+{"step": 1100, "rec": 0.1249, "nce": 0.25, "minutes": 33.6}
+{"step": 1200, "rec": 0.1277, "nce": 0.0317, "minutes": 36.7}
+{"step": 1300, "rec": 0.0765, "nce": 0.0887, "minutes": 39.7}
+{"step": 1400, "rec": 0.0755, "nce": 0.0224, "minutes": 42.8}
+{"step": 1500, "rec": 0.1065, "nce": 0.1739, "minutes": 45.8}
+{"trained": 1500, "minutes": 45.8}

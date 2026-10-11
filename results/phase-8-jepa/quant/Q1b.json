@@ -1,0 +1,30 @@
+{
+ "pool": 40479,
+ "queries": 5000,
+ "next_pairs": 40058,
+ "fit": 100000,
+ "float32_1024": {
+  "recall@10": 1.0,
+  "next_median_rank": 2506.0
+ },
+ "int8_1024": {
+  "recall@10": 0.992,
+  "next_median_rank": 2507.0
+ },
+ "float32_pca256": {
+  "recall@10": 0.783,
+  "next_median_rank": 2766.0
+ },
+ "int8_pca256": {
+  "recall@10": 0.782,
+  "next_median_rank": 2770.0
+ },
+ "binary_1024": {
+  "recall@10": 0.672,
+  "next_median_rank": 2429.0
+ },
+ "binary_pca256": {
+  "recall@10": 0.296,
+  "next_median_rank": 3025.0
+ }
+}

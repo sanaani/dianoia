@@ -1,0 +1,9 @@
+Model choice on VALIDATION (train mailboxes held out), judged materials; test untouched.
+original  sonar     0.324
+original  bge       0.480
+original  ft_bge    0.829
+original  ft_sonar  0.847
+judged    sonar     0.329
+judged    bge       0.505
+judged    ft_bge    0.865
+judged    ft_sonar  0.890

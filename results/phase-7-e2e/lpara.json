@@ -1,0 +1,446 @@
+{
+ "R1": {
+  "all": {
+   "cross_own_siblings": {
+    "mean": 0.8043,
+    "lo": 0.7872,
+    "hi": 0.8212,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9661,
+    "lo": 0.9617,
+    "hi": 0.9702,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.9645,
+    "lo": 0.9595,
+    "hi": 0.9696,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5266,
+    "lo": 0.5082,
+    "hi": 0.5461,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0493,
+    "lo": 0.0186,
+    "hi": 0.0802,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.996,
+    "lo": 0.9927,
+    "hi": 0.9987,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9881,
+    "lo": 0.9855,
+    "hi": 0.9906,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9886,
+    "lo": 0.9857,
+    "hi": 0.991,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0026,
+    "lo": -0.0044,
+    "hi": 0.0098,
+    "n": 1500
+   }
+  },
+  "lpara-literal": {
+   "cross_own_siblings": {
+    "mean": 0.8043,
+    "lo": 0.7872,
+    "hi": 0.8212,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9661,
+    "lo": 0.9617,
+    "hi": 0.9702,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.9645,
+    "lo": 0.9595,
+    "hi": 0.9696,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5266,
+    "lo": 0.5082,
+    "hi": 0.5461,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0493,
+    "lo": 0.0186,
+    "hi": 0.0802,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.996,
+    "lo": 0.9927,
+    "hi": 0.9987,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9881,
+    "lo": 0.9855,
+    "hi": 0.9906,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9886,
+    "lo": 0.9857,
+    "hi": 0.991,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0026,
+    "lo": -0.0044,
+    "hi": 0.0098,
+    "n": 1500
+   }
+  },
+  "geometry": {
+   "rewordings_closer_than_negation": {
+    "mean": 0.9854,
+    "lo": 0.9656,
+    "hi": 1.0,
+    "n": 80
+   },
+   "roundtrip_beats_negation": {
+    "mean": 0.9875,
+    "lo": 0.976,
+    "hi": 0.9969,
+    "n": 80
+   },
+   "radius_median": 0.0649,
+   "negation_median": 0.4215
+  }
+ },
+ "P1": {
+  "all": {
+   "cross_own_siblings": {
+    "mean": 0.9172,
+    "lo": 0.9049,
+    "hi": 0.9289,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9653,
+    "lo": 0.9608,
+    "hi": 0.9694,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.963,
+    "lo": 0.9579,
+    "hi": 0.9682,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5362,
+    "lo": 0.5176,
+    "hi": 0.5564,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0489,
+    "lo": 0.0175,
+    "hi": 0.0803,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.9967,
+    "lo": 0.9933,
+    "hi": 0.9993,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 0.9997,
+    "lo": 0.999,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9871,
+    "lo": 0.9839,
+    "hi": 0.9901,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9887,
+    "lo": 0.9857,
+    "hi": 0.9914,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0005,
+    "lo": -0.0053,
+    "hi": 0.0067,
+    "n": 1500
+   }
+  },
+  "lpara-literal": {
+   "cross_own_siblings": {
+    "mean": 0.9172,
+    "lo": 0.9049,
+    "hi": 0.9289,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9653,
+    "lo": 0.9608,
+    "hi": 0.9694,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.963,
+    "lo": 0.9579,
+    "hi": 0.9682,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5362,
+    "lo": 0.5176,
+    "hi": 0.5564,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0489,
+    "lo": 0.0175,
+    "hi": 0.0803,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.9967,
+    "lo": 0.9933,
+    "hi": 0.9993,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 0.9997,
+    "lo": 0.999,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9871,
+    "lo": 0.9839,
+    "hi": 0.9901,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9887,
+    "lo": 0.9857,
+    "hi": 0.9914,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0005,
+    "lo": -0.0053,
+    "hi": 0.0067,
+    "n": 1500
+   }
+  },
+  "geometry": {
+   "rewordings_closer_than_negation": {
+    "mean": 0.9958,
+    "lo": 0.9875,
+    "hi": 1.0,
+    "n": 80
+   },
+   "roundtrip_beats_negation": {
+    "mean": 0.9885,
+    "lo": 0.9781,
+    "hi": 0.9969,
+    "n": 80
+   },
+   "radius_median": 0.0362,
+   "negation_median": 0.4551
+  }
+ },
+ "S1": {
+  "all": {
+   "cross_own_siblings": {
+    "mean": 0.9168,
+    "lo": 0.9046,
+    "hi": 0.9288,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9646,
+    "lo": 0.9599,
+    "hi": 0.9688,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.963,
+    "lo": 0.9578,
+    "hi": 0.9682,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5361,
+    "lo": 0.5167,
+    "hi": 0.5542,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0547,
+    "lo": 0.0239,
+    "hi": 0.0865,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.9993,
+    "lo": 0.998,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 0.999,
+    "lo": 0.998,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9854,
+    "lo": 0.9817,
+    "hi": 0.9892,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9872,
+    "lo": 0.9835,
+    "hi": 0.9905,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0041,
+    "lo": -0.0017,
+    "hi": 0.0106,
+    "n": 1500
+   }
+  },
+  "lpara-literal": {
+   "cross_own_siblings": {
+    "mean": 0.9168,
+    "lo": 0.9046,
+    "hi": 0.9288,
+    "n": 1500
+   },
+   "cross_retention": {
+    "mean": 0.9646,
+    "lo": 0.9599,
+    "hi": 0.9688,
+    "n": 1500
+   },
+   "cross_meaning_kept": {
+    "mean": 0.963,
+    "lo": 0.9578,
+    "hi": 0.9682,
+    "n": 1500
+   },
+   "cross_own_all": {
+    "mean": 0.5361,
+    "lo": 0.5167,
+    "hi": 0.5542,
+    "n": 1500
+   },
+   "cross_fluency_gap": {
+    "mean": 0.0547,
+    "lo": 0.0239,
+    "hi": 0.0865,
+    "n": 1500
+   },
+   "own_idea_all": {
+    "mean": 0.9993,
+    "lo": 0.998,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "own_idea_siblings": {
+    "mean": 0.999,
+    "lo": 0.998,
+    "hi": 1.0,
+    "n": 1500
+   },
+   "detail_retention": {
+    "mean": 0.9854,
+    "lo": 0.9817,
+    "hi": 0.9892,
+    "n": 1500
+   },
+   "meaning_kept": {
+    "mean": 0.9872,
+    "lo": 0.9835,
+    "hi": 0.9905,
+    "n": 1500
+   },
+   "negation_separation": {
+    "mean": null
+   },
+   "fluency_gap": {
+    "mean": 0.0041,
+    "lo": -0.0017,
+    "hi": 0.0106,
+    "n": 1500
+   }
+  },
+  "geometry": {
+   "rewordings_closer_than_negation": {
+    "mean": 0.9958,
+    "lo": 0.9875,
+    "hi": 1.0,
+    "n": 80
+   },
+   "roundtrip_beats_negation": {
+    "mean": 0.9906,
+    "lo": 0.9802,
+    "hi": 0.9979,
+    "n": 80
+   },
+   "radius_median": 0.037,
+   "negation_median": 0.4766
+  }
+ }
+}

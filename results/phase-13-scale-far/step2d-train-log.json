@@ -1,0 +1,20 @@
+[
+ {
+  "epoch": 1,
+  "train_loss": 0.4072,
+  "dev_recall": 0.3508,
+  "minutes": 2.9
+ },
+ {
+  "epoch": 2,
+  "train_loss": 0.3421,
+  "dev_recall": 0.4084,
+  "minutes": 3.0
+ },
+ {
+  "epoch": 3,
+  "train_loss": 0.2522,
+  "dev_recall": 0.4031,
+  "minutes": 3.0
+ }
+]

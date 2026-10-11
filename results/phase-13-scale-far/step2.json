@@ -1,0 +1,30 @@
+{
+ "min_real": 0.7,
+ "corpus": {
+  "agreement": "8/10",
+  "counted": false,
+  "real_share": 0.08,
+  "heavy_real_share": 0.04,
+  "rest_real_share": 0.12,
+  "labels": {
+   "C": 0,
+   "G": 4,
+   "A": 2,
+   "B": 44
+  }
+ },
+ "fastino": {
+  "agreement": "7/10",
+  "counted": false,
+  "real_share": 0.44,
+  "heavy_real_share": 0.44,
+  "rest_real_share": 0.44,
+  "labels": {
+   "C": 1,
+   "G": 21,
+   "A": 10,
+   "B": 18
+  }
+ },
+ "choice": "sonnet"
+}

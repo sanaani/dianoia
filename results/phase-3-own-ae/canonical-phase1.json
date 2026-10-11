@@ -1,0 +1,8 @@
+{
+  "model": "sonnet",
+  "sampled": 2388,
+  "kept": 2381,
+  "failed": 7,
+  "median_words_source": 17.0,
+  "median_words_canonical": 15.0
+}

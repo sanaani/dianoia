@@ -1,0 +1,68 @@
+# Phase 13: short questions (step 1) and how much filtering scale needs (step 2). Every number here was fixed on
+# 10/07/2026, before any phase 13 result existed. Hypotheses: results/phase-13-scale-far/HYPOTHESES.md (approved
+# 10/07/2026). A change after results exist is a new commit saying why. Step 3 (AWS) is added once 1 and 2 decide it.
+
+data: C:/Users/shaun/dianoia-data
+seed: 0
+mem_mb_total: 5000
+
+# Relative to <data>/work.
+inputs:
+  queries: p10/queries.parquet
+  abstracts: p10/abstracts.parquet
+
+measure_encoder: BAAI/bge-small-en-v1.5    # phase 12's second encoder for "far"
+
+far:                                       # step 2: phase 12's far rule, unchanged, on new pairs
+  medians: p12/medians.json                # overlap 0.09, cosine 0.6746
+  pool: p12/pool.parquet                   # the IDF basis, so the medians mean the same thing
+  corpus: p10/corpus                       # every cross-field applicant citation, 2013-2024 (lift <= 0.5, <= 50 cites)
+  survivors: p10/survivors                 # survivors-<year>.jsonl: kept by Fastino stages 1 and 2
+  weight_clip: [1, 10]
+
+review:
+  n: 50                                    # per source; half from combinations weighted heavy_weight or more
+  heavy_weight: 5
+  seed: 13
+  gold: p10/label/rubric-cascade50.jsonl   # 10 re-judged per reading; under 9/10 agreement it does not count
+  gold_texts: [p10/label/kept-cascade-pairs.jsonl, p10/label/kept-pairs.jsonl]
+  read_dirs: [p10, p12]                    # never draw a pair Claude has read before
+  min_real: 0.70                           # C or G (RUBRIC.md) among the 50 as drawn
+
+step1:
+  eval: p12/eval.jsonl
+  splits: [test]                           # phase 12's 291 far test questions
+  max_sentences: 2
+  top_k: 10
+  adapters:                                # phase 12's chosen models
+    far: p12/out/adapters/far-s0-e2
+    near: p12/out/adapters/near-s0-e3
+  bootstrap: 2000
+
+embedder: Qwen/Qwen3-Embedding-0.6B
+instruct: "Instruct: Given a patent abstract, retrieve an earlier patent from a different field whose idea it borrows\nQuery: "
+
+smoke:                                     # laptop CPU dry run of remote-p13.py on real files: code paths only
+  embedder: trl-internal-testing/tiny-Qwen3ForCausalLM
+
+aws:                                       # GPU steps: far_cosine (minutes); step 1 scoring, unused (skipped)
+  hours: 1                                 # self-terminate cap
+  market: od
+  budget_left_usd: 5.4
+  max_cost_usd: 1.01
+sonnet:                                    # step 3 labels (10/08/2026): Sonnet v3, then v4 on v3 C with borrow >= min_borrow
+  min_borrow: 4                            # phase 11's rule; hand check of step 2's Fastino reading: 9/11 real at >= 4, 3/8 below
+  workers: 4                               # claude -p processes of about 300 MB each
+  per_call: 10
+filter:                                    # step 2d (10/08/2026): scoring filter for Fastino's rejects
+  seed: 13
+  n_stage1: 3000                           # random far pairs stage 1 rejected, for Sonnet
+  n_stage2: 2000                           # random far pairs stage 1 accepted and stage 2 rejected
+  holdout: 0.3                             # of the reject sample, never trained on (F1)
+  dev: 0.1                                 # of the training part, for epochs
+  base: BAAI/bge-reranker-base
+  top_share: 0.2                           # F1: the top-scored 20% ...
+  min_recall: 0.7                          # ... hold at least 70% of the held-out strict positives
+  epochs: 3
+  lr: 2.0e-5
+  smoke_base: cross-encoder/ms-marco-TinyBERT-L2-v2   # laptop dry run only

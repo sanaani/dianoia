@@ -1,0 +1,88 @@
+# Phase 15 as code (10/09/2026): is more far data worth it, and can Fastino screen for Sonnet?
+# Hypotheses: results/phase-15-curve-screen/HYPOTHESES.md (approved 10/09/2026); numbers: config.yaml.
+#
+#   pipelines/phase15/run.sh     data on the laptop, a laptop dry run, one AWS GPU job for both steps, then verdicts
+#
+# Every laptop step runs under scripts/memcap.py. The GPU job (scripts/p15-gpu.sh) has a budget gate, checksums every
+# download and terminates the instance.
+
+import os
+
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+W = f"{D}/work"
+P = f"{W}/p15"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+P15 = f"{CAP} {{resources.mem_mb}} -- {PY} {S}/p15-data.py"
+RES = f"{REPO}/results/phase-15-curve-screen"
+
+import yaml as _yaml
+
+CFG = f"{P}/config.used.yaml"
+os.makedirs(P, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+
+rule all:
+    input: f"{RES}/step1.json", f"{RES}/step2.json"
+
+
+rule curve:
+    # Nested subsets of phase 12's far training pairs (seed 15).
+    output: [f"{P}/curve/train-{n}.jsonl" for n in config["curve"]["sizes"]], f"{P}/curve/manifest.json"
+    resources: mem_mb=600
+    log: f"{P}/logs/curve.log"
+    shell: P15 + " curve --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule screen:
+    # Phase 14's Sonnet-labeled far pairs, split by citing article, as Fastino reads them.
+    output: f"{P}/screen/pairs.jsonl"
+    resources: mem_mb=1200
+    log: f"{P}/logs/screen.log"
+    shell: P15 + " screen --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule smoke_gpu:
+    # Laptop dry run of step 1's GPU code on the real files with a tiny model. Fastino's smoke runs on the instance
+    # (run-P15.sh's smoke line): fine-tuning it needs more memory than the laptop allows.
+    input: rules.curve.output, rules.screen.output
+    output: f"{P}/smoke/p15-curve.ok"
+    resources: mem_mb=2000
+    log: f"{P}/logs/smoke-gpu.log"
+    shell: "rm -rf {P}/smoke && {CAP} {resources.mem_mb} -- {PY} {S}/remote-p15.py --work {W} --config {CFG} --out {P}/smoke --smoke --part curve > {log} 2>&1 && touch {output}"
+
+
+rule gpu:
+    # One AWS GPU after a budget gate (scripts/p15-gpu.sh); never retried.
+    input: rules.smoke_gpu.output
+    output: f"{P}/metrics/p15.json"
+    resources: gpu=1, mem_mb=500
+    retries: 0
+    log: f"{P}/logs/gpu.log"
+    shell: "bash {S}/p15-gpu.sh {P} {CFG} > {log} 2>&1"
+
+
+rule verdicts:
+    input: rules.gpu.output
+    output: f"{RES}/STEP1.md", f"{RES}/step1.json", f"{RES}/STEP2.md", f"{RES}/step2.json"
+    resources: mem_mb=600
+    log: f"{P}/logs/verdicts.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p15-verdicts.py --work {W} --out {P}/out --config {CFG} --results {RES} > {log} 2>&1"
+
+
+rule bias:
+    # Descriptive follow-up asked for after S1 failed (10/09/2026): does Fastino's top 20% keep far positives as
+    # well as near ones, and does a free ranker do as well? Not in "all": run as pipelines/phase15/run.sh bias.
+    input: rules.verdicts.output
+    output: f"{RES}/BIAS.md", f"{RES}/bias.json"
+    resources: mem_mb=800
+    log: f"{P}/logs/bias.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p15-bias.py --work {W} --out {P}/out --results {RES} > {log} 2>&1"

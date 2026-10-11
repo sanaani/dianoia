@@ -1,0 +1,81 @@
+{
+  "framed": 1841,
+  "texts": 1841,
+  "kinds": {
+    "paraphrase": {
+      "n": 350,
+      "act": 0.931,
+      "agent": 0.594,
+      "action": 0.251,
+      "patient": 0.126,
+      "recipient": 0.82,
+      "topic": 0.203,
+      "time": 0.614,
+      "negated": 0.946,
+      "certainty": 0.734,
+      "quantity": 0.846,
+      "core": 0.04,
+      "all": 0.003
+    },
+    "rename": {
+      "n": 144,
+      "act": 0.944,
+      "agent": 0.736,
+      "action": 0.674,
+      "patient": 0.458,
+      "recipient": 0.91,
+      "topic": 0.333,
+      "time": 0.743,
+      "negated": 0.965,
+      "certainty": 0.708,
+      "quantity": 0.84,
+      "core": 0.236,
+      "all": 0.09
+    },
+    "register": {
+      "n": 350,
+      "act": 0.906,
+      "agent": 0.714,
+      "action": 0.514,
+      "patient": 0.386,
+      "recipient": 0.877,
+      "topic": 0.334,
+      "time": 0.654,
+      "negated": 0.966,
+      "certainty": 0.7,
+      "quantity": 0.877,
+      "core": 0.126,
+      "all": 0.04
+    },
+    "negation": {
+      "n": 315,
+      "act": 0.883,
+      "agent": 0.746,
+      "action": 0.708,
+      "patient": 0.47,
+      "recipient": 0.857,
+      "topic": 0.384,
+      "time": 0.679,
+      "negated": 0.146,
+      "certainty": 0.641,
+      "quantity": 0.886,
+      "core": 0.013,
+      "all": 0.0
+    },
+    "predicate_change": {
+      "n": 332,
+      "act": 0.907,
+      "agent": 0.792,
+      "action": 0.271,
+      "patient": 0.395,
+      "recipient": 0.858,
+      "topic": 0.373,
+      "time": 0.705,
+      "negated": 0.961,
+      "certainty": 0.78,
+      "quantity": 0.88,
+      "core": 0.06,
+      "all": 0.027
+    }
+  }
+}

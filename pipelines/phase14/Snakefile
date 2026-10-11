@@ -1,0 +1,214 @@
+# Phase 14 as code (10/08/2026): OpenAlex management papers and what they borrow from distant fields.
+# Hypotheses: results/phase-14-openalex/HYPOTHESES.md (approved 10/08/2026); numbers: config.yaml.
+#
+#   pipelines/phase14/run.sh gold_sheet  step 1 (the pairs and the far rule), then the 10 gold pairs to read
+#   pipelines/phase14/run.sh             step 2 (needs Claude's labels: gold-labels.txt, review-<far|strict>-labels.txt)
+#
+# Every laptop step runs under scripts/memcap.py. The fetch is resumable and stops cleanly (exit 3) when OpenAlex's
+# daily budget is used. The cosine half of the far rule runs on one AWS GPU (p14-far-gpu.sh), as phase 13's did.
+
+import os
+
+configfile: os.path.join(workflow.basedir, "config.yaml")
+shell.executable(r"C:\Program Files\Git\usr\bin\bash.exe")
+
+REPO = os.path.abspath(os.path.join(workflow.basedir, "../..")).replace("\\", "/")
+D = config["data"]
+W = f"{D}/work/p14"
+PY = config.get("python", "C:/Users/shaun/dianoia-data/venv/Scripts/python.exe")
+S = f"{REPO}/scripts"
+CAP = f"{PY} {S}/memcap.py"
+P14 = f"{CAP} {{resources.mem_mb}} -- {PY} {S}/p14-data.py"
+
+import yaml as _yaml
+
+CFG = f"{W}/config.used.yaml"
+os.makedirs(W, exist_ok=True)
+_text = _yaml.safe_dump(dict(config), sort_keys=True)
+if not os.path.exists(CFG) or open(CFG).read() != _text:
+    open(CFG, "w").write(_text)
+
+wildcard_constraints:
+    v="v3p|v4p",
+    source="far|strict",
+
+
+rule all:
+    input: f"{REPO}/results/phase-14-openalex/step2.json"
+
+
+rule gold_sheet:
+    input: f"{W}/gold.txt"
+
+
+rule fetch:
+    # The sample and the cited works outside the Social Sciences. Never retried automatically: exit 3 means the day's
+    # OpenAlex budget is used, and a retry would only spend another request.
+    output: f"{W}/fetch/done.json"
+    retries: 0
+    resources: mem_mb=800
+    log: f"{W}/logs/fetch.log"
+    shell: P14 + " fetch --config {CFG} --work {W} >> {log} 2>&1"
+
+
+rule pairs:
+    input: rules.fetch.output
+    output: f"{W}/pairs.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/pairs.log"
+    shell: P14 + " pairs --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule overlap:
+    input: rules.pairs.output, f"{D}/work/p12/medians.json", f"{D}/work/p12/pool.parquet"
+    output: f"{W}/far-tmp/low.jsonl", f"{W}/far-tmp/low.done.json"
+    resources: mem_mb=2500
+    log: f"{W}/logs/overlap.log"
+    shell: P14 + " overlap --data {D} --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule far_cosine:
+    # bge-small cosine on one AWS GPU, merged into far-tmp/far-part.jsonl; never retried (phase 13's lesson).
+    input: rules.overlap.output
+    output: f"{W}/far-tmp/cosine.merged"
+    retries: 0
+    resources: mem_mb=1500, gpu=1
+    log: f"{W}/logs/far-cosine.log"
+    shell: "{CAP} {resources.mem_mb} -- bash {S}/p14-far-gpu.sh {W} {CFG} {PY} > {log} 2>&1 && touch {output}"
+
+
+rule far:
+    input: rules.far_cosine.output
+    output: f"{W}/far.parquet", f"{W}/far-text.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/far.log"
+    shell: P14 + " far --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule gold_draw:
+    # 10 far pairs for Claude's gold labels, blind (numbers only); the labels go in gold-labels.txt ("<n> <C|G|A|B>").
+    input: rules.far.output
+    output: txt=f"{W}/gold.txt", key=f"{W}/gold-key.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/gold-sheet.log"
+    shell: P14 + " gold-sheet --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule gold:
+    input: rules.gold_draw.output.key, f"{W}/gold-labels.txt"
+    output: f"{W}/gold.jsonl"
+    resources: mem_mb=300
+    log: f"{W}/logs/gold.log"
+    shell: P14 + " gold --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule sonnet_todo:
+    input: f"{W}/far.parquet", f"{W}/far-text.jsonl", rules.gold_draw.output.key, lambda w: [] if w.v == "v3p" else [f"{W}/sonnet/v3p.jsonl"]
+    output: f"{W}/sonnet/todo-{{v}}.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/sonnet-todo-{{v}}.log"
+    shell: P14 + " sonnet-todo --config {CFG} --work {W} --prompt {wildcards.v} --out {output} > {log} 2>&1"
+
+
+rule sonnet:
+    # Sonnet through the Claude subscription (no AWS cost), paper-worded prompts; resumable from <v>.part.jsonl.
+    input: f"{W}/sonnet/todo-{{v}}.jsonl"
+    output: f"{W}/sonnet/{{v}}.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/sonnet-{{v}}.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py sonnet --pairs {input} --out {W}/sonnet/{wildcards.v}.part.jsonl"
+           " --prompt {wildcards.v} --workers {config[sonnet][workers]} --per-call {config[sonnet][per_call]} > {log} 2>&1"
+           " && cp {W}/sonnet/{wildcards.v}.part.jsonl {output}"
+
+
+rule review:
+    # Blind reading: 50 new pairs and the 10 gold pairs, shuffled. Refuses until the gold labels are 20 hours old.
+    input: rules.gold.output, f"{W}/far.parquet", lambda w: [f"{W}/sonnet/v4p.jsonl", f"{W}/review-far-key.jsonl"] if w.source == "strict" else []
+    output: txt=f"{W}/review-{{source}}.txt", key=f"{W}/review-{{source}}-key.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/review-{{source}}.log"
+    shell: P14 + " review --config {CFG} --work {W} --source {wildcards.source} > {log} 2>&1"
+
+
+rule decide:
+    input: expand(f"{W}/review-{{s}}-{{f}}", s=("far", "strict"), f=("key.jsonl", "labels.txt")), f"{W}/sonnet/v4p.jsonl"
+    output: f"{REPO}/results/phase-14-openalex/step2.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/decide.log"
+    shell: P14 + " decide --config {CFG} --work {W} --out {output} > {log} 2>&1"
+
+
+# Step 3 (10/09/2026, after step 2 passed): Sonnet on the far pairs step 2 left unlabeled, so the test can hold 300
+# strict pairs (step 2 found 109 in 4,979). Same prompts and rule; step 2's files are left as they were.
+
+rule rest_todo:
+    input: f"{W}/far.parquet", f"{W}/far-text.jsonl", f"{W}/sonnet/v3p.jsonl", f"{W}/gold-key.jsonl", lambda w: [] if w.v == "v3p" else [f"{W}/sonnet/v3p-rest.jsonl"]
+    output: f"{W}/sonnet/todo-{{v}}-rest.jsonl"
+    resources: mem_mb=1500
+    log: f"{W}/logs/rest-todo-{{v}}.log"
+    shell: P14 + " rest-todo --config {CFG} --work {W} --prompt {wildcards.v} --out {output} > {log} 2>&1"
+
+
+rule sonnet_rest:
+    input: f"{W}/sonnet/todo-{{v}}-rest.jsonl"
+    output: f"{W}/sonnet/{{v}}-rest.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/sonnet-{{v}}-rest.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p10-label.py sonnet --pairs {input} --out {W}/sonnet/{wildcards.v}-rest.part.jsonl"
+           " --prompt {wildcards.v} --workers {config[sonnet][workers]} --per-call {config[sonnet][per_call]} > {log} 2>&1"
+           " && cp {W}/sonnet/{wildcards.v}-rest.part.jsonl {output}"
+
+
+T = f"{W}/step3"
+
+
+rule step3:
+    input: f"{REPO}/results/phase-14-openalex/STEP3.md"
+
+
+rule step3_build:
+    # The test: strict pairs from both Sonnet passes, one per citing article, 300 at random; 999 same-field candidates.
+    input: f"{W}/sonnet/v4p.jsonl", f"{W}/sonnet/v4p-rest.jsonl", f"{W}/far-text.jsonl"
+    output: ev=f"{T}/eval.jsonl", docs=f"{T}/docs.jsonl"
+    resources: mem_mb=2500
+    log: f"{W}/logs/step3-build.log"
+    shell: P14 + " step3-build --config {CFG} --work {W} > {log} 2>&1"
+
+
+rule step3_stage:
+    # Phase 12's chosen adapters, unchanged, and this run's config, next to the test files for the GPU job.
+    input: rules.step3_build.output
+    output: ad=directory(f"{T}/adapters")
+    resources: mem_mb=300
+    run:
+        import shutil
+        for p in config["step3"]["adapters"].values():
+            shutil.copytree(f"{D}/work/{p}", f"{output.ad}/{os.path.basename(p)}")
+        shutil.copyfile(CFG, f"{T}/config.used.yaml")
+
+
+rule smoke_gpu:
+    # Laptop dry run of the GPU script on the real files with a tiny model (code paths only).
+    input: rules.step3_stage.output
+    output: f"{T}/smoke/p14-test.json"
+    resources: mem_mb=1500
+    log: f"{W}/logs/smoke-gpu.log"
+    shell: "rm -rf {T}/smoke && {CAP} {resources.mem_mb} -- {PY} {S}/remote-p14.py --work {T} --config {CFG} --out {T}/smoke --smoke > {log} 2>&1"
+
+
+rule gpu:
+    # One AWS GPU after a budget gate (scripts/p14-gpu.sh); never retried.
+    input: rules.smoke_gpu.output, rules.step3_stage.output
+    output: f"{T}/metrics/p14-test.json"
+    resources: gpu=1, mem_mb=500
+    retries: 0
+    log: f"{W}/logs/gpu.log"
+    shell: "bash {S}/p14-gpu.sh {T} {CFG} > {log} 2>&1"
+
+
+rule verdicts:
+    input: rules.gpu.output, ev=rules.step3_build.output.ev
+    output: f"{REPO}/results/phase-14-openalex/STEP3.md", f"{REPO}/results/phase-14-openalex/step3.json"
+    resources: mem_mb=500
+    log: f"{W}/logs/verdicts.log"
+    shell: "{CAP} {resources.mem_mb} -- {PY} {S}/p14-verdicts.py --scores {T}/out/scores --eval {input.ev} --config {CFG} --out {REPO}/results/phase-14-openalex > {log} 2>&1"

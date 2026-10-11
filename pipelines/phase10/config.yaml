@@ -1,0 +1,70 @@
+# Phase 10: historical recovery of cross-domain borrowings in patents. Every number here was fixed on 10/05/2026,
+# before any patent data was built. The hypotheses are results/phase-10-analogy/HYPOTHESES.md; how each is measured and
+# judged is OPERATIONALIZATION.md beside this file. Changing a value here after results exist must be a new commit
+# that says why.
+
+data: C:/Users/shaun/dianoia-data
+seed: 0
+
+# Laptop memory. The pipeline never schedules more than this at once (snakemake --resources mem_mb=...), and each step
+# runs under scripts/memcap.py with its own cap.
+mem_mb_total: 5000
+
+patents:
+  manifest: raw/patentsview/manifest.txt
+  files: [g_patent.tsv.zip, g_cpc_current.tsv.zip, g_us_patent_citation.tsv.zip, g_patent_abstract.tsv.zip]
+  sections: [A, B, C, D, E, F, G, H]   # Y is a cross-sectional tag, not a field
+  borrowing_category: cited by applicant
+
+split:
+  val: ["2018-01-01", "2019-12-31"]    # citing patent's grant date
+  test: ["2021-01-01", "2024-12-31"]
+  pool_before: "2021-01-01"           # candidates and word statistics come from patents granted before this
+
+recovery:
+  queries: 1000            # per split, at most
+  min_queries: 500         # 10/07/2026, before any result: the labeled val split has 923 pairs, so 1,000 is a ceiling;
+                           # fewer than 500 stops the run (OPERATIONALIZATION: "insufficient data" below 500)
+  candidates: 1000         # the true cited patent plus 999 from the cited patent's own section
+  pool_per_section: 4000
+  top_k: 10
+
+words:
+  spread_per_section: 25000   # abstracts per section for domain spread; none is a query
+  min_count: 20               # a word needs this many patent occurrences for its spread to count
+  max_hypernym_steps: 4
+
+# Role replacement dials: level k replaces a word whose generality is below the k-th threshold with the in-context
+# best WordNet hypernym (up to max_hypernym_steps) at or above it. Level 0 leaves the words as written.
+dials:
+  generality_quantiles: [0.4, 0.6, 0.8, 0.9]
+  noun_levels: [0, 1, 2, 3, 4]
+  verb_levels: [0, 1, 2, 3, 4]
+
+models:
+  substitute_lm: Qwen/Qwen3-1.7B-Base
+  embedder: Qwen/Qwen3-Embedding-0.6B
+  h3_layer: 14
+
+verdicts:
+  h1_pass: 0.70
+  h1_fail: 0.60
+  bootstrap: 2000
+
+# The laptop dry run of the GPU script on the real inputs (rules smoke_gpu, smoke_verdicts). Off since 10/07/2026:
+# the laptop's commit charge sits near its limit (14.3 of 19.7 GB with ordinary apps open), and loading the models
+# got the step killed from outside on five attempts, whatever its own cap. The same script and verdict code pass
+# end to end in the fixture run (run.sh smoke) before every real run, and run-P10.sh's "# smoke:" line runs the
+# script on these real inputs on the instance before the job starts.
+laptop_gpu_smoke: false
+
+aws:
+  hours: 3        # self-terminate cap
+  market: od     # about an hour, and a reclaim would lose every stage with the instance (rule: >1 h runs on demand)
+  budget_left_usd: 14.5   # 10/07/2026: about $4.50 left after the corpus run, plus $10 Shaun added
+  max_cost_usd: 6
+
+# Pairs that passed the labeling steps (10/06/2026): Fastino stages 1-2 keep, Sonnet v3 "real" with borrow >= 4,
+# Sonnet v4 C or G (results/phase-10-analogy/RUBRIC.md), with an "overlap" column. Built by scripts/p10-label.py
+# kept and overlap. See results/phase-10-analogy/DATA-REVIEW.md.
+keep: label/kept-final.parquet

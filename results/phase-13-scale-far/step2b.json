@@ -1,0 +1,33 @@
+{
+ "kept": {
+  "agreement": "7/10",
+  "counted": false,
+  "real_share": 0.44,
+  "heavy_real_share": 0.44,
+  "rest_real_share": 0.44,
+  "labels": {
+   "C": 1,
+   "G": 21,
+   "A": 10,
+   "B": 18
+  },
+  "pool": 10131,
+  "real_est": 4458
+ },
+ "rejected": {
+  "agreement": "9/10",
+  "counted": true,
+  "real_share": 0.08,
+  "heavy_real_share": 0.12,
+  "rest_real_share": 0.04,
+  "labels": {
+   "C": 1,
+   "G": 3,
+   "A": 0,
+   "B": 46
+  },
+  "pool": 108828,
+  "real_est": 8706
+ },
+ "recall_est": 0.339
+}

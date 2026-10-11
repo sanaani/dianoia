@@ -1,0 +1,113 @@
+{
+  "fit_items": 931,
+  "val_items": 176,
+  "val_mailboxes": [
+    "cuilla-m",
+    "griffith-j",
+    "hain-m",
+    "hernandez-j",
+    "hyatt-k",
+    "jones-t",
+    "lavorato-j",
+    "linder-e",
+    "mccarty-d",
+    "sanders-r",
+    "shankman-j"
+  ],
+  "best_epoch": 12,
+  "best_val_win_256": 0.7272,
+  "args": {
+    "epochs": 15,
+    "batch": 128,
+    "lr": 0.001,
+    "tau": 0.05,
+    "inputs": [
+      "sonar",
+      "bge",
+      "qwen3",
+      "e5"
+    ],
+    "hidden": 1024,
+    "dropout": 0.3,
+    "wd": 0.1,
+    "tag": "_lc0.5",
+    "fraction": 0.5
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "loss": 2.8795,
+      "val_win_256": 0.5985
+    },
+    {
+      "epoch": 1,
+      "loss": 1.8197,
+      "val_win_256": 0.6554
+    },
+    {
+      "epoch": 2,
+      "loss": 1.5962,
+      "val_win_256": 0.6886
+    },
+    {
+      "epoch": 3,
+      "loss": 1.4903,
+      "val_win_256": 0.6963
+    },
+    {
+      "epoch": 4,
+      "loss": 1.4137,
+      "val_win_256": 0.7073
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3511,
+      "val_win_256": 0.7152
+    },
+    {
+      "epoch": 6,
+      "loss": 1.2818,
+      "val_win_256": 0.718
+    },
+    {
+      "epoch": 7,
+      "loss": 1.2186,
+      "val_win_256": 0.7213
+    },
+    {
+      "epoch": 8,
+      "loss": 1.1712,
+      "val_win_256": 0.7257
+    },
+    {
+      "epoch": 9,
+      "loss": 1.0971,
+      "val_win_256": 0.7254
+    },
+    {
+      "epoch": 10,
+      "loss": 1.0678,
+      "val_win_256": 0.7257
+    },
+    {
+      "epoch": 11,
+      "loss": 1.0615,
+      "val_win_256": 0.7257
+    },
+    {
+      "epoch": 12,
+      "loss": 1.0221,
+      "val_win_256": 0.7272
+    },
+    {
+      "epoch": 13,
+      "loss": 0.9697,
+      "val_win_256": 0.7269
+    },
+    {
+      "epoch": 14,
+      "loss": 0.9855,
+      "val_win_256": 0.7269
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+# Phase 15: is more far data worth it, and can Fastino screen for Sonnet? Every number here was fixed on 10/09/2026,
+# before any phase 15 result existed. Hypotheses: results/phase-15-curve-screen/HYPOTHESES.md (approved 10/09/2026).
+
+data: C:/Users/shaun/dianoia-data
+mem_mb_total: 5000
+
+curve:                                     # step 1
+  train: p12/train-far.jsonl               # phase 12's 1,676 far training pairs (audited, p12/audit.json)
+  sizes: [419, 838]                        # a quarter and a half, nested; the full size is phase 12's far-s0-e2
+  seed: 15                                 # the subset draw; training uses phase 12's seed 0
+  epochs: [1, 2, 3]                        # chosen on patent dev top-10, then MRR, as phase 12
+  full:                                    # existing scores of phase 12's far-s0-e2 and the off-the-shelf encoder
+    patent: {far: p12/out/scores/far-s0-e2.json, base: p12/out/scores/base.json, seeds: [p12/out/scores/far-s1-e2.json, p12/out/scores/far-s2-e2.json]}
+    paper: {far: p14/step3/out/scores/far.json, base: p14/step3/out/scores/base.json}
+  climbing_lo: 0.0                         # L1: full minus half, lower bound above this -> still climbing
+  flat_hi: 0.03                            # upper bound below this -> flat
+  bootstrap: 2000
+
+screen:                                    # step 2
+  min_borrow: 4                            # phase 11's strict rule, unchanged
+  seed: 15
+  test_share: 0.3                          # of citing articles
+  val_share: 0.1                           # of the remaining articles
+  words: 150                               # per abstract; DeBERTa reads 512 tokens
+  labels: ["real borrowing", "no real borrowing"]
+  pos_repeat: 4
+  n_neg: 3000
+  epochs: 3
+  discard: 0.5                             # S1: discard the lowest-scored half
+  min_recall_lo: 0.90                      # exact 95% lower bound on positives kept
+  base: fastino/GLiNER2.5-Decide
+
+# Phase 12's training recipe, unchanged (p12/config.used.yaml).
+embedder: Qwen/Qwen3-Embedding-0.6B
+instruct: "Instruct: Given a patent abstract, retrieve an earlier patent from a different field whose idea it borrows\nQuery: "
+negatives: 7
+recovery: {top_k: 10}
+train: {batch: 32, chunk: 8, lora_alpha: 32, lora_dropout: 0.05, lora_r: 16, lr: 0.0001, max_tokens: 320, temperature: 0.05, warmup_ratio: 0.05}
+smoke:
+  embedder: trl-internal-testing/tiny-Qwen3ForCausalLM
+  train: 8
+  steps: 2
+  queries: 3
+  candidates: 15
+  screen: 12                               # rows per split for the Fastino smoke run
+
+aws:                                       # one g5.xlarge for both steps
+  hours: 2.5                               # self-terminate cap
+  market: od
+  budget_left_usd: 2.6                     # of the $95 total (estimate $3-3.50 after phase 14, less two failed starts)
+  max_cost_usd: 2.52

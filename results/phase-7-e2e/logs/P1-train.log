@@ -1,0 +1,44 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<03:05,  2.08it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 703.09it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:05<00:05,  5.03s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 24.78s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 21.81s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 144/1013 [00:00<00:00, 1353.40it/s]Loading weights:  28%|██▊       | 280/1013 [00:00<00:00, 1076.51it/s]Loading weights:  39%|███▊      | 391/1013 [00:00<00:00, 990.85it/s] Loading weights:  49%|████▊     | 492/1013 [00:02<00:04, 111.61it/sLoading weights:  55%|█████▍    | 555/1013 [00:04<00:06, 70.06it/s]Loading weights:  62%|██████▏   | 630/1013 [00:05<00:04, 88.67it/sLoading weights:  72%|███████▏  | 726/1013 [00:05<00:02, 118.85it/sLoading weights:  76%|███████▋  | 774/1013 [00:06<00:02, 79.94it/s] Loading weights:  80%|███████▉  | 808/1013 [00:08<00:03, 54.57it/s]Loading weights:  82%|████████▏ | 832/1013 [00:10<00:04, 36.45it/s]Loading weights:  84%|████████▍ | 849/1013 [00:11<00:05, 31.31it/s]Loading weights:  85%|████████▌ | 862/1013 [00:14<00:08, 18.34it/s]Loading weights:  86%|████████▌ | 871/1013 [00:14<00:07, 19.13it/s]Loading weights:  87%|████████▋ | 882/1013 [00:15<00:06, 21.01it/s]Loading weights:  88%|████████▊ | 889/1013 [00:17<00:09, 12.85it/s]Loading weights:  89%|████████▉ | 902/1013 [00:17<00:07, 15.80it/s]Loading weights:  90%|████████▉ | 907/1013 [00:17<00:06, 15.91it/s]Loading weights:  91%|█████████ | 918/1013 [00:19<00:08, 11.75it/s]Loading weights:  91%|█████████ | 921/1013 [00:19<00:07, 12.10it/s]Loading weights:  94%|█████████▍| 950/1013 [00:20<00:03, 20.59it/s]Loading weights:  94%|█████████▍| 954/1013 [00:20<00:02, 21.61it/s]Loading weights:  95%|█████████▌| 966/1013 [00:22<00:03, 12.31it/s]Loading weights:  96%|█████████▌| 969/1013 [00:22<00:03, 12.17it/s]Loading weights:  97%|█████████▋| 982/1013 [00:22<00:01, 16.27it/s]Loading weights:  99%|█████████▊| 998/1013 [00:23<00:00, 15.27it/s]Loading weights:  99%|█████████▊| 998/1013 [00:42<00:00, 15.27it/s]Loading weights: 100%|██████████| 1013/1013 [01:10<00:00,  1.13s/it]Loading weights: 100%|██████████| 1013/1013 [01:10<00:00, 14.28it/s]
+{"groups": 113024, "with_pos": 92427, "with_neg": 89183}
+{"paraphrase_groups": 8927, "entail_groups": 26123, "contrast_groups": 15175, "natural_per_batch": 8, "contrast_per_batch": 4, "lpara_groups": 14351, "lpara_per_batch": 5}
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"step": 100, "rec": 0.5278, "nce": 0.6506, "minutes": 4.2}
+{"step": 200, "rec": 0.3432, "nce": 0.4281, "minutes": 8.3}
+{"step": 300, "rec": 0.2945, "nce": 0.5764, "minutes": 12.2}
+{"step": 400, "rec": 0.2185, "nce": 0.1403, "minutes": 16.2}
+{"step": 500, "rec": 0.2693, "nce": 0.5574, "minutes": 20.2}
+{"step": 600, "rec": 0.2909, "nce": 0.142, "minutes": 24.0}
+{"step": 700, "rec": 0.1916, "nce": 0.4508, "minutes": 28.0}
+{"step": 800, "rec": 0.1728, "nce": 0.1686, "minutes": 32.0}
+{"step": 900, "rec": 0.1808, "nce": 0.1788, "minutes": 35.9}
+{"step": 1000, "rec": 0.163, "nce": 0.0908, "minutes": 39.9}
+{"step": 1100, "rec": 0.1106, "nce": 0.0517, "minutes": 43.9}
+{"step": 1200, "rec": 0.2044, "nce": 0.1552, "minutes": 47.8}
+{"step": 1300, "rec": 0.2235, "nce": 0.183, "minutes": 51.8}
+{"step": 1400, "rec": 0.1683, "nce": 0.0616, "minutes": 55.8}
+{"step": 1500, "rec": 0.1557, "nce": 0.0888, "minutes": 59.8}
+{"step": 1600, "rec": 0.1304, "nce": 0.1893, "minutes": 63.8}
+{"step": 1700, "rec": 0.189, "nce": 0.0708, "minutes": 67.8}
+{"step": 1800, "rec": 0.1784, "nce": 0.1134, "minutes": 71.7}
+{"step": 1900, "rec": 0.1817, "nce": 0.081, "minutes": 75.6}
+{"step": 2000, "rec": 0.2573, "nce": 0.0828, "minutes": 79.6}
+{"step": 2100, "rec": 0.1432, "nce": 0.1413, "minutes": 83.6}
+{"step": 2200, "rec": 0.1352, "nce": 0.2558, "minutes": 87.5}
+{"step": 2300, "rec": 0.1611, "nce": 0.1506, "minutes": 91.6}
+{"step": 2400, "rec": 0.2183, "nce": 0.2315, "minutes": 95.6}
+{"step": 2500, "rec": 0.2145, "nce": 0.1231, "minutes": 99.5}
+{"step": 2600, "rec": 0.1178, "nce": 0.1252, "minutes": 103.4}
+{"step": 2700, "rec": 0.1147, "nce": 0.0943, "minutes": 107.4}
+{"step": 2800, "rec": 0.1989, "nce": 0.1218, "minutes": 111.4}
+{"step": 2900, "rec": 0.1268, "nce": 0.0482, "minutes": 115.4}
+{"step": 3000, "rec": 0.1245, "nce": 0.1381, "minutes": 119.3}
+{"trained": 3000, "minutes": 119.4}
+: 111.4}
+{"step": 2900, "rec": 0.1268, "nce": 0.0482, "minutes": 115.4}
+{"step": 3000, "rec": 0.1245, "nce": 0.1381, "minutes": 119.3}
+{"trained": 3000, "minutes": 119.4}

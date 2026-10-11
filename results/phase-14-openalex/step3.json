@@ -1,0 +1,128 @@
+{
+ "O1": {
+  "n": 255,
+  "diff": 0.1647,
+  "lo": 0.102,
+  "hi": 0.2235,
+  "pass": true
+ },
+ "near_minus_base": {
+  "n": 255,
+  "diff": 0.1333,
+  "lo": 0.0745,
+  "hi": 0.1882
+ },
+ "table": {
+  "base": {
+   "n": 255,
+   "top10": 0.2,
+   "mrr": 0.0895
+  },
+  "far": {
+   "n": 255,
+   "top10": 0.3647,
+   "mrr": 0.191
+  },
+  "near": {
+   "n": 255,
+   "top10": 0.3333,
+   "mrr": 0.1519
+  }
+ },
+ "split": {
+  "label": {
+   "G": {
+    "n": 169,
+    "base": 0.1893,
+    "far": 0.3846,
+    "near": 0.3728
+   },
+   "C": {
+    "n": 86,
+    "base": 0.2209,
+    "far": 0.3256,
+    "near": 0.2558
+   }
+  },
+  "field": {
+   "Computer Science": {
+    "n": 116,
+    "base": 0.1983,
+    "far": 0.3276,
+    "near": 0.319
+   },
+   "Mathematics": {
+    "n": 26,
+    "base": 0.1923,
+    "far": 0.4615,
+    "near": 0.4231
+   },
+   "Engineering": {
+    "n": 23,
+    "base": 0.1304,
+    "far": 0.3478,
+    "near": 0.2609
+   },
+   "Environmental Science": {
+    "n": 21,
+    "base": 0.1429,
+    "far": 0.5238,
+    "near": 0.381
+   },
+   "Physics and Astronomy": {
+    "n": 20,
+    "base": 0.1,
+    "far": 0.2,
+    "near": 0.05
+   },
+   "Neuroscience": {
+    "n": 19,
+    "base": 0.1579,
+    "far": 0.2105,
+    "near": 0.2632
+   },
+   "Biochemistry, Genetics and Molecular Biology": {
+    "n": 8,
+    "base": 0.25,
+    "far": 0.375,
+    "near": 0.5
+   },
+   "Medicine": {
+    "n": 8,
+    "base": 0.625,
+    "far": 0.625,
+    "near": 0.625
+   },
+   "Agricultural and Biological Sciences": {
+    "n": 7,
+    "base": 0.2857,
+    "far": 0.7143,
+    "near": 0.5714
+   },
+   "Health Professions": {
+    "n": 4,
+    "base": 0.5,
+    "far": 0.5,
+    "near": 0.5
+   },
+   "Immunology and Microbiology": {
+    "n": 1,
+    "base": 0.0,
+    "far": 0.0,
+    "near": 0.0
+   },
+   "Pharmacology, Toxicology and Pharmaceutics": {
+    "n": 1,
+    "base": 1.0,
+    "far": 1.0,
+    "near": 1.0
+   },
+   "Materials Science": {
+    "n": 1,
+    "base": 0.0,
+    "far": 0.0,
+    "near": 1.0
+   }
+  }
+ }
+}

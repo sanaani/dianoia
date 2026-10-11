@@ -1,0 +1,30 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<01:56,  3.32it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 1011.90it/s]
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:05<00:05,  5.77s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 24.42s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 21.62s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 196/1013 [00:00<00:00, 1759.17it/s]Loading weights:  40%|███▉      | 404/1013 [00:00<00:00, 1920.22it/s]Loading weights:  59%|█████▉    | 597/1013 [00:00<00:00, 1773.78it/s]Loading weights:  77%|███████▋  | 776/1013 [00:00<00:00, 1502.13it/s]Loading weights:  92%|█████████▏| 932/1013 [00:00<00:00, 1404.64it/s]Loading weights: 100%|██████████| 1013/1013 [00:00<00:00, 1122.42it/s]
+{"groups": 90497, "with_pos": 69898, "with_neg": 66465}
+{"paraphrase_groups": 4288, "entail_groups": 26123, "natural_per_batch": 8}
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{"step": 100, "rec": 0.5819, "nce": 0.4426, "minutes": 3.2}
+{"step": 200, "rec": 0.3489, "nce": 0.1829, "minutes": 6.1}
+{"step": 300, "rec": 0.519, "nce": 0.413, "minutes": 9.1}
+{"step": 400, "rec": 0.2905, "nce": 0.1623, "minutes": 12.0}
+{"step": 500, "rec": 0.193, "nce": 0.0651, "minutes": 14.9}
+{"step": 600, "rec": 0.4143, "nce": 0.1702, "minutes": 17.9}
+{"step": 700, "rec": 0.1723, "nce": 0.0155, "minutes": 20.8}
+{"step": 800, "rec": 0.3743, "nce": 0.1754, "minutes": 23.8}
+{"step": 900, "rec": 0.1158, "nce": 0.375, "minutes": 26.7}
+{"step": 1000, "rec": 0.2069, "nce": 0.1075, "minutes": 29.6}
+{"step": 1100, "rec": 0.1251, "nce": 0.0199, "minutes": 32.6}
+{"step": 1200, "rec": 0.4398, "nce": 0.0329, "minutes": 35.5}
+{"step": 1300, "rec": 0.1781, "nce": 0.0887, "minutes": 38.4}
+{"step": 1400, "rec": 0.2344, "nce": 0.1411, "minutes": 41.4}
+{"step": 1500, "rec": 0.3753, "nce": 0.1334, "minutes": 44.3}
+{"step": 1600, "rec": 0.2817, "nce": 0.1823, "minutes": 47.3}
+{"step": 1700, "rec": 0.2322, "nce": 0.051, "minutes": 50.2}
+{"step": 1800, "rec": 0.2048, "nce": 0.018, "minutes": 53.1}
+{"step": 1900, "rec": 0.1678, "nce": 0.1397, "minutes": 56.1}
+{"step": 2000, "rec": 0.1749, "nce": 0.2299, "minutes": 59.0}
+{"trained": 2000, "minutes": 59.0}

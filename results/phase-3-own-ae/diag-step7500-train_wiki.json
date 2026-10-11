@@ -1,0 +1,27 @@
+{
+  "grader": "sonnet",
+  "decoded": "C:/Users/shaun/dianoia-data/work/ae/diag/train_wiki.jsonl",
+  "n_sources": 200,
+  "arms": {
+    "ae1024": {
+      "n_checked": 200,
+      "intent_check_all": 0.085,
+      "act": 0.965,
+      "action": 0.155,
+      "roles": 0.355,
+      "quantities": 0.555,
+      "word_jaccard_median": 0.412,
+      "exact_copy": 0.015
+    },
+    "ae256": {
+      "n_checked": 200,
+      "intent_check_all": 0.05,
+      "act": 0.975,
+      "action": 0.115,
+      "roles": 0.325,
+      "quantities": 0.55,
+      "word_jaccard_median": 0.412,
+      "exact_copy": 0.015
+    }
+  }
+}

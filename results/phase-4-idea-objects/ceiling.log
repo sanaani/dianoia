@@ -1,0 +1,68 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 25/199 [00:00<00:00, 249.66it/s]Loading weights:  26%|██▌       | 51/199 [00:00<00:00, 252.01it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 775.19it/s]
+chat/copy {'n': 100, 'event_f1': 0.893, 'count_equal': 0.46, 'act': 0.851, 'act_coarse': 0.94, 'neg': 0.981, 'mod': 0.879, 'pred': 0.857, 'content_cos': 0.941, 'rel_f1': 0.734, 'rel_label': 0.763, 'rel_coarse': 0.839, 'center': 0.86, 'multi_event': 1.0}
+chat/disfluent {'n': 99, 'event_f1': 0.902, 'count_equal': 0.485, 'act': 0.829, 'act_coarse': 0.929, 'neg': 0.983, 'mod': 0.859, 'pred': 0.872, 'content_cos': 0.942, 'rel_f1': 0.718, 'rel_label': 0.727, 'rel_coarse': 0.828, 'center': 0.798, 'multi_event': 1.0}
+chat/move {'n': 93, 'event_f1': 0.887, 'count_equal': 0.409, 'act': 0.82, 'act_coarse': 0.925, 'neg': 0.913, 'mod': 0.852, 'pred': 0.839, 'content_cos': 0.937, 'rel_f1': 0.704, 'rel_label': 0.732, 'rel_coarse': 0.793, 'center': 0.785, 'multi_event': 1.0}
+chat/original {'n': 104, 'multi_event': 1.0, 'n_events': 8.702}
+chat/paraphrase {'n': 93, 'event_f1': 0.88, 'count_equal': 0.495, 'act': 0.817, 'act_coarse': 0.923, 'neg': 0.951, 'mod': 0.78, 'pred': 0.468, 'content_cos': 0.896, 'rel_f1': 0.686, 'rel_label': 0.75, 'rel_coarse': 0.847, 'center': 0.742, 'multi_event': 1.0}
+chat/split {'n': 100, 'event_f1': 0.905, 'count_equal': 0.43, 'act': 0.823, 'act_coarse': 0.918, 'neg': 0.975, 'mod': 0.883, 'pred': 0.886, 'content_cos': 0.947, 'rel_f1': 0.728, 'rel_label': 0.713, 'rel_coarse': 0.773, 'center': 0.73, 'multi_event': 1.0}
+chat/stripped {'n': 99, 'event_f1': 0.886, 'count_equal': 0.444, 'act': 0.809, 'act_coarse': 0.902, 'neg': 0.979, 'mod': 0.852, 'pred': 0.848, 'content_cos': 0.937, 'rel_f1': 0.677, 'rel_label': 0.747, 'rel_coarse': 0.82, 'center': 0.747, 'multi_event': 1.0}
+email/copy {'n': 137, 'event_f1': 0.951, 'count_equal': 0.854, 'act': 0.956, 'act_coarse': 0.964, 'neg': 0.989, 'mod': 0.86, 'pred': 0.904, 'content_cos': 0.955, 'rel_f1': 0.778, 'rel_label': 0.815, 'rel_coarse': 0.892, 'center': 0.956, 'multi_event': 0.562}
+email/disfluent {'n': 142, 'event_f1': 0.95, 'count_equal': 0.873, 'act': 0.933, 'act_coarse': 0.947, 'neg': 0.982, 'mod': 0.879, 'pred': 0.877, 'content_cos': 0.959, 'rel_f1': 0.795, 'rel_label': 0.821, 'rel_coarse': 0.886, 'center': 0.915, 'multi_event': 0.556}
+email/move {'n': 143, 'event_f1': 0.89, 'count_equal': 0.797, 'act': 0.868, 'act_coarse': 0.9, 'neg': 0.225, 'mod': 0.807, 'pred': 0.85, 'content_cos': 0.926, 'rel_f1': 0.614, 'rel_label': 0.596, 'rel_coarse': 0.693, 'center': 0.86, 'multi_event': 0.573}
+email/original {'n': 147, 'multi_event': 0.565, 'n_events': 1.673}
+email/paraphrase {'n': 141, 'event_f1': 0.746, 'count_equal': 0.766, 'act': 0.908, 'act_coarse': 0.94, 'neg': 0.919, 'mod': 0.663, 'pred': 0.149, 'content_cos': 0.834, 'rel_f1': 0.392, 'rel_label': 0.708, 'rel_coarse': 0.806, 'center': 0.752, 'multi_event': 0.567}
+email/split {'n': 140, 'event_f1': 0.929, 'count_equal': 0.8, 'act': 0.943, 'act_coarse': 0.961, 'neg': 0.993, 'mod': 0.846, 'pred': 0.913, 'content_cos': 0.954, 'rel_f1': 0.686, 'rel_label': 0.808, 'rel_coarse': 0.862, 'center': 0.907, 'multi_event': 0.571}
+email/stripped {'n': 131, 'event_f1': 0.941, 'count_equal': 0.817, 'act': 0.981, 'act_coarse': 0.989, 'neg': 0.981, 'mod': 0.877, 'pred': 0.913, 'content_cos': 0.958, 'rel_f1': 0.745, 'rel_label': 0.823, 'rel_coarse': 0.887, 'center': 0.931, 'multi_event': 0.588}
+meeting/copy {'n': 104, 'event_f1': 0.854, 'count_equal': 0.49, 'act': 0.859, 'act_coarse': 0.932, 'neg': 0.99, 'mod': 0.88, 'pred': 0.885, 'content_cos': 0.94, 'rel_f1': 0.665, 'rel_label': 0.78, 'rel_coarse': 0.875, 'center': 0.74, 'multi_event': 1.0}
+meeting/disfluent {'n': 101, 'event_f1': 0.829, 'count_equal': 0.376, 'act': 0.835, 'act_coarse': 0.918, 'neg': 0.984, 'mod': 0.866, 'pred': 0.882, 'content_cos': 0.937, 'rel_f1': 0.628, 'rel_label': 0.752, 'rel_coarse': 0.851, 'center': 0.713, 'multi_event': 1.0}
+meeting/move {'n': 100, 'event_f1': 0.838, 'count_equal': 0.51, 'act': 0.839, 'act_coarse': 0.912, 'neg': 0.914, 'mod': 0.855, 'pred': 0.884, 'content_cos': 0.929, 'rel_f1': 0.641, 'rel_label': 0.72, 'rel_coarse': 0.81, 'center': 0.58, 'multi_event': 1.0}
+meeting/original {'n': 108, 'multi_event': 1.0, 'n_events': 6.685}
+meeting/paraphrase {'n': 102, 'event_f1': 0.799, 'count_equal': 0.373, 'act': 0.829, 'act_coarse': 0.906, 'neg': 0.961, 'mod': 0.804, 'pred': 0.489, 'content_cos': 0.887, 'rel_f1': 0.58, 'rel_label': 0.708, 'rel_coarse': 0.783, 'center': 0.696, 'multi_event': 1.0}
+meeting/split {'n': 98, 'event_f1': 0.829, 'count_equal': 0.429, 'act': 0.857, 'act_coarse': 0.934, 'neg': 0.983, 'mod': 0.881, 'pred': 0.89, 'content_cos': 0.94, 'rel_f1': 0.659, 'rel_label': 0.75, 'rel_coarse': 0.833, 'center': 0.735, 'multi_event': 1.0}
+meeting/stripped {'n': 105, 'event_f1': 0.844, 'count_equal': 0.438, 'act': 0.843, 'act_coarse': 0.918, 'neg': 0.983, 'mod': 0.868, 'pred': 0.879, 'content_cos': 0.938, 'rel_f1': 0.652, 'rel_label': 0.792, 'rel_coarse': 0.87, 'center': 0.705, 'multi_event': 1.0}
+{
+ "email": {
+  "move": {
+   "n": 143,
+   "changed": 0.937
+  },
+  "copy": {
+   "n": 134,
+   "changed": 0.388
+  },
+  "paraphrase": {
+   "n": 138,
+   "changed": 0.949
+  }
+ },
+ "meeting": {
+  "move": {
+   "n": 100,
+   "changed": 0.81
+  },
+  "copy": {
+   "n": 96,
+   "changed": 0.375
+  },
+  "paraphrase": {
+   "n": 95,
+   "changed": 0.758
+  }
+ },
+ "chat": {
+  "move": {
+   "n": 93,
+   "changed": 0.796
+  },
+  "copy": {
+   "n": 89,
+   "changed": 0.337
+  },
+  "paraphrase": {
+   "n": 82,
+   "changed": 0.659
+  }
+ }
+}
+FAILS 16 ['chat/paraphrase:mod', 'chat/paraphrase:rel_f1', 'chat/stripped:rel_f1', 'email/paraphrase:event_f1', 'email/paraphrase:mod', 'email/paraphrase:rel_f1', 'email/split:rel_f1', 'meeting/disfluent:event_f1', 'meeting/disfluent:rel_f1', 'meeting/paraphrase:event_f1', 'meeting/paraphrase:rel_f1', 'meeting/paraphrase:center', 'meeting/split:event_f1', 'meeting/split:rel_f1', 'meeting/stripped:event_f1', 'meeting/stripped:rel_f1']

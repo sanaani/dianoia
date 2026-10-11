@@ -1,0 +1,40 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:07<00:07,  7.92s/it]Fetching 2 files: 100%|██████████| 2/2 [00:33<00:00, 18.40s/it]Fetching 2 files: 100%|██████████| 2/2 [00:33<00:00, 16.83s/it]
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 4052.92it/s]
+{"rows": 32, "of": 20821, "minutes": 0.2}
+{"rows": 672, "of": 20821, "minutes": 1.6}
+{"rows": 1312, "of": 20821, "minutes": 4.6}
+{"rows": 1952, "of": 20821, "minutes": 5.7}
+{"rows": 2592, "of": 20821, "minutes": 7.9}
+{"rows": 3232, "of": 20821, "minutes": 9.1}
+{"rows": 3872, "of": 20821, "minutes": 10.4}
+{"rows": 4512, "of": 20821, "minutes": 12.2}
+{"rows": 5152, "of": 20821, "minutes": 14.1}
+{"rows": 5792, "of": 20821, "minutes": 15.9}
+{"rows": 6432, "of": 20821, "minutes": 17.9}
+{"rows": 7072, "of": 20821, "minutes": 19.4}
+{"rows": 7712, "of": 20821, "minutes": 21.0}
+{"rows": 8352, "of": 20821, "minutes": 23.2}
+{"rows": 8992, "of": 20821, "minutes": 25.9}
+{"rows": 9632, "of": 20821, "minutes": 27.6}
+{"rows": 10272, "of": 20821, "minutes": 29.4}
+{"rows": 10912, "of": 20821, "minutes": 31.3}
+{"rows": 11552, "of": 20821, "minutes": 33.4}
+{"rows": 12192, "of": 20821, "minutes": 35.4}
+{"rows": 12832, "of": 20821, "minutes": 37.9}
+{"rows": 13472, "of": 20821, "minutes": 40.2}
+{"rows": 14112, "of": 20821, "minutes": 42.6}
+{"rows": 14752, "of": 20821, "minutes": 45.5}
+{"rows": 15392, "of": 20821, "minutes": 48.5}
+{"rows": 16032, "of": 20821, "minutes": 51.2}
+{"rows": 16672, "of": 20821, "minutes": 54.3}
+{"rows": 17312, "of": 20821, "minutes": 58.1}
+{"rows": 17952, "of": 20821, "minutes": 61.2}
+{"rows": 18592, "of": 20821, "minutes": 64.7}
+{"rows": 19232, "of": 20821, "minutes": 68.7}
+{"rows": 19872, "of": 20821, "minutes": 73.0}
+{"rows": 20512, "of": 20821, "minutes": 77.9}
+{"predicted": 20821, "resumed_from": 0, "empty": 0}

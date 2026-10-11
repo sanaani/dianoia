@@ -1,0 +1,68 @@
+# Phase 12: can an encoder learn to match far analogies? Every number here was fixed on 10/07/2026, before the far set
+# existed. Hypotheses: results/phase-12-far-analogy/HYPOTHESES.md; measures and verdict rules: OPERATIONALIZATION.md
+# beside this file. A change after results exist is a new commit saying why.
+
+data: C:/Users/shaun/dianoia-data
+seed: 0
+mem_mb_total: 5000
+
+# Relative to <data>/work. Queries, candidates and abstracts are phase 10's (pipelines/phase10); the pairs are phase
+# 10's kept pairs and phase 11's training pairs.
+inputs:
+  keep: p10/label/kept-final.parquet
+  train: p10/label/train-p11.jsonl
+  queries: p10/queries.parquet
+  abstracts: p10/abstracts.parquet
+  patents: p10/patents.parquet
+
+measure_encoder: BAAI/bge-small-en-v1.5   # the second encoder for "far"; never the one trained and scored
+min_far_test: 200                          # fewer far test queries: stop and ask Shaun
+negatives: 7                               # hard negatives per training pair, from the cited patent's own section
+
+# The hand check (p10-label.py review, RUBRIC.md): 50 far test pairs (gated) and 50 far training pairs (reported),
+# each with 10 earlier hand-labeled pairs re-judged; rater agreement under 9/10 means the reading is not used.
+review:
+  n: 50
+  seed: 12
+  gold: p10/label/rubric-cascade50.jsonl
+  texts: [p10/label/kept-cascade-pairs.jsonl, p10/label/kept-pairs.jsonl]
+  min_real: 0.70                           # C or G (RUBRIC.md's kept classes) among the far test pairs
+
+embedder: Qwen/Qwen3-Embedding-0.6B
+# Phase 10's query instruction (its level 0); documents carry none, as in phase 10.
+instruct: "Instruct: Given a patent abstract, retrieve an earlier patent from a different field whose idea it borrows\nQuery: "
+
+train:
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  temperature: 0.05
+  batch: 32                 # pairs per step; each brings its cited abstract and 7 negatives
+  chunk: 8                  # texts per forward pass; gradient caching keeps the batch exact (remote-p12.py).
+                            # 24 ran out of the A10G's 22 GB in the instance smoke (10/07/2026): LoRA's float32 path holds large activations
+  lr: 1.0e-4
+  warmup_ratio: 0.05
+  max_tokens: 320
+  epochs: [1, 2, 3]         # chosen on dev far top-10, then MRR, per model
+  seeds: [0, 1, 2]          # verdicts use seed 0; 1 and 2 give the spread
+
+recovery:
+  top_k: 10
+
+verdicts:
+  bootstrap: 2000
+  h3_floor: -0.03           # near test: far-trained minus off the shelf, lower bound must be above this
+
+smoke:                      # laptop CPU dry run on real files: code paths only
+  train: 8
+  queries: 3
+  candidates: 15
+  embedder: trl-internal-testing/tiny-Qwen3ForCausalLM
+  steps: 2
+
+aws:
+  hours: 4                  # self-terminate cap; estimate about 3 h (10 training epochs at ~10 min, 9 scorings at ~6 min,
+                            # from phase 11's timings), and a cap hit loses everything not yet downloaded
+  market: od
+  budget_left_usd: 9.5      # less the 10/07 smoke instance that ran out of GPU memory (minutes)
+  max_cost_usd: 4.1

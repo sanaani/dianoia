@@ -1,0 +1,2 @@
+*.sh text eol=lf
+Snakefile text eol=lf

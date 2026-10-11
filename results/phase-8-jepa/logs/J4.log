@@ -1,0 +1,40 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/387 [00:00<?, ?it/s]Loading weights:   0%|          | 1/387 [00:00<01:45,  3.67it/s]Loading weights: 100%|██████████| 387/387 [00:00<00:00, 1078.21it/s]
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:07<00:07,  7.33s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 24.54s/it]Fetching 2 files: 100%|██████████| 2/2 [00:43<00:00, 21.96s/it]
+Loading weights:   0%|          | 0/1013 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 196/1013 [00:00<00:00, 1772.72it/s]Loading weights:  37%|███▋      | 378/1013 [00:00<00:00, 1789.22it/s]Loading weights:  56%|█████▋    | 572/1013 [00:00<00:00, 1842.60it/s]Loading weights:  75%|███████▍  | 757/1013 [00:00<00:00, 1519.83it/s]Loading weights:  90%|█████████ | 916/1013 [00:00<00:00, 1363.37it/s]Loading weights: 100%|██████████| 1013/1013 [00:00<00:00, 1103.85it/s]
+{"ideas": 196360, "encode_min": 3.9}
+/opt/pytorch/lib/python3.12/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+{"step": 500, "loss": 6.3901, "cos": 0.3207, "val_loss": 5.5065, "val_cos": 0.3603, "minutes": 0.3}
+{"step": 1000, "loss": 6.3373, "cos": 0.3068, "val_loss": 5.3948, "val_cos": 0.3396, "minutes": 0.5}
+{"step": 1500, "loss": 5.9221, "cos": 0.3009, "val_loss": 5.2516, "val_cos": 0.3169, "minutes": 0.7}
+{"step": 2000, "loss": 5.8227, "cos": 0.3012, "val_loss": 5.1994, "val_cos": 0.3157, "minutes": 0.9}
+{"step": 2500, "loss": 5.9505, "cos": 0.2946, "val_loss": 5.028, "val_cos": 0.3205, "minutes": 1.1}
+{"step": 3000, "loss": 5.5969, "cos": 0.3045, "val_loss": 4.9559, "val_cos": 0.322, "minutes": 1.2}
+{"step": 3500, "loss": 5.8662, "cos": 0.3002, "val_loss": 4.9799, "val_cos": 0.3259, "minutes": 1.4}
+{"step": 4000, "loss": 5.4608, "cos": 0.3062, "val_loss": 4.8724, "val_cos": 0.3094, "minutes": 1.6}
+{"step": 4500, "loss": 5.6599, "cos": 0.3027, "val_loss": 4.8233, "val_cos": 0.3149, "minutes": 1.8}
+{"step": 5000, "loss": 5.5041, "cos": 0.2962, "val_loss": 4.8128, "val_cos": 0.304, "minutes": 2.0}
+{"step": 5500, "loss": 5.1527, "cos": 0.2974, "val_loss": 4.7622, "val_cos": 0.3066, "minutes": 2.2}
+{"step": 6000, "loss": 5.4381, "cos": 0.2932, "val_loss": 4.6984, "val_cos": 0.3118, "minutes": 2.4}
+{"step": 6500, "loss": 5.5086, "cos": 0.2987, "val_loss": 4.716, "val_cos": 0.3098, "minutes": 2.6}
+{"step": 7000, "loss": 5.3226, "cos": 0.3079, "val_loss": 4.6711, "val_cos": 0.3164, "minutes": 2.8}
+{"step": 7500, "loss": 5.1861, "cos": 0.31, "val_loss": 4.6577, "val_cos": 0.3137, "minutes": 3.0}
+{"step": 8000, "loss": 4.8405, "cos": 0.3131, "val_loss": 4.6535, "val_cos": 0.3062, "minutes": 3.2}
+{"step": 8500, "loss": 5.2321, "cos": 0.3029, "val_loss": 4.623, "val_cos": 0.3157, "minutes": 3.4}
+{"step": 9000, "loss": 5.1319, "cos": 0.308, "val_loss": 4.5733, "val_cos": 0.3176, "minutes": 3.6}
+{"step": 9500, "loss": 4.9438, "cos": 0.3096, "val_loss": 4.5736, "val_cos": 0.3185, "minutes": 3.8}
+{"step": 10000, "loss": 4.987, "cos": 0.3204, "val_loss": 4.5575, "val_cos": 0.3205, "minutes": 4.0}
+{"step": 10500, "loss": 4.9752, "cos": 0.3219, "val_loss": 4.5334, "val_cos": 0.318, "minutes": 4.1}
+{"step": 11000, "loss": 4.865, "cos": 0.3113, "val_loss": 4.5107, "val_cos": 0.3175, "minutes": 4.3}
+{"step": 11500, "loss": 4.7071, "cos": 0.325, "val_loss": 4.5073, "val_cos": 0.3201, "minutes": 4.5}
+{"step": 12000, "loss": 5.0506, "cos": 0.3258, "val_loss": 4.4848, "val_cos": 0.3232, "minutes": 4.7}
+{"step": 12500, "loss": 4.9015, "cos": 0.3185, "val_loss": 4.4771, "val_cos": 0.3256, "minutes": 4.9}
+{"step": 13000, "loss": 4.9562, "cos": 0.3132, "val_loss": 4.4641, "val_cos": 0.3286, "minutes": 5.1}
+{"step": 13500, "loss": 5.1037, "cos": 0.328, "val_loss": 4.461, "val_cos": 0.3294, "minutes": 5.3}
+{"step": 14000, "loss": 4.7492, "cos": 0.335, "val_loss": 4.465, "val_cos": 0.3296, "minutes": 5.5}
+{"step": 14500, "loss": 4.7569, "cos": 0.332, "val_loss": 4.4601, "val_cos": 0.3294, "minutes": 5.7}
+{"step": 15000, "loss": 4.8539, "cos": 0.3328, "val_loss": 4.4582, "val_cos": 0.3296, "minutes": 5.9}
+{"pool": 3951, "train_units": 16879, "val_units": 570, "test_units": 633, "best_val_loss": 4.4582, "curve": [{"step": 500, "loss": 6.3901, "cos": 0.3207, "val_loss": 5.5065, "val_cos": 0.3603, "minutes": 0.3}, {"step": 1000, "loss": 6.3373, "cos": 0.3068, "val_loss": 5.3948, "val_cos": 0.3396, "minutes": 0.5}, {"step": 1500, "loss": 5.9221, "cos": 0.3009, "val_loss": 5.2516, "val_cos": 0.3169, "minutes": 0.7}, {"step": 2000, "loss": 5.8227, "cos": 0.3012, "val_loss": 5.1994, "val_cos": 0.3157, "minutes": 0.9}, {"step": 2500, "loss": 5.9505, "cos": 0.2946, "val_loss": 5.028, "val_cos": 0.3205, "minutes": 1.1}, {"step": 3000, "loss": 5.5969, "cos": 0.3045, "val_loss": 4.9559, "val_cos": 0.322, "minutes": 1.2}, {"step": 3500, "loss": 5.8662, "cos": 0.3002, "val_loss": 4.9799, "val_cos": 0.3259, "minutes": 1.4}, {"step": 4000, "loss": 5.4608, "cos": 0.3062, "val_loss": 4.8724, "val_cos": 0.3094, "minutes": 1.6}, {"step": 4500, "loss": 5.6599, "cos": 0.3027, "val_loss": 4.8233, "val_cos": 0.3149, "minutes": 1.8}, {"step": 5000, "loss": 5.5041, "cos": 0.2962, "val_loss": 4.8128, "val_cos": 0.304, "minutes": 2.0}, {"step": 5500, "loss": 5.1527, "cos": 0.2974, "val_loss": 4.7622, "val_cos": 0.3066, "minutes": 2.2}, {"step": 6000, "loss": 5.4381, "cos": 0.2932, "val_loss": 4.6984, "val_cos": 0.3118, "minutes": 2.4}, {"step": 6500, "loss": 5.5086, "cos": 0.2987, "val_loss": 4.716, "val_cos": 0.3098, "minutes": 2.6}, {"step": 7000, "loss": 5.3226, "cos": 0.3079, "val_loss": 4.6711, "val_cos": 0.3164, "minutes": 2.8}, {"step": 7500, "loss": 5.1861, "cos": 0.31, "val_loss": 4.6577, "val_cos": 0.3137, "minutes": 3.0}, {"step": 8000, "loss": 4.8405, "cos": 0.3131, "val_loss": 4.6535, "val_cos": 0.3062, "minutes": 3.2}, {"step": 8500, "loss": 5.2321, "cos": 0.3029, "val_loss": 4.623, "val_cos": 0.3157, "minutes": 3.4}, {"step": 9000, "loss": 5.1319, "cos": 0.308, "val_loss": 4.5733, "val_cos": 0.3176, "minutes": 3.6}, {"step": 9500, "loss": 4.9438, "cos": 0.3096, "val_loss": 4.5736, "val_cos": 0.3185, "minutes": 3.8}, {"step": 10000, "loss": 4.987, "cos": 0.3204, "val_loss": 4.5575, "val_cos": 0.3205, "minutes": 4.0}, {"step": 10500, "loss": 4.9752, "cos": 0.3219, "val_loss": 4.5334, "val_cos": 0.318, "minutes": 4.1}, {"step": 11000, "loss": 4.865, "cos": 0.3113, "val_loss": 4.5107, "val_cos": 0.3175, "minutes": 4.3}, {"step": 11500, "loss": 4.7071, "cos": 0.325, "val_loss": 4.5073, "val_cos": 0.3201, "minutes": 4.5}, {"step": 12000, "loss": 5.0506, "cos": 0.3258, "val_loss": 4.4848, "val_cos": 0.3232, "minutes": 4.7}, {"step": 12500, "loss": 4.9015, "cos": 0.3185, "val_loss": 4.4771, "val_cos": 0.3256, "minutes": 4.9}, {"step": 13000, "loss": 4.9562, "cos": 0.3132, "val_loss": 4.4641, "val_cos": 0.3286, "minutes": 5.1}, {"step": 13500, "loss": 5.1037, "cos": 0.328, "val_loss": 4.461, "val_cos": 0.3294, "minutes": 5.3}, {"step": 14000, "loss": 4.7492, "cos": 0.335, "val_loss": 4.465, "val_cos": 0.3296, "minutes": 5.5}, {"step": 14500, "loss": 4.7569, "cos": 0.332, "val_loss": 4.4601, "val_cos": 0.3294, "minutes": 5.7}, {"step": 15000, "loss": 4.8539, "cos": 0.3328, "val_loss": 4.4582, "val_cos": 0.3296, "minutes": 5.9}], "predictor": {"cos": 0.3276, "top1": 0.0356, "top10": 0.3906, "median_rank": 26.0, "n": 3374}, "last": {"cos": 0.4258, "top1": 0.0, "top10": 0.3465, "median_rank": 112.0, "n": 3374}, "context_mean": {"cos": 0.4649, "top1": 0.0027, "top10": 0.2961, "median_rank": 116.5, "n": 3374}, "same_unit_best": {"cos": 0.61}}

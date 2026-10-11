@@ -1,0 +1,59 @@
+{
+  "chat": {
+    "n_ideas": 10.439,
+    "n_ref": 9.737,
+    "faithfulness": 0.927,
+    "coverage": 0.793,
+    "literal": 0.974,
+    "ref_f1": 0.459,
+    "unit_inv_stripped": 0.586,
+    "inv_stripped": 0.741,
+    "unit_inv_disfluent": 0.778,
+    "inv_disfluent": 0.831,
+    "invariance": 0.786,
+    "unit_invariance": 0.682,
+    "accuracy": 0.831,
+    "n": 114
+  },
+  "email": {
+    "n_ideas": 1.767,
+    "n_ref": 1.627,
+    "faithfulness": 0.912,
+    "coverage": 0.767,
+    "literal": 0.923,
+    "ref_f1": 0.532,
+    "unit_inv_stripped": 0.732,
+    "inv_stripped": 0.845,
+    "unit_inv_disfluent": 0.864,
+    "inv_disfluent": 0.908,
+    "invariance": 0.877,
+    "unit_invariance": 0.798,
+    "accuracy": 0.847,
+    "n": 150
+  },
+  "meeting": {
+    "n_ideas": 7.205,
+    "n_ref": 6.974,
+    "faithfulness": 0.926,
+    "coverage": 0.694,
+    "literal": 0.917,
+    "ref_f1": 0.379,
+    "unit_inv_stripped": 0.626,
+    "inv_stripped": 0.733,
+    "unit_inv_disfluent": 0.727,
+    "inv_disfluent": 0.822,
+    "invariance": 0.777,
+    "unit_invariance": 0.676,
+    "accuracy": 0.788,
+    "n": 117
+  },
+  "all": {
+    "faithfulness": 0.921,
+    "coverage": 0.752,
+    "invariance": 0.819,
+    "unit_invariance": 0.726,
+    "literal": 0.936,
+    "ref_f1": 0.463,
+    "accuracy": 0.824
+  }
+}

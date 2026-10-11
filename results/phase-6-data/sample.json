@@ -1,0 +1,59 @@
+{
+ "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+ "bar": 0.9,
+ "seed": 6,
+ "sources": {
+  "snli": {
+   "lossy_mean_dropped": 0.686,
+   "lossy_extreme_share": 0.388,
+   "pos_sampled": 500,
+   "pos_kept": 22,
+   "pos_rate": 0.044,
+   "fwd_pass": 0.872,
+   "kept_mean_overlap": 0.487,
+   "kept_low_overlap_share": 0.545,
+   "mean_words": 9.9,
+   "neg_sampled": 200,
+   "neg_rate": 0.795,
+   "seconds": 9
+  },
+  "mnli": {
+   "lossy_mean_dropped": 0.622,
+   "lossy_extreme_share": 0.314,
+   "pos_sampled": 500,
+   "pos_kept": 117,
+   "pos_rate": 0.234,
+   "fwd_pass": 0.932,
+   "kept_mean_overlap": 0.437,
+   "kept_low_overlap_share": 0.607,
+   "mean_words": 15.2,
+   "neg_sampled": 200,
+   "neg_rate": 0.98,
+   "seconds": 3
+  },
+  "mrpc": {
+   "lossy_mean_dropped": 0.342,
+   "lossy_extreme_share": 0.0,
+   "pos_sampled": 500,
+   "pos_kept": 69,
+   "pos_rate": 0.138,
+   "fwd_pass": 0.296,
+   "kept_mean_overlap": 0.653,
+   "kept_low_overlap_share": 0.13,
+   "mean_words": 22.4,
+   "seconds": 2
+  },
+  "stsb": {
+   "lossy_mean_dropped": 0.318,
+   "lossy_extreme_share": 0.034,
+   "pos_sampled": 500,
+   "pos_kept": 257,
+   "pos_rate": 0.514,
+   "fwd_pass": 0.702,
+   "kept_mean_overlap": 0.581,
+   "kept_low_overlap_share": 0.28,
+   "mean_words": 10.1,
+   "seconds": 2
+  }
+ }
+}
